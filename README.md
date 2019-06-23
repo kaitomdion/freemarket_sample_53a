@@ -42,7 +42,6 @@
 |burden_id|integer|null: false, foreign_key: true|
 
 ### Association
-
 -belogs_to :user
 -belogs_to :region
 -belogs_to :method
@@ -60,7 +59,6 @@
 |user_id|string|null: false, foreign_key: true|
 
 ### Association
-
 -belongs_to :user
 
 ## categoriesテーブル
@@ -69,7 +67,6 @@
 |name|string|null: false|
 
 ### Association
-
 -has_many :items
 -has_many :genres
 
@@ -80,7 +77,6 @@
 |category_id|string|null: false, foreign_key: true|
 
 ### Association
-
 -belongs_to :category
 -has_many :detail-genres
 
@@ -91,7 +87,6 @@
 |genre_id|string|null: false, foreign_key: true|
 
 ### Association
-
 -belongs_to :genre
 
 ## brandテーブル
@@ -105,8 +100,7 @@
 |name|string|null false|
 
 ### Association
-
-has_many :items
+-has_many :items
 
 ## methodテーブル
 |Column|Type|Option|
@@ -114,8 +108,7 @@ has_many :items
 |method|string|null false|
 
 ### Association
-
-has_many :items
+-has_many :items
 
 ## statusテーブル
 |Column|Type|Option|
@@ -123,8 +116,7 @@ has_many :items
 |status|string|null false|
 
 ### Association
-
-has_many :items
+-has_many :items
 
 ## daysテーブル
 |Column|Type|Option|
@@ -132,15 +124,15 @@ has_many :items
 |days|string|null false|
 
 ### Association
-
-has_many :items
+-has_many :items
 
 ## burdenテーブル
 |Column|Type|Option|
 |------|----|------|
 |burden|string|null false|
 
-has_many :items
+### Association
+-has_many :items
 
 
 
