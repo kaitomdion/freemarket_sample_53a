@@ -1,27 +1,158 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+|Column|Type|Option|
+|------|----|------|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+|encrypted_password|string|null: false|
+|last_name|string|null: false|
+|first_name|string|null :false|
+|kata_last_name|string|null: false|
+|kata_first_name|string|null: false|
+|birth_year|string|null: false|
+|birth_month|string|null: false|
+|birth_day|string|null: false|
+|phone_number|string|null: false, unique: true|
+|postal_code|string|null: false|
+|region_id|integer|null: false, foreign_key: true|
+|town|string|null: false|
+|credit|string|null: false|
+|item_id|integer|null: false, foreign_key: true|
 
-Things you may want to cover:
+### Association
+- has_many :items, through: :users_items, dependent: :destroy
+- has_many :users_items
+- belongs_to :region
 
-* Ruby version
+## itemsテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
+|image|string|null: false|
+|state|text|null: false|
+|categoty_id|integer|null: false, foreign_key: true|
+|price|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|region_id|integer|null: false, foreign_key: true|
+|method_id|integer|null: false, foreign_key: true|
+|status_id|integer|null: false, foreign_key: true|
+|days_id|integer|null: false, foreign_key: true|
+|burden_id|integer|null: false, foreign_key: true|
 
-* System dependencies
+### Association
+- belogs_to :user
+- belogs_to :region
+- belogs_to :method
+- belogs_to :status
+- belogs_to :days
+- belogs_to :burden
+- has_many :categories, through: :categories_items
+- has_many :categories_items
 
-* Configuration
+## cardsテーブル
+|Column|Type|Option|
+|------|----|------|
+|number|string|null: false, unique: true|
+|limit_month|string|null: false|
+|limit_year|string|null: false|
+|security_card|string|null: false, unique: true|
+|user_id|string|null: false, foreign_key: true|
 
-* Database creation
+### Association
+- belongs_to :user
 
-* Database initialization
+## categoriesテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
 
-* How to run the test suite
+### Association
+- has_many :items, through: :categories_items
+- has_many :categories_items
 
-* Services (job queues, cache servers, search engines, etc.)
+## categories_itemsテーブル
+|Column|Type|Option|
+|------|----|------|
+|category_id|string|null: false, foreign_key: true|
+|item_id|string|null: false, foreign_key: true|
 
-* Deployment instructions
+### Association
+- belongs_to :category
+- belongs_to :item
 
-* ...
+## brandテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|------|
+
+### Association
+- has_many :groups
+
+## groupテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null :false|
+
+### Association
+- belongs_to :brand
+
+## regionテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null false|
+
+### Association
+- has_many :items
+
+## methodテーブル
+|Column|Type|Option|
+|------|----|------|
+|method|string|null false|
+
+### Association
+- has_many :items
+
+## statusテーブル
+|Column|Type|Option|
+|------|----|------|
+|status|string|null false|
+
+### Association
+- has_many :items
+
+## daysテーブル
+|Column|Type|Option|
+|------|----|------|
+|days|string|null false|
+
+### Association
+- has_many :items
+
+## burdenテーブル
+|Column|Type|Option|
+|------|----|------|
+|burden|string|null false|
+
+### Association
+- has_many :items
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
