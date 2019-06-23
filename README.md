@@ -16,7 +16,7 @@
 |birth_day|string|null: false|
 |phone_number|string|null: false, unique: true|
 |postal_code|string|null: false|
-|prefectures|string|null: false|
+|region_id|integer|null: false, foreign_key: true|
 |town|string|null: false|
 |credit|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
@@ -24,25 +24,32 @@
 ### Association
 -has_many :items, through: :users_items, dependent: :destroy
 -has_many :users_items
+-belongs_to :region
 
 ## itemsテーブル
 |Column|Type|Option|
 |name|string|null: false|
 |image|string|null: false|
-|state|string|null: false|
+|state|text|null: false|
 |categoty_id|integer|null: false, foreign_key: true|
-|delivery_burden|string|null: false|
-|delivery_region|string|null: false|
-|delivery_days|string|null: false|
 |price|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
+|region_id|integer|null: false, foreign_key: true|
+|method_id|integer|null: false, foreign_key: true|
+|status_id|integer|null: false, foreign_key: true|
+|days_id|integer|null: false, foreign_key: true|
+|burden_id|integer|null: false, foreign_key: true|
+
 
 
 ### Association
 
 -belogs_to :user
--belogs_to :category
-
+-belogs_to :region
+-belogs_to :method
+-belogs_to :status
+-belogs_to :days
+-belogs_to :burden
 
 ## cardsテーブル
 |Column|Type|Option|
@@ -88,6 +95,43 @@
 |Column|Type|Option|
 |name|string|null :false|
 
+## regionテーブル
+|Column|Type|Option|
+|name|string|null false|
+
+### Association
+
+has_many :items
+
+## methodテーブル
+|Column|Type|Option|
+|method|string|null false|
+
+### Association
+
+has_many :items
+
+## statusテーブル
+|Column|Type|Option|
+|status|string|null false|
+
+### Association
+
+has_many :items
+
+## methodテーブル
+|Column|Type|Option|
+|days|string|null false|
+
+### Association
+
+has_many :items
+
+## burdenテーブル
+|Column|Type|Option|
+|burden|string|null false|
+
+has_many :items
 
 
 
