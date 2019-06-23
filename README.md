@@ -126,7 +126,7 @@ has_many :items
 
 has_many :items
 
-## methodテーブル
+## daysテーブル
 |Column|Type|Option|
 |------|----|------|
 |days|string|null false|
