@@ -22,9 +22,9 @@
 |item_id|integer|null: false, foreign_key: true|
 
 ### Association
--has_many :items, through: :users_items, dependent: :destroy
--has_many :users_items
--belongs_to :region
+- has_many :items, through: :users_items, dependent: :destroy
+- has_many :users_items
+- belongs_to :region
 
 ## itemsテーブル
 |Column|Type|Option|
@@ -42,12 +42,14 @@
 |burden_id|integer|null: false, foreign_key: true|
 
 ### Association
--belogs_to :user
--belogs_to :region
--belogs_to :method
--belogs_to :status
--belogs_to :days
--belogs_to :burden
+- belogs_to :user
+- belogs_to :region
+- belogs_to :method
+- belogs_to :status
+- belogs_to :days
+- belogs_to :burden
+- has_many :categories, through: :categories_items
+- has_many :categories_items
 
 ## cardsテーブル
 |Column|Type|Option|
@@ -59,7 +61,7 @@
 |user_id|string|null: false, foreign_key: true|
 
 ### Association
--belongs_to :user
+- belongs_to :user
 
 ## categoriesテーブル
 |Column|Type|Option|
@@ -67,32 +69,34 @@
 |name|string|null: false|
 
 ### Association
--has_many :items
--has_many :genres
+- has_many :items, through: :categories_items
+- has_many :categories_items
 
-## genresテーブル
+## categories_itemsテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|null :false|
 |category_id|string|null: false, foreign_key: true|
+|item_id|string|null: false, foreign_key: true|
 
 ### Association
--belongs_to :category
--has_many :detail-genres
-
-## detail-genresテーブル
-|Column|Type|Option|
-|------|----|------|
-|name|string|null :false|
-|genre_id|string|null: false, foreign_key: true|
-
-### Association
--belongs_to :genre
+- belongs_to :category
+- belongs_to :item
 
 ## brandテーブル
 |Column|Type|Option|
 |------|----|------|
 |name|string|null :false|
+
+### Association
+- has_many :groups
+
+##groupテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null :false|
+
+### Association
+- belongs_to :brand
 
 ## regionテーブル
 |Column|Type|Option|
@@ -100,7 +104,7 @@
 |name|string|null false|
 
 ### Association
--has_many :items
+- has_many :items
 
 ## methodテーブル
 |Column|Type|Option|
@@ -108,7 +112,7 @@
 |method|string|null false|
 
 ### Association
--has_many :items
+- has_many :items
 
 ## statusテーブル
 |Column|Type|Option|
@@ -116,7 +120,7 @@
 |status|string|null false|
 
 ### Association
--has_many :items
+- has_many :items
 
 ## daysテーブル
 |Column|Type|Option|
@@ -124,7 +128,7 @@
 |days|string|null false|
 
 ### Association
--has_many :items
+- has_many :items
 
 ## burdenテーブル
 |Column|Type|Option|
@@ -132,7 +136,7 @@
 |burden|string|null false|
 
 ### Association
--has_many :items
+- has_many :items
 
 
 
