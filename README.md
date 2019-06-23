@@ -90,7 +90,7 @@
 ### Association
 - has_many :groups
 
-##groupテーブル
+## groupテーブル
 |Column|Type|Option|
 |------|----|------|
 |name|string|null :false|
