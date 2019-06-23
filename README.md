@@ -85,7 +85,7 @@
 ## brandテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|null :false|
+|name|string|------|
 
 ### Association
 - has_many :groups
