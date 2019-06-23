@@ -28,6 +28,7 @@
 
 ## itemsテーブル
 |Column|Type|Option|
+|------|----|------|
 |name|string|null: false|
 |image|string|null: false|
 |state|text|null: false|
@@ -40,8 +41,6 @@
 |days_id|integer|null: false, foreign_key: true|
 |burden_id|integer|null: false, foreign_key: true|
 
-
-
 ### Association
 
 -belogs_to :user
@@ -53,6 +52,7 @@
 
 ## cardsテーブル
 |Column|Type|Option|
+|------|----|------|
 |number|string|null: false, unique: true|
 |limit_month|string|null: false|
 |limit_year|string|null: false|
@@ -65,6 +65,7 @@
 
 ## categoriesテーブル
 |Column|Type|Option|
+|------|----|------|
 |name|string|null: false|
 
 ### Association
@@ -74,6 +75,7 @@
 
 ## genresテーブル
 |Column|Type|Option|
+|------|----|------|
 |name|string|null :false|
 |category_id|string|null: false, foreign_key: true|
 
@@ -84,6 +86,7 @@
 
 ## detail-genresテーブル
 |Column|Type|Option|
+|------|----|------|
 |name|string|null :false|
 |genre_id|string|null: false, foreign_key: true|
 
@@ -93,10 +96,12 @@
 
 ## brandテーブル
 |Column|Type|Option|
+|------|----|------|
 |name|string|null :false|
 
 ## regionテーブル
 |Column|Type|Option|
+|------|----|------|
 |name|string|null false|
 
 ### Association
@@ -105,6 +110,7 @@ has_many :items
 
 ## methodテーブル
 |Column|Type|Option|
+|------|----|------|
 |method|string|null false|
 
 ### Association
@@ -113,6 +119,7 @@ has_many :items
 
 ## statusテーブル
 |Column|Type|Option|
+|------|----|------|
 |status|string|null false|
 
 ### Association
@@ -121,6 +128,7 @@ has_many :items
 
 ## methodテーブル
 |Column|Type|Option|
+|------|----|------|
 |days|string|null false|
 
 ### Association
@@ -129,6 +137,7 @@ has_many :items
 
 ## burdenテーブル
 |Column|Type|Option|
+|------|----|------|
 |burden|string|null false|
 
 has_many :items
