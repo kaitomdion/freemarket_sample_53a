@@ -1,0 +1,218 @@
+.header2 {
+  display: block;
+  height: 128px;
+  border-style: solid;
+  border-width: 0;
+  text-align: center;
+  
+}
+
+.header2_logo{
+  width: 185px;
+  height: 49px;
+  display: inline-block;
+  margin: 40px 0 0;
+}
+
+.header2_logo_url{
+  width: 185px;
+  height: 49px;
+}
+
+.registration-box{
+  background-color: rgb(245 , 245 , 245);
+  .registration-main{
+    display: block;
+    .registration-main-content{
+      width: 700px;
+      height: 1816px;
+      margin: 0 auto;
+      background-color: white;
+      &_head{
+        border-bottom: 1px solid #f5f5f5f5;
+        font-weight: 600;
+        padding: 32px 19px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+        font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+      }
+      &_box{
+        height: 1590px;
+        padding: 64px;
+        border-top:1px solid red;
+
+        &_input{
+          width: 320px;
+          height: 1239px;
+          margin: 0 auto;
+          padding: 40px 16px;
+          .registration-form-group-first{
+            height: 70px;
+            &_label{
+              font-weight: 600;
+              display: inline-block;
+              font-size: 14px;
+            }
+            &_input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 28px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+          .registration-form-group-text{
+            height: 87px;
+            margin: 40px 0 0;
+            font-size: 14px;
+            &_title{
+              font-weight: 600;
+            }
+            &_text{
+              margin: 8px 0 0;
+              padding: 0;
+              color: #888;
+            }
+          }
+          .registration-form-group-birthday{
+            height: 182px;
+            margin: 40px 0 0;
+            
+            &_label{
+              font-weight: 600;
+              display: inline-block;
+              font-size: 14px;
+            }
+            &_input{
+              .select-wrap{
+                display: inline-block;
+                width: 140px;
+                height: 40px;
+                margin: 8px 0 0;
+                background: #fff;
+                .select-default{
+                  width: 140px;
+                  height: 40px;
+                }
+               
+              }
+            }
+          }
+          .registration-form-group{
+            height: 70px;
+            margin: 40px 0 0;
+            &_label{
+              font-weight: 600;
+              display: inline-block;
+              font-size: 14px;
+            }
+            &_input{
+              width: 100%;
+              margin: 8px 0 0;
+              height: 28px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+          .form-info_text{
+            margin: 8px 0 0;
+            color: #888;
+            font-size: 12px
+          }
+        }
+
+        &_send{
+          width: 320px;
+          height: 311px;
+          margin: 37px auto 0;
+          .check_box{
+            margin: 40px 0 0;
+            height: 78px;
+            border: thin solid blue;
+          }
+          .termsofservice{
+            margin: 40px 0 0;
+            font-size: 14px;
+            text-align: center;
+            &_text{
+              text-decoration: none;
+              color: black;
+            }
+          }
+          .registration-submit{
+            margin: 40px 0 0;
+            background: red;
+            border: 1px solid red;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+          }
+          .registration-help{
+            margin: 40px 0 0;
+            text-align: right;
+            font-size: 14px;
+
+            &_text{
+              text-decoration: none;
+              color: blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.required-tag{
+  color: white;
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+
+
+  .header2_text1{
+    display: inline-block;
+  }
+  .header2_text2{
+    display: inline-block;
+  }
+
+  .header2_text3{
+    display: inline-block;
+  }
+  .header2_text4{
+    display: inline-block;
+  }
+  .header2_text5{
+    display: inline-block;
+  }
+
+  .header2_bar{
+    display: inline-block;
+  }
+  .header2_bar{
+  padding: 0px 0 0 44px;
+  }
+
+  .header2_status{
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 12px;
+  }
