@@ -1,0 +1,277 @@
+.wrapper{
+  background-color: rgb(245,245,245);
+  height:2132px;
+  width:1280px;
+  padding:0;
+  margin:0;
+  .header{
+  height:100px;
+  width:1280px;
+  background-color:white;
+  }
+  .nav{
+    height:49px;
+    width:1280px;
+    background-color:darkmagenta;
+  }
+  .main-container{
+    margin:40px auto 0;
+    width:1020px;
+    height:1292px;
+    display:block;
+    padding:0 0 40px;
+    .main-content{
+      float:right;
+      width:700px;
+      height:1189px;
+      .mypage-user-icon{
+        // position: relative;
+        height:160px;
+        padding:20px;
+        background:white;
+        display:block;
+        text-align: center;
+        a{
+          height:111px;
+          width:700px;
+          display:block;
+          // position: absolute;
+          top:50%;
+          right:0;
+          left:0;
+        figure{
+          overflow: hidden;
+          width:60px;
+          height:60px;
+          margin:0 auto;
+          border-radius:50%;
+          img{
+            vertical-align: middle;
+          }
+        }
+        h2{
+          font-size:14px;
+          margin:8px 0 0;
+          line-height:1.4;
+          font-weight:600;
+        }
+        .mypage-number{
+          margin:8px 0 0;
+          .mypage-number-i{
+            display:inline-block;
+            font-size:14px;
+            span{
+              margin:0 0 0 8px;
+            }
+          }
+          .mypage-number-ii{
+            display:inline-block;
+            font-size: 14px;
+            margin:0 0 0 16px;
+            span{
+              margin:0 0 0 8px;
+            }
+          }
+        }
+       }
+      }
+      .mypage-tab-container-notification-todo{
+        width:700px;
+        height:567px;
+        margin:0;
+        .mypage-tabs{
+          height:74px;
+          width:100%;
+          list-style: none;
+          background:#eee;
+          .notice-tab{
+            height:74px;
+            width:50%;
+            float:left;
+            text-align:center;
+            line-height:74px;
+          }
+          .todo-tab{
+            height:74px;
+            width:50%;
+            float:right;
+            text-align:center;
+            line-height:74px;
+          }
+        }
+        .tab-content{
+          height:493px;
+          width:700px;
+          top:0;
+          #mypage-tab-notification.mypage-item-list.tab-pane.active{
+            display:block;
+            .notice{
+              border-bottom: #eee solid 1px;
+              background-color: white;
+              height:81px;
+              .mypage-item-link{
+                display: block;
+                min-height: 80px;
+                padding: 8px;
+                color: #333;
+                font-size:12px;
+                figure{
+                  position: relative;
+                  overflow: hidden;
+                  float: left;
+                  width: 48px;
+                  height: 48px;
+                  .lazyloaded{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 1;
+                    width: 100%;
+                  }
+                }
+                .mypage-item-body{
+                  margin: 0 40px 0 68px;
+                  .mypage-item-text{
+                    max-height: 4.4em;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    line-height: 1.5;
+                  }
+                  .time-box{
+                    .icon-time{
+                      span{
+
+                      }
+                    }
+                  }
+                }
+                .icon-arrow-raight{
+
+                }
+
+              }
+            }
+            .mypage-go-list{
+              display: block;
+              min-height: 80px;
+              padding: 16px;
+              color: #333;
+              background-color:white;
+              a{
+                display: block;
+                height: 56px;
+                margin: 0 auto;
+                background: #eee;
+                color: #333;
+                line-height: 56px;
+                text-align: center;
+              }
+          }
+
+          }
+        }
+      }
+      .mypage-tab-container-purchace-list{
+        margin: 80px 0 0;
+        background: #fff;
+        height:382px;
+        width:700px;
+        .mypage-tab-head{
+          padding:0 16px;
+          background: #fff;
+          font-size: 16px;
+          line-height: 72px;
+        }
+        .mypage-tabs{
+          width:700px;
+          height:74px;
+          list-style: none;
+          background:#fff;
+          font-weight:600;
+          .notice-tab-bottom{
+            height:74px;
+            width:50%;
+            float:left;
+            text-align:center;
+            line-height:74px;
+            .torihiki{
+              font-weight:600;
+              position: relative;
+              display:inline-block;
+              color: #333;
+              font-size: 16px;
+              line-height: 72px;
+            }
+          }
+        }
+        .tab-content{
+          .mypage-tab-transaction-now{
+            display: block;
+            .mypage-tab-not-found{
+              padding: 160px 0 60px;
+              background: url(/jp/assets/img/common/common/logo-gray-icon.svg?57233791);
+              background-repeat: no-repeat;
+              background-position: center 40px;
+              background-size: 78px 85px;
+              text-align: center;
+              font-size: 16px;
+              color: #ccc;
+            }
+          }
+        }
+     }
+      }
+    }
+    .side-bar{
+      float:left;
+      width:280px;
+      margin:0 40px 0 0;
+      .side-bar-box{
+        ul{
+          list-style:none;
+          li{
+            background-color:#fff ;
+            border-top:1px solid  #eee;
+            height:48px;
+            display:flex;
+            align-items: center;
+            position:relative;
+            &:hover{
+              background-color:gray;
+            }
+            a{
+              padding:16px;
+              font-size:14px;
+            }
+            .fa.fa-chevron-right{
+              position:absolute;
+              right:16px;
+              color:#eee;
+              &:hover{
+                color:black;
+                right:15px;
+              }
+            }
+          }
+        }
+        h3{
+          font-size:16px;
+          margin:40px 0 0;
+          font-weight:bold;
+        }
+        }
+      }
+  .aside{
+    height:260px;
+    width:1280px;
+    background-color: orange
+  }
+  .footer{
+    height:391px;
+    width:1280px;
+    background-color: aqua;
+  }
+}

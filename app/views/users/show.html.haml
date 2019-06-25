@@ -1,0 +1,175 @@
+.wrapper
+  .header
+  .nav
+  .main-container
+    .main-content
+      %section.mypage-user-icon
+        %a{:href => "https://www.mercari.com/jp/u/937091267/"}
+          %figure
+            %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+          %h2.bold ケンピー
+          .mypage-number
+            .mypage-number-i
+              評価
+              %span.bold 36
+            .mypage-number-ii
+              出品数
+              %span.bold 33
+      %section.mypage-tab-container-notification-todo
+        %ul.mypage-tabs
+          %li.notice-tab
+            %h3
+              %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+                お知らせ
+                -# %span.mypage-nav-number.hidden-large
+                -#   99+
+          %li.todo-tab
+            %h3
+              %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+                やることリスト
+        .tab-content
+          %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+            %li.notice
+              %a.mypage-item-link{:href => "https://item.mercari.com/jp/m62002611702/"}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .mypage-item-body
+                  .mypage-item-text いいね！しました
+                  %time
+                    %i.icon-time
+                    %span 1 日前
+                %i.icon-arrow-right
+            %li.notice
+              %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-text 事務局から個別メッセージ「ログイン通知」
+                  %time
+                    %i.icon-time
+                    %span 1 日前
+                %i.icon-arrow-right
+            %li.notice
+              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-text 明日、5%還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
+                  %time.time-box
+                    %i.icon-time
+                    %span 1 日前
+                %i.icon-arrow-right
+            %li.notice
+              %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-text 事務局から個別メッセージ「ログイン通知」
+                  %time
+                    %i.icon-time
+                    %span 2 日前
+                %i.icon-arrow-right
+            %li.notice
+              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-text 《まもなく終了》メルカリ6周年感謝祭キャンペーン開催中！
+                  %time
+                    %i.icon-time
+                    %span 2 日前
+                %i.icon-arrow-right
+            %li.mypage-go-list
+              %a{:href => "/jp/mypage/notification/"} 一覧を見る
+      %section.mypage-tab-container-purchace-list
+        %h2.mypage-tab-head
+          購入した商品
+        %ul.mypage-tabs
+          %li.notice-tab-bottom
+            %a.torihiki
+              取引中
+          %li.notice-tab-bottom
+            %a.torihiki
+              過去の取引
+        .tab-content
+          %ul.mypage-tab-transaction-now
+            %li.mypage-tab-not-found
+              取引中の商品がありません
+    .side-bar
+      %nav.side-bar-box
+        %ul
+          %li
+            %a  マイページ
+            %i.fa.fa-chevron-right
+          %li
+            %a  お知らせ
+            %i.fa.fa-chevron-right
+          %li
+            %a  やることリスト
+            %i.fa.fa-chevron-right
+          %li
+            %a  いいね一覧
+            %i.fa.fa-chevron-right
+          %li
+            %a  出品する
+            %i.fa.fa-chevron-right
+          %li
+            %a  出品した商品-出品中
+            %i.fa.fa-chevron-right
+          %li
+            %a  出品した商品-取引中
+            %i.fa.fa-chevron-right
+          %li
+            %a  出品した商品-売却済み
+            %i.fa.fa-chevron-right
+          %li
+            %a  購入した商品-取引中
+            %i.fa.fa-chevron-right
+          %li
+            %a  購入した商品-過去の取引
+            %i.fa.fa-chevron-right
+          %li
+            %a  ニュース一覧
+            %i.fa.fa-chevron-right
+          %li
+            %a  評価一覧
+            %i.fa.fa-chevron-right
+          %li
+            %a  ガイド
+            %i.fa.fa-chevron-right
+          %li
+            %a  お問い合わせ
+            %i.fa.fa-chevron-right
+        %h3.mypage-nav-head-merpay  メルペイ
+        %ul
+          %li
+            %a  残高・振込申請
+            %i.fa.fa-chevron-right
+          %li
+            %a  ポイント
+            %i.fa.fa-chevron-right
+        %h3.mypage-nav-head-settei  設定
+        %ul
+          %li
+            %a  プロフィール
+            %i.fa.fa-chevron-right
+          %li
+            %a  発送元・お届け先住所
+            %i.fa.fa-chevron-right
+          %li
+            %a  支払い方法
+            %i.fa.fa-chevron-right
+          %li
+            %a  メール/パスワード
+            %i.fa.fa-chevron-right
+          %li
+            %a  本人情報
+            %i.fa.fa-chevron-right
+          %li
+            %a  電話番号の確認
+            %i.fa.fa-chevron-right
+          %li
+            %a  ログアウト
+            %i.fa.fa-chevron-right
+  .aside
+  .footer
