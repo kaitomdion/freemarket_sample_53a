@@ -3,7 +3,7 @@
     %h1.header2_logo
       =link_to root_path, class: "header2_logo_url" do
         = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2342399531",alt:"mercari",class:"header2_logo_url_image")
-
+    = image_tag("")
     %nav.header2_bar
       %ol.header2_clearfix
         %li.header2_text1
@@ -17,4 +17,19 @@
         %li.header2_text5
           .header2_status 完了
 
-  .registration-main
+  .sms_confirmation-main
+    .sms_confirmation-main-content
+      %h2.sms_confirmation-main-content_head
+        電話番号の確認
+      = form_for(new_user_path) do |f|
+        .sms_confirmation-main-content_box_input
+          .sms_confirmation-form-group-first
+            %P.sms_confirmation-form-group-first_label
+              携帯電話の番号
+            = f.telephone_field  :sms, class: "sms_confirmation-form-group-first_input", placeholder: "携帯電話の番号を入力"
+            %p.form-info_text 本人確認のため、携帯電話のSMS(ショートメッセージ)を利用して認証を行います。
+            
+            .foom__a.actions
+            = f.submit "SMSを送信する", class: "sms_confirmation-submit"
+
+            %p.form-info_text ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。

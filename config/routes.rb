@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     collection do
       get 'registration'
       get 'sms_confirmation'
+      get 'sms_confirmation_sms'
+      get 'address'
+      get 'credit_card'
+      get 'done'
     end
   end
   resources :items, only: [:index, :show, :new] do
