@@ -4,7 +4,7 @@
   .main-container
     .main-content
       %section.mypage-user-icon
-        %a{:href => "https://www.mercari.com/jp/u/937091267/"}
+        %a
           %figure
             %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
           %h2.bold ケンピー
@@ -35,20 +35,20 @@
                   %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
                 .mypage-item-body
                   .mypage-item-text いいね！しました
-                  %time
-                    %i.icon-time
-                    %span 1 日前
-                %i.icon-arrow-right
+                  %time.time-box
+                    %i.fa.fa-clock-o
+                    %span.day 1 日前
+                %i.fa.fa-chevron-right
             %li.notice
               %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
                 %figure
                   %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
                   .mypage-item-text 事務局から個別メッセージ「ログイン通知」
-                  %time
-                    %i.icon-time
-                    %span 1 日前
-                %i.icon-arrow-right
+                  %time.time-box
+                    %i.fa.fa-clock-o
+                    %span.day 1 日前
+                %i.fa.fa-chevron-right
             %li.notice
               %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
                 %figure
@@ -56,29 +56,29 @@
                 .mypage-item-body
                   .mypage-item-text 明日、5%還元お得チケットの有効期限が切れます！タップして詳細を確認しましょう。
                   %time.time-box
-                    %i.icon-time
-                    %span 1 日前
-                %i.icon-arrow-right
+                    %i.fa.fa-clock-o
+                    %span.day 1 日前
+                %i.fa.fa-chevron-right
             %li.notice
               %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
                 %figure
                   %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
-                  .mypage-item-text 事務局から個別メッセージ「ログイン通知」
-                  %time
-                    %i.icon-time
-                    %span 2 日前
-                %i.icon-arrow-right
+                  .mypage-item-text  事務局から個別メッセージ「《このお知らせを受け取った方限定》セブン-イレブンからの発送でP150プレゼント！」
+                  %time.time-box
+                    %i.fa.fa-clock-o
+                    %span.day 2 日前
+                %i.fa.fa-chevron-right
             %li.notice
               %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
                 %figure
                   %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
                   .mypage-item-text 《まもなく終了》メルカリ6周年感謝祭キャンペーン開催中！
-                  %time
-                    %i.icon-time
-                    %span 2 日前
-                %i.icon-arrow-right
+                  %time.time-box
+                    %i.fa.fa-clock-o
+                    %span.day 2 日前
+                %i.fa.fa-chevron-right
             %li.mypage-go-list
               %a{:href => "/jp/mypage/notification/"} 一覧を見る
       %section.mypage-tab-container-purchace-list
@@ -92,14 +92,24 @@
             %a.torihiki
               過去の取引
         .tab-content
-          %ul.mypage-tab-transaction-now
-            %li.mypage-tab-not-found
-              取引中の商品がありません
+          %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane.active
+            %li.mypage-list
+              %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m62628436380/"}
+                %figure.shopper
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .mypage-item-body
+                  .mypage-item-body-box
+                    .mypage-item-text
+                      「Clipa 2 クリッパ バッグハンガー」 を購入しました。購入しました。購入しました。
+                      %span.text-complete 取引が完了しました
+                    .mypage-item-status.bold.done
+                      取引完了
+                  %i.fa.fa-chevron-right
     .side-bar
       %nav.side-bar-box
         %ul
           %li
-            %a  マイページ
+            %a.mypage  マイページ
             %i.fa.fa-chevron-right
           %li
             %a  お知らせ
@@ -140,7 +150,7 @@
           %li
             %a  お問い合わせ
             %i.fa.fa-chevron-right
-        %h3.mypage-nav-head-merpay  メルペイ
+        %h3  メルペイ
         %ul
           %li
             %a  残高・振込申請
@@ -148,7 +158,7 @@
           %li
             %a  ポイント
             %i.fa.fa-chevron-right
-        %h3.mypage-nav-head-settei  設定
+        %h3  設定
         %ul
           %li
             %a  プロフィール
