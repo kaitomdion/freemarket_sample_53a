@@ -67,6 +67,9 @@ gem 'sprockets', '3.7.2'
 gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-rails"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
@@ -78,4 +81,10 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+end
+
+group :development do
+ 
+
+  gem 'spring'
 end
