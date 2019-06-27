@@ -3,19 +3,20 @@
     %h1.header2_logo
       =link_to root_path, class: "header2_logo_url" do
         = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2342399531",alt:"mercari",class:"header2_logo_url_image")
+    = image_tag "regi.png",class:"id_head"
 
-    %nav.header2_bar
-      %ol.header2_clearfix
-        %li.header2_text1
-          .header2_status 会員情報
-        %li.header2_text2
-          .header2_status 電話番号認証
-        %li.header2_text3
-          .header2_status お届け先住所
-        %li.header2_text4
-          .header2_status 支払い方法
-        %li.header2_text5
-          .header2_status 完了
+    -# %nav.header2_bar
+    -#   %ol.header2_clearfix
+    -#     %li.header2_text1
+    -#       .header2_status 会員情報
+    -#     %li.header2_text2
+    -#       .header2_status 電話番号認証
+    -#     %li.header2_text3
+    -#       .header2_status お届け先住所
+    -#     %li.header2_text4
+    -#       .header2_status 支払い方法
+    -#     %li.header2_text5
+    -#       .header2_status 完了
 
   .registration-main
     .registration-main-content
@@ -118,4 +119,5 @@
               本人情報の登録について
 
 
-
+  -# .registration-foot
+  -#   = render "items/footer_item"
