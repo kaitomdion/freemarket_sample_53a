@@ -17,6 +17,6 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
-  resources :cards, only: [:new]
+  resources :cards, only: [:index, :new, :create]
 
 end
