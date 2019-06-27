@@ -28,5 +28,11 @@ class UsersController < ApplicationController
   
   def done
   end
+
+  def logout
+  end
+
+  def account_information
+  end
   
 end
