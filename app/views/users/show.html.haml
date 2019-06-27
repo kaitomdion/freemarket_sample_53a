@@ -5,127 +5,133 @@
     nav-bar
   .main-container
     .main-content
-      %section.mypage-user-icon
-        %a
-          %figure
-            %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
-          %h2.bold ケンピー
-          .mypage-number
-            .mypage-number-i
+      %section.main-content-mypage-user
+        %a.main-content-mypage-user__field
+          %figure.main-content-mypage-user__field__figure
+            %img.main-content-mypage-user__field__figure__image{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+          %h2.main-content-mypage-user__field__name ケンピー
+          .main-content-mypage-number
+            .main-content-mypage-number__evaluation
               評価
-              %span.bold 36
-            .mypage-number-ii
+              %span.main-content-mypage-number__evaluation__count 36
+            .main-content-mypage-number__sells
               出品数
-              %span.bold 33
-      %section.mypage-tab-container-notification-todo
-        %ul.mypage-tabs
-          %li.notice-tab
+              %span.main-content-mypage-number__sells__count 33
+      %section.main-content-tabs
+        %ul.main-content-tabs__list
+          %li.main-content-tabs__list-notice
             %h3
               %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
                 お知らせ
                 -# %span.mypage-nav-number.hidden-large
                 -#   99+
-          %li.todo-tab
+          %li.main-content-tabs__list-todo
             %h3
               %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
                 やることリスト
-        .tab-content
-          %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
-            %li.notice
-              %a.mypage-item-link{:href => "https://item.mercari.com/jp/m62002611702/"}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-                .mypage-item-body
-                  .mypage-item-text いいね！しました
-                  %time.time-box
+        .main-content-tabs__line
+          %ul.main-content-tabs__line__list
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/m62002611702/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
                     %i.fa.fa-clock-o
-                    %span.day 1 日前
+                    %span.day-time 1 日前
                 %i.fa.fa-chevron-right
-            %li.notice
-              %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-                .mypage-item-body
-                  .mypage-item-text 事務局から個別メッセージ「ログイン通知」
-                  %time.time-box
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/m62002611702/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
                     %i.fa.fa-clock-o
-                    %span.day 1 日前
+                    %span.day-time 1 日前
                 %i.fa.fa-chevron-right
-            %li.notice
-              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-                .mypage-item-body
-                  .mypage-item-text 明日、5%還元お得チケットの有効期限が切れます！タップして詳細を確認しましよう。
-                  %time.time-box
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/m62002611702/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
                     %i.fa.fa-clock-o
-                    %span.day 1 日前
+                    %span.day-time 1 日前
                 %i.fa.fa-chevron-right
-            %li.notice
-              %a.mypage-item-link{:href => "https://www.mercari.com/jp/mypage/news/"}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-                .mypage-item-body
-                  .mypage-item-text  事務局から個別メッセージ「《このお知らせを受け取った方限定》セブン-イレブンからの発送でP150プレゼント！」aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                  %time.time-box
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/m62002611702/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
                     %i.fa.fa-clock-o
-                    %span.day 2 日前
+                    %span.day-time 1 日前
                 %i.fa.fa-chevron-right
-            %li.notice
-              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-                .mypage-item-body
-                  .mypage-item-text 《まもなく終了》メルカリ6周年感謝祭キャンペーン開催中！
-                  %time.time-box
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/m62002611702/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
                     %i.fa.fa-clock-o
-                    %span.day 2 日前
+                    %span.day-time 1 日前
                 %i.fa.fa-chevron-right
-            %li.mypage-go-list
-              %a{:href => "/jp/mypage/notification/"} 一覧を見る
-      %section.mypage-tab-container-purchace-list
-        %h2.mypage-tab-head
+                
+            %li.main-content-tabs__line__list__back
+              %a.main-content-tabs__line__list__back-text{:href => "/jp/mypage/notification/"} 一覧を見る
+
+      %section.main-content-purchace
+        %h2.main-content-purchace__head
           購入した商品
-        %ul.mypage-tabs
-          %li.notice-tab-bottom
-            %a.torihiki
+        %ul.main-content-purchace__tabs
+          %li.main-content-purchace__tabs-tab
+            %a.main-content-purchace__tabs-tab__text
               取引中
-          %li.notice-tab-bottom
-            %a.torihiki
+          %li.main-content-purchace__tabs-tab
+            %a.main-content-purchace__tabs-tab__text
               過去の取引
-        .tab-content
-          %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane.active
-            %li.notice
-              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
-                .mypage-item-body
-                  .mypage-item-text クリッパバックハンガーを購入しました。
-                  .torihikikanryou  取引完了
+        .main-content-purchace__box
+          %ul.main-content-purchace__box-lists
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
                 %i.fa.fa-chevron-right
-            %li.notice
-              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-                .mypage-item-body
-                  .mypage-item-text 《まもなく終了》メルカリ6周年感謝祭キャンペーン開催中！
-                  .torihikikanryou  取引完了
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
                 %i.fa.fa-chevron-right
-            %li.notice
-              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-                .mypage-item-body
-                  .mypage-item-text 《まもなく終了》メルカリ6周年感謝祭キャンペーン開催中！
-                  .torihikikanryou  取引完了
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
                 %i.fa.fa-chevron-right
-            %li.notice
-              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
-                %figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
-                .mypage-item-body
-                  .mypage-item-text 《まもなく終了》メルカリ6周年感謝祭キャンペーン開催中！
-                  .torihikikanryou  取引完了
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
                 %i.fa.fa-chevron-right
     .side-bar
       %nav.side-bar__box
