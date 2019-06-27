@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'address'
       get 'credit_card'
       get 'done'
+      get 'logout'
+      get 'account_information'
     end
   end
   resources :items, only: [:index, :show, :new] do
