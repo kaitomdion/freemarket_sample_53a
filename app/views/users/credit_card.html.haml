@@ -20,7 +20,7 @@
   .credit-main
     .credit-main-content
       %h2.credit-main-content_head
-        電話番号認証
+        支払い方法
       = form_for(new_user_path) do |f|
         .credit_form-content
           .credit_form-group
@@ -29,6 +29,7 @@
             %span.required-tag 必須
             = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", class: "credit_form_input"
             %ul.credit-brand_list
+              = image_tag "credit_brand.png", class:"creditimage"
               %li
                 = image_tag ""
               %li
