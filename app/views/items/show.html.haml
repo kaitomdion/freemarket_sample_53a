@@ -1,0 +1,133 @@
+.background
+  = render "main-header"
+  .show
+    .show__name
+      COACH 2way ボストンバッグ　サーモンピンク
+    .show__contents.clearfix
+      .show__contents__item-photo
+        %img.owl-lazy{:alt => "COACH 2way ボストンバッグ サーモンピンク", "data-src" => "https://static.mercdn.net/item/detail/orig/photos/m10468760096_1.jpg?1561443114", :src => "https://static.mercdn.net/item/detail/orig/photos/m10468760096_1.jpg?1561443114", :style => "opacity: 1;"}/
+      %table.show__contents__detail-table
+        %tbody
+          %tr
+            %th
+              出品者
+            %td
+              = link_to "#", class: 'show__contents__detail-table__name' do
+                スノーマン
+              .show__contents__detail-table__face
+                .show__contents__detail-table__face__user-ratings1
+                  %i.fas.fa-laugh
+                  %span
+                    228
+                .show__contents__detail-table__face__user-ratings2
+                  
+                  %i.fas.fa-meh
+                  %span
+                    6
+                .show__contents__detail-table__face__user-ratings3
+                  %i.fas.fa-frown
+                  %span
+                    4
+          %tr
+            %th
+              カテゴリー
+            %td
+              = link_to "#", class: 'show__contents__detail-table__category1' do
+                レディース
+              = link_to "#", class: 'show__contents__detail-table__category2' do
+                %i.fa.fa-chevron-right
+                バッグ
+              = link_to "#", class: 'show__contents__detail-table__category3' do
+                %i.fa.fa-chevron-right
+                ショルダーバッグ
+          %tr 
+            %th 
+              ブランド
+            %td
+              = link_to "#", class: 'show__contents__detail-table__brand' do
+                コーチ
+          %tr
+            %th
+              商品の状態
+            %td
+              やや傷や汚れあり
+          %tr
+            %th
+              配送料の負担
+            %td
+              送料込み(出品者負担)
+          %tr
+            %th
+              配送元地域
+            %td
+              = link_to "#", class: 'show__contents__detail-table__delivary' do
+                大阪府
+          %tr
+            %th
+              配送日の目安
+            %td
+              4~7日で発送
+    .show__text-center
+      .show__text-center__price
+        ￥ 5,555
+      .show__text-center__tax
+        (税込)
+      .show__text-center__fee
+        送料込み
+    = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
+    .show__item-description
+      %p.show__item-description__text
+        COACH 2wayボストンバッグご覧いただきありがとうございます。
+        こちらはコーチのショルダーバッグです。
+        サイズ
+        横→33㎝
+        縦→トッテ含め30㎝・本体18㎝
+        底→16㎝
+        ワンシーズン使用しました
+        ベルトは一度も使用していません
+        中の布も汚れはありませんが
+        二ヶ所ボールペン？汚れがあります
+        ご不明点があればコメントよろしくお願いいたします。
+    .show__item-button-container.clearfix
+      .show__item-button-container__left
+        %button.show__item-button-container__left__like{type: "button", name: "like!"}
+          %i.far.fa-heart
+          %span
+            いいね！
+          %span.show__item-button-container__left__like__count
+            0
+        =link_to "", class: 'show__item-button-container__left__report' do
+          %i.far.fa-flag
+          %span
+            不適切な商品の登録
+      .show__item-button-container__right
+        = link_to "", class:'show__item-button-container__right__news' do
+          %i.fa.fa-lock
+          %span
+            あんしん・あんぜんへの取り組み
+  .detail-message
+    .detail-message__container
+      .detail-message__container__content
+        = form_for (root_path) do |f|
+          %p.detail-message__container__content__text
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = f.text_area :text, class: 'detail-message__container__content__textarea', type: 'text'
+          = f.submit 'コメントする', class: 'detail-message__container__content__submit'
+  %ul.navi-item.clearfix
+    %li.navi-item__link-prev
+      = link_to "#", class: 'navi-item__link-prev__text' do
+        %i.fa.fa-chevron-left
+        *ハンドメイドピアス* 155
+    %li.navi-item__link-next
+      = link_to "#", class: 'navi-item__link-next__text' do
+        金文字で[日本一の兵　真田幸村] 前後　肩プリントTシャツ
+        %i.fa.fa-chevron-right
+  .item-social
+    .item-social__media-box
+      = link_to "#", class: 'item-social__media-box__facebook' do
+        %i.fab.fa-facebook-square
+      = link_to "#", class: 'item-social__media-box__twitter' do
+        %i.fab.fa-twitter
+      = link_to "#", class: 'item-social__media-box__pinterest' do
+        %i.fab.fa-pinterest
+  = render "main-footer"
