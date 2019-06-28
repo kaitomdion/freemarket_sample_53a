@@ -1,0 +1,111 @@
+.sign-up-header{
+  background: #eee;
+  height: 789px;
+.sign-up{
+    display: block;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+
+    .sign-up-content{
+      width: 700px;
+      height: 408px;
+      margin: 0 auto;
+      background-color: white;
+
+      &_header{
+        padding: 32px 16px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .sign-up-content-main{
+        padding: 64px;
+        height: 182px;
+        border-top: 1px solid #eee;
+
+        .sign-up-content-main-content{
+          width: 320px;
+          height: 182px;
+          margin: 0 auto;
+
+          &_mail{
+            position: relative;
+            background: #eee;
+            color: #000;
+            display: flex;
+            width: 100%;
+            line-height: 50px;
+            font-size: 14px;
+            text-decoration: none;
+            &_icon{
+              position: absolute;
+              top: 30%;
+              left: 16px;
+              font-size: 16px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+.form_actions{
+  transition: all ease-out .3s;
+  background: #eee;
+  border: 1px solid #eee;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  
+
+ &-facebook{
+  transition: all ease-out .3s;
+  margin: 16px 0 0;
+  background: #385185;
+  border: 1px solid transparent;
+  color: white;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+}
+
+ &-google{
+  margin: 16px 0 0;
+  border: 1px solid gray;
+  color: yellow;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  text-align: center;
+  background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+}
+}
+
+.sign-up-submit{
+  color: white;
+}
+
+.fa.fa-envelope-o.fa-2x{
+  float: left;
+}
+
+.fa.fa-facebook-square.fa-2x{
+  float: left;
+
+}
+
+
+.fa.fa-google.fa-2x{
+  float: left;
+
+}
