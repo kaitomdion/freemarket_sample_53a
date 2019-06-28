@@ -1,5 +1,10 @@
-@import "config/reset";
+@import "./config/reset";
 @import "font-awesome";
+@import "./items.index";
+@import "./detail";
+@import "./exhibition";
+@import "./cards.index";
+@import "./confirm";
 @import "main-header";
 @import "user-mypage";
 @import "main-footer";
@@ -14,8 +19,5 @@
 @import "credit_card";
 @import "done";
 @import "./items";
-@import "./exhibition";
-@import "./detail";
-@import "logout";
 @import "logout";
 @import "account_information"

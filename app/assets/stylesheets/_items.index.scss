@@ -1,0 +1,187 @@
+@import "./main-header";
+@import "./main-footer";
+
+.container {
+  background-color: rgb(230, 227, 227);
+  
+  .thumbnail {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    &__outer {
+      height: 100%;
+      &__show {
+        height: 100%;
+        &__item {
+          height: 100%;
+          &__image {
+            height: 100%;
+            &__photo {
+              background-repeat: repeat-x;
+              height: 100%;
+              background-size: cover;
+              background-position: center;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contents {
+    padding: 30px 0;
+    background: #f5f5f5;
+    .items-head {
+      font-size: 22px;
+      text-align: center;
+    }
+    .items-contents {
+      height: 500px;
+      &__title {
+        font-size: 18px;
+        margin: 26px 11px;
+        text-align: center;
+        &__name {
+          color: #0099e8;
+          text-decoration: none;
+        }
+
+        &__name:hover {
+          text-decoration: underline;
+          opacity: .7;
+        }
+      }
+
+      &__boxes {
+        width: 92%;
+        margin: 0 auto;
+        height: 400px;
+        &__box {
+          margin: 0 0 20px 20px;
+          width: 23%;
+          float: left;
+          &__link{
+            text-decoration: none;
+          }
+
+          &__photo {
+            &__image {
+              
+            }
+          }
+
+          &__text {
+            padding: 8px;
+            height: 110px;
+            width: 250px;
+            &__sentence {
+              overflow: hidden;
+              position: relative;
+              font-weight: 400;
+              height: 3em;
+              line-height: 1.5;
+              word-break: break-word;
+              white-space: normal;
+              text-decoration: none;
+              color: #333;
+
+            }
+
+            &__num {
+              display: flex;
+              -webkit-box-align: center;
+              align-items: center;
+              -webkit-box-pack: justify;
+              justify-content: space-between;
+              margin: 8px 0 0;
+              width: 250px;
+              &__price {
+                font-size: 20px;
+                font-weight: 600;
+                color: #333;
+              }
+
+              &__like {
+                font-size: 16px;
+                font-weight: 400;
+                color: #333;
+              }
+            }
+
+            &__tax {
+              font-size: 10px;
+              color: #333;
+            }
+          }
+        }
+      }
+
+      &__all {
+        padding: 20px 0 30px;
+        width: 91%;
+        text-align: right;
+        &__link {
+          text-decoration: none;
+          color: #0099e8;
+        }
+        &__link:hover {
+          text-decoration: underline;
+          opacity: .7;
+        }
+      }
+    }
+  }
+  .bottom-banner {
+    background: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?57233791);
+    background-position: center;
+    background-size: cover;
+    &__photo {
+      overflow: hidden;
+      position: relative;
+      width: 800px;
+      height: 300px;
+      margin: 0 auto;
+      color: #fff;
+        &__logo {
+          position: absolute;
+          top: 20%;
+          &__title {
+            font-size: 20px;
+          }
+          &__text {
+            margin: 10px 0 0;
+            font-size: 32px;
+          }
+          &__icon {
+            margin: 20px 0 0;
+            &__pic {
+              float: left;
+            }
+
+            &__smart {
+              float: left;
+              margin: 0 0 0 24px;
+              line-height: 90px;
+              &__mark {
+                float: left;
+                &__app:hover {
+                  text-decoration: underline;
+                  opacity: .7;
+                }
+                &__goo:hover {
+                  text-decoration: underline;
+                  opacity: .7;
+                }
+              }
+            }
+          }
+        }
+        &__example {
+          width: 300px;
+          height: 100%;
+          float: right;
+        }
+    }
+  }
+}
+
