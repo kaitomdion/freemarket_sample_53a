@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root "items#index"
-  resources :users, only: [:new, :show, :edit ,:index]
-  resources :users, only: [:new, :show, :edit] do
+  resources :users, only: [:new, :show, :edit ,:index] do
     collection do
       get 'registration'
       get 'sms_confirmation'
