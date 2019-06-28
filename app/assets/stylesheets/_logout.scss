@@ -5,6 +5,7 @@
     .logout-main-content{
       width: 700px;
       margin: 0 auto;
+      height: 179px;
       background-color: white;
       &_box{
         height: 179px;
@@ -47,7 +48,6 @@
 
 
 .logout-submit{
-  margin: 50px 0 0;
   background: red;
   border: 1px solid red;
   color: #fff;
