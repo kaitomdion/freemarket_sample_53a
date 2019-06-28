@@ -2,21 +2,20 @@
   height: 100%;
   width: 100%;
   background: #fafafa;
-  padding-top: 40px;
   .show{
     width: 620px;
     background: #fff;
-    margin: 0 auto 0;
+    margin: 40px auto 0;
     padding: 24px 40px 40px;
-    .show__name{
+    &__name{
       font-size: 20px;
       text-align: center;
       word-wrap: break-word;
       line-height: 1.4;
     }
-    .show__contents{
+    &__contents{
       margin: 16px 0 0;
-      .show__contents__item-photo{
+      &__item-photo{
         float: left;
         min-width: 300px;
         max-width: 300px;
@@ -28,7 +27,7 @@
           margin-left: 50px;
         }
       }
-      .show__contents__detail-table{
+      &__detail-table{
         float: right;
         max-width: 300px;
         height: 420px;
@@ -36,12 +35,12 @@
         width: 100%;
         background: #fafafa;
         font-size: 14px;
-        .show__contents__detail-table__name{
+        &-table__name{
           color: #0099e8;
           text-decoration: none;
         }
-        .show__contents__detail-table__face{
-          .show__contents__detail-table__face__user-ratings1{
+        &__face{
+          &__user-ratings1{
             display: inline-block;
             .fa-laugh{
               font-size: 16px;
@@ -49,7 +48,7 @@
               color: #ef5185;
             }
           }
-          .show__contents__detail-table__face__user-ratings2{
+          &__user-ratings2{
             display: inline-block;
             margin: 8px 0 0 16px;
             .fa-meh{
@@ -58,7 +57,7 @@
               color: #fba933;
             }
           }
-          .show__contents__detail-table__face__user-ratings3{
+          &__user-ratings3{
             display: inline-block;
             margin: 8px 0 0 16px;
             .fa-frown{
@@ -68,50 +67,50 @@
             }
           }
         }
-        .show__contents__detail-table__category1{
+        &__category1{
           color: #0099e8;
           text-decoration: none;
           display: block;
         }
-        .show__contents__detail-table__category2{
+        &__category2{
           color: #0099e8;
           text-decoration: none;
           display: block;
         }
-        .show__contents__detail-table__category3{
+        &__category3{
           color: #0099e8;
           text-decoration: none;
           display: block;
         }
-        .show__contents__detail-table__brand{
+        &__brand{
           color: #0099e8;
           text-decoration: none;
         }
-        .show__contents__detail-table__delivary{
+        &__delivary{
           color: #0099e8;
           text-decoration: none;
         }
       }
     }
-    .show__text-center{
+    &__text-center{
       margin: 24px 0 0;
       text-align: center;
-      .show__text-center__price{
+      &__price{
         margin: 0 16px 0 0;
         font-size: 40px;
         font-weight: 600;
         display: inline-block;
       }
-      .show__text-center__tax{
+      &__tax{
          font-size: 8px;
          display: inline-block;
       }
-      .show__text-center__fee{
+      &__fee{
         display: inline-block;
         font-size: 16px;
       }
     }
-    .show__item-buy-btn{
+    &__item-buy-btn{
       background: #ea352d;
       height: 60px;
       line-height: 60px;
@@ -123,19 +122,19 @@
       font-size: 24px;
       text-decoration: none;
     }
-    .show__item-description{
+    &__item-description{
       padding: 32px 0 0;
       line-height: 1.8;
       font-size: 17px;
-      .show__item-description__text{
+      &__text{
         white-space: pre-wrap;
       }
     }
-    .show__item-button-container{
+    &__item-button-container{
       margin: 16px 0 0;
-      .show__item-button-container__left{
+      &__left{
         float: left;
-        .show__item-button-container__left__like{
+        &__like{
           display: inline-block;
           color: #333;
           border: 1px solid #f5f5f5;
@@ -146,9 +145,8 @@
           background: #fafafa;
           touch-action: manipulation;
           font-size: 14px;
-
         }
-        .show__item-button-container__left__report{
+        &__report{
           display: inline-block;
           margin: 0 0 0 16px;
           color: #333;
@@ -162,10 +160,10 @@
           font-size: 14px;
         }
       }
-      .show__item-button-container__right{
+      &__right{
         margin: 10px 0 0;
         float: right;
-        .show__item-button-container__right__news{
+        &__news{
           display: inline-block;
           color: #0099e8;
           text-decoration: none;
@@ -178,16 +176,16 @@
   .detail-message{
     width: 700px;
     margin: 8px auto;
-    .detail-message__container{
-      .detail-message__container__content{
+    &__container{
+      &__content{
         padding: 24px;
         background: #fff;
-        .detail-message__container__content__text{
+        &__text{
           padding: 8px;
           font-size: 14px;
           background: #fff6de;
         }
-        .detail-message__container__content__textarea{
+        &__textarea{
           margin: 8px 0 0;
           display: block;
           width: 100%;
@@ -199,7 +197,7 @@
           font-size: 16px;
           line-height: 1.5;
         }
-        .detail-message__container__content__text__submit{
+        &__submit{
           width: 100%;
           margin: 8px 0 0;
           font-size: 14px;
@@ -217,13 +215,14 @@
   .navi-item{
     margin: 24px auto 0;
     width: 700px;
-    .navi-item__link-prev{
+    height: 50px;
+    &__link-prev{
       width: 45%;
       position: relative;
       word-wrap: break-word;
       float: left;
       padding: 0 0 0 14px;
-      .navi-item__link-prev__text{
+      &__text{
         font-size: 14px;
         color: #0099e8;
         text-decoration: none;
@@ -232,14 +231,14 @@
         margin-right: 5px;
       }
     }
-    .navi-item__link-next{
+    &__link-next{
       width: 45%;
       position: relative;
       word-wrap: break-word;
       float: right;
       padding: 0 14px 0 0;
       text-align: right;
-      .navi-item__link-next__text{
+      &__text{
         font-size: 14px;
         color: #0099e8;
         text-decoration: none;
@@ -256,11 +255,11 @@
     padding: 32px 0 24px;
     width: 700px;
     background: #fff;
-    .item-social__media-box{
+    &__media-box{
       text-align: center;
       margin: 16px 0 0;
       list-style: none;
-      .item-social__media-box__facebook{
+      &__facebook{
         text-decoration: none;
         .fa-facebook-square{
           width: 44px;
@@ -272,7 +271,7 @@
           background: #385185;
         }
       }
-      .item-social__media-box__twitter{
+      &__twitter{
         text-decoration: none;
         .fa-twitter{
           width: 44px;
@@ -284,7 +283,7 @@
           background: #5d9dc9;
         }
       }
-      .item-social__media-box__pinterest{
+      &__pinterest{
         text-decoration: none;
         .fa-pinterest{
           width: 44px;
@@ -299,7 +298,6 @@
     }
   }
 }
-
 th{
   width: 39%;
   text-align: left;
@@ -308,9 +306,7 @@ th{
   padding: 8px;
   border-collapse: collapse;
   border: 1px solid #f5f5f5;
-
 }
-
 td{
   width: 61%;
   background: #fff;
