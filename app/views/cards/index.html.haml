@@ -1,8 +1,22 @@
-
-.card-contents
-  .card-contents__haed
-    支払い方法
-  .card-contents__main
-    .card-contents__main__title
-    .card-contents__main__btn
-    .card-contents__main__text
+.background
+  = render "items/main-header"
+  .side_bar
+    = render "users/side.bar"
+  .cards
+    .card-contents
+      .card-contents__haed
+        支払い方法
+      .card-contents__main
+        .card-contents__main__title
+          クレジットカード一覧
+        .card-contents__main__btn
+          .card-contents__main__btn__red
+            = link_to "#", class: 'card-contents__wrapper__main__btn__red__link' do
+              %i.far.fa-credit-card
+              クレジットカードを追加する
+        .card-contents__main__text
+          = link_to "#", class: 'card-contents__wrapper__main__text__link' do
+            %span
+              支払い方法について
+              %i.fa.fa-chevron-right
+= render "items/main-footer"

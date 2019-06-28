@@ -1,0 +1,105 @@
+.top-footer
+  .clearfix
+    .footer-mercari
+      %h2.footer-mercari__title メルカリについて
+      %ul.footer-mercari__list
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            会社概要(運営会社)
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            採用情報
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            プレスリリース
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            公式ブログ
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            メルカリロゴ利用ガイドライン
+        %li.footer-mercari__list__social
+          = link_to "", class: "footer-mercari__list__social__s" do
+            %i.fab.fa-twitter
+        %li.footer-mercari__list__social
+          = link_to "", class: "footer-mercari__list__social__s" do
+            %i.fab.fa-facebook-square
+    .footer-mercari
+      %h2.footer-mercari__title ヘルプ&ガイド
+      %ul.footer-mercari__list
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            メルカリガイド
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            らくらくメルカリ便
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            ゆうゆうメルカリ便
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            大型メルカリ便
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            車体取引ガイド
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            メルカリあんしん・あんぜん宣言!
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            偽ブランド品撲滅への取り組み
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            メルカリボックス
+    .footer-mercari.full-width
+      %h2.footer-mercari__title プライバシーと利用規約
+      .footer-mercari__title__privacy
+        %ul.footer-mercari__privacy__list
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              プライバシーポリシー
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              メルカリ利用規約
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              あんしんスマホサポート制度に関する利用規約
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              コンプライアンスポリシー
+      .footer-mercari__title__privacy
+        %ul.footer-mercari__privacy__list
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              個人データの安全管理に係る基本方針
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              特定商取引に関する表記
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              資金決済法に基づく表示
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              法令遵守と犯罪抑止のために
+          %li.footer-mercari__title__privacy__list__l
+            = link_to "", class: "footer-mercari__title__privacy__list__l__text" do
+              返品・返金ポリシー
+    .footer-mercari.footer-nav-lang
+      %h2.footer-mercari__title 国
+      %ul.footer-mercari__list
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            日本
+        %li.footer-mercari__list__l
+          = link_to "", class: "footer-mercari__list__l__text" do
+            United States
+  .footer-bottom
+    =link_to "", class: "footer-bottom__icon" do
+      = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?1905591235", height: "33", width: "124", class: "footer-bottom__icon__pic") 
+    %span.footer-bottom__copy 
+      %small.footer-bottom__copy__right© 2019 Mercari
+= link_to "", class: "footer-btn" do
+
+  .footer-btn__text
+    出品
+  %i.fa.fa-camera
