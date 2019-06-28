@@ -1,9 +1,9 @@
 class CardsController < ApplicationController
 
-  def new
+  def index
   end
 
-  def index
+  def new
   end
 
   def create
