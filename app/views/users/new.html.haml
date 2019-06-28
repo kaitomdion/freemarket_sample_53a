@@ -1,19 +1,19 @@
 .sign-up-header
-  -# = render "items/header_item"
+  = render "items/header_item"
   %main.sign-up
     %section.sign-up-content
       %h2.sign-up-content_header 新規会員登録
       .sign-up-content-main
         .sign-up-content-main-content
           .form_actions
-            %i.fa.fa-envelope-o.fa-2x
+            %i.far.fa-envelope.fa-2x
             = link_to "メールアドレスで登録する", class: "sign-up-submit"
           .form_actions-facebook
-            %i.fa.fa-facebook-square.fa-2x
+            %i.fab.fa-facebook-square.fa-2x
             = link_to "Facebookで登録する", class: "sign-up-submit"
           .form_actions-google
-            %i.fa.fa-google.fa-2x  
+            %i.fab.fa-google.fa-2x  
             = link_to "Googleで登録する", class: "sign-up-submit"
 
-  -# .registration-foot
-  -#   = render "items/footer_item"
+  .registration-foot
+    = render "items/footer_item"

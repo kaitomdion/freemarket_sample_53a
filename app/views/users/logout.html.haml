@@ -1,5 +1,18 @@
-.logout-main
-  .logout-main-content
-    .logout-main-content_box
-      .foom__a.actions
-      = f.submit "ログアウト", class: "logout-submit"
+.account-wrappar
+  .account-header
+    = render "items/main-header"
+  .account-content
+    .account-sideber
+      = render "users/side-bar"
+
+    .logout-main
+      .logout-main-content
+        = form_for(new_user_path) do |f|
+          .logout-main-content_box_input
+            .logout-form-group-first
+              .foom__a.actions
+              = f.submit "ログアウト", class: "logout-submit"
+
+  .acoount-footer
+    -# = render "items/footer_item"
+    = render "items/main-footer"
