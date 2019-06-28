@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "items#index"
+  resources :users, only: [:new, :show, :edit ,:index]
   resources :users, only: [:new, :show, :edit] do
     collection do
       get 'registration'

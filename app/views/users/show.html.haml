@@ -1,0 +1,139 @@
+.wrapper
+  = render '/items/main-header'
+  .nav
+    nav-bar
+  .main-container
+    .main-content
+      %section.main-content-mypage-user
+        %a.main-content-mypage-user__field
+          %figure.main-content-mypage-user__field__figure
+            %img.main-content-mypage-user__field__figure__image{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+          %h2.main-content-mypage-user__field__name ケンピー
+          .main-content-mypage-number
+            .main-content-mypage-number__evaluation
+              評価
+              %span.main-content-mypage-number__evaluation__count 36
+            .main-content-mypage-number__sells
+              出品数
+              %span.main-content-mypage-number__sells__count 33
+      %section.main-content-tabs
+        %ul.main-content-tabs__list
+          %li.main-content-tabs__list-notice
+            %h3
+              %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+                お知らせ
+                -# %span.mypage-nav-number.hidden-large
+                -#   99+
+          %li.main-content-tabs__list-todo
+            %h3
+              %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+                やることリスト
+        .main-content-tabs__line
+          %ul.main-content-tabs__line__list
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/m62002611702/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
+                    %i.fa.fa-clock-o
+                    %span.day-time 1 日前
+                %i.fa.fa-chevron-right
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://mercari.com/jp/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
+                    %i.fa.fa-clock-o
+                    %span.day-time 1 日前
+                %i.fa.fa-chevron-right
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
+                    %i.fa.fa-clock-o
+                    %span.day-time 1 日前
+                %i.fa.fa-chevron-right
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
+                    %i.fa.fa-clock-o
+                    %span.day-time 1 日前
+                %i.fa.fa-chevron-right
+
+            %li.main-content-tabs__line__list__notice
+              %a.main-content-tabs__line__list__notice__field{:href => "https://item.mercari.com/jp/"}
+                %figure.main-content-tabs__line__list__notice__field__figure
+                  %img.main-content-tabs__line__list__notice__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+                .main-content-tabs__line__list--textarea
+                  .main-content-tabs__line__list--textarea__text いいね！しました
+                  .main-content-tabs__line__list--textarea__timebox
+                    %i.fa.fa-clock-o
+                    %span.day-time 1 日前
+                %i.fa.fa-chevron-right
+            %li.main-content-tabs__line__list__back
+              %a.main-content-tabs__line__list__back-text{:href => "/jp/mypage/notification/"} 一覧を見る
+
+      %section.main-content-purchace
+        %h2.main-content-purchace__head
+          購入した商品
+        %ul.main-content-purchace__tabs
+          %li.main-content-purchace__tabs-tab
+            %a.main-content-purchace__tabs-tab__text
+              取引中
+          %li.main-content-purchace__tabs-tab
+            %a.main-content-purchace__tabs-tab__text
+              過去の取引
+        .main-content-purchace__box
+          %ul.main-content-purchace__box-lists
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
+                %i.fa.fa-chevron-right
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
+                %i.fa.fa-chevron-right
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
+                %i.fa.fa-chevron-right
+            %li.main-content-purchace__box-lists__list
+              %a.main-content-purchace__box-lists__list__field{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure.main-content-purchace__box-lists__list__field__figure
+                  %img.main-content-purchace__box-lists__list__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581", :src => "//static.mercdn.net/thumb/photos/m62628436380_1.jpg?1551872581"}/
+                .main-content-purchace__box-lists__list__field__box
+                  .main-content-purchace__box-lists__list__field__box-text クリッパバックハンガーを購入しました。
+                  .main-content-purchace__box-lists__list__field__box-icon  取引完了
+                %i.fa.fa-chevron-right
+            %li.main-content-tabs__line__list__back
+              %a.main-content-tabs__line__list__back-text{:href => "/jp/mypage/notification/"} 一覧を見る
+    = render 'side-bar'
+  .aside
+    aside
+  = render 'items/main-footer'
