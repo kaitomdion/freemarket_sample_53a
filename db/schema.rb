@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_084129) do
+ActiveRecord::Schema.define(version: 2019_06_29_084829) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,28 @@ ActiveRecord::Schema.define(version: 2019_06_29_084129) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.string "price", null: false
+    t.bigint "shipping_region_id", null: false
+    t.bigint "shipping_method_id", null: false
+    t.bigint "shipping_status_id", null: false
+    t.bigint "shipping_day_id", null: false
+    t.bigint "shipping_burden_id", null: false
+    t.integer "buyer_id", null: false
+    t.integer "saler_id", null: false
+    t.bigint "transaction_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shipping_burden_id"], name: "index_items_on_shipping_burden_id"
+    t.index ["shipping_day_id"], name: "index_items_on_shipping_day_id"
+    t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id"
+    t.index ["shipping_region_id"], name: "index_items_on_shipping_region_id"
+    t.index ["shipping_status_id"], name: "index_items_on_shipping_status_id"
+    t.index ["transaction_id"], name: "index_items_on_transaction_id"
   end
 
   create_table "shipping_burdens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,4 +117,10 @@ ActiveRecord::Schema.define(version: 2019_06_29_084129) do
   end
 
   add_foreign_key "cards", "users"
+  add_foreign_key "items", "shipping_burdens"
+  add_foreign_key "items", "shipping_days"
+  add_foreign_key "items", "shipping_methods"
+  add_foreign_key "items", "shipping_regions"
+  add_foreign_key "items", "shipping_statuses"
+  add_foreign_key "items", "transactions"
 end
