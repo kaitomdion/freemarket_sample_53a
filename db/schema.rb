@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_085717) do
+ActiveRecord::Schema.define(version: 2019_06_29_090005) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(version: 2019_06_29_085717) do
     t.index ["shipping_region_id"], name: "index_items_on_shipping_region_id"
     t.index ["shipping_status_id"], name: "index_items_on_shipping_status_id"
     t.index ["transaction_id"], name: "index_items_on_transaction_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_likes_on_item_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "shipping_burdens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -146,4 +155,6 @@ ActiveRecord::Schema.define(version: 2019_06_29_085717) do
   add_foreign_key "items", "shipping_regions"
   add_foreign_key "items", "shipping_statuses"
   add_foreign_key "items", "transactions"
+  add_foreign_key "likes", "items"
+  add_foreign_key "likes", "users"
 end
