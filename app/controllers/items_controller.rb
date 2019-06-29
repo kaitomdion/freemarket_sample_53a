@@ -12,4 +12,7 @@ class ItemsController < ApplicationController
   def confirm
   end
 
+  def end
+  end
+
 end

@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show, :new] do
     collection do
       get 'confirm'
+      get 'end'
     end
   end
-  resources :cards, only: [:index, :new, :create]
-
+  resources :cards, only: [:index, :new, :create] 
 end
