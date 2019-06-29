@@ -85,7 +85,7 @@
 ## transactionsテーブル
 |Column|Type|Option|
 |------|----|------|
-|status|string|null false|
+|status|integer|null false|
 
 ### Association
 - has_many :items
