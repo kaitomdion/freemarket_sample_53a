@@ -1,7 +1,7 @@
-.background{
+.show-item{
   height: 100%;
   width: 100%;
-  background: #fafafa;
+  background-color: rgb(245 , 245 , 245);
   .show{
     width: 620px;
     background: #fff;
@@ -35,7 +35,7 @@
         width: 100%;
         background: #fafafa;
         font-size: 14px;
-        &-table__name{
+        &__name{
           color: #0099e8;
           text-decoration: none;
         }
@@ -293,6 +293,78 @@
           font-size: 26px;
           color: #fff;
           background: #aa262a;
+        }
+      }
+    }
+  }
+  .item-user-profile{
+    width: 700px;
+    margin: 0 auto;
+    .item-user-profile__container{
+      .item-user-profile__container__head{
+        margin: 24px 0 8px;
+        font-size: 22px;
+        line-height: 1.4;
+        .item-user-profile__container__head__link{
+          color: #0099e8;
+          text-decoration: none;
+        }
+      }
+      .item-user-profile__container__contents{
+        width: 92%;
+        margin: 0; 
+        height: 400px;
+        .item-user-profile__container__contents__box{
+          margin: 0 20px 0 0;
+          width: 30%;
+          float: left;
+          .item-user-profile__container__contents__box__link{
+            cursor: pointer;
+            text-decoration: none;
+            .item-user-profile__container__contents__box__photo{
+              .item-user-profile__container__contents__box__photo__image{
+              }
+            }
+            .item-user-profile__container__contents__box__text{
+              padding: 8px;
+              height: 110px;
+              width: 200px;
+              .item-user-profile__container__contents__box__text__sentence{
+                overflow: hidden;
+                position: relative;
+                font-weight: 400;
+                height: 3em;
+                line-height: 1.5;
+                word-break: break-word;
+                white-space: normal;
+                text-decoration: none;
+                color: #333;
+              }
+              .item-user-profile__container__contents__box__text__num{
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+                -webkit-box-pack: justify;
+                justify-content: space-between;
+                margin: 8px 0 0;
+                width: 180px;
+                .item-user-profile__container__contents__box__text__num__price{
+                  font-size: 20px;
+                  font-weight: 600;
+                  color: #333;
+                }
+                .item-user-profile__container__contents__box__text__num__like{
+                  font-size: 16px;
+                  font-weight: 400;
+                  color: #333;
+                }
+              }
+              .item-user-profile__container__contents__box__text__tax{
+                font-size: 10px;
+                color: #333;
+              }
+            }
+          }
         }
       }
     }

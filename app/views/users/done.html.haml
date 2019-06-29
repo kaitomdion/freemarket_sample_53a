@@ -32,5 +32,27 @@
             .foom__a.actions
             = f.submit "メルカリをはじめる", class: "done-submit"
 
-  -# .registration-foot
-  -#   = render "items/footer_item"
+        -# = render "items.banana"
+        .bottom-banner
+          .bottom-banner__photo
+            .bottom-banner__photo__logo
+              %h2.bottom-banner__photo__logo__title スマホでかんたんフリマアプリ
+              %p.bottom-banner__photo__logo__text 今すぐ無料ダウンロード！
+              .bottom-banner__photo__logo__icon
+                %img{ src: "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?2334484240", width: "68", class: "bottom-banner__photo__logo__icon__pic"}
+                %ul.bottom-banner__photo__logo__icon__smart.clearfix
+                  %li.bottom-banner__photo__logo__icon__smart__mark
+                    = link_to "", class: "bottom-banner__photo__logo__text__icon__smart__mark__app" do
+                      = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2334484240", height: "36", width: "134") 
+                  %li.bottom-banner__photo__logo__icon__smart__mark
+                    = link_to "", class: "bottom-banner__photo__logo__text__icon__smart__mark__goo" do
+                      = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2334484240", height: "36", width: "134") 
+            = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2414431219", height: "36", width: "134", class: "bottom-banner__photo__example")
+  .registration-foot
+    = render "items/footer_item"
+
+:css
+  .bottom-banner__photo{
+    width: 700px;
+}   
+

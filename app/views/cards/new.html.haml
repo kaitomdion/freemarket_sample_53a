@@ -1,13 +1,13 @@
-.contents 
+.card-new 
   = render 'items/main-header'
   .card-main
-    = render 'users/side.bar'
+    = render 'users/side-bar'
   .credit-box
     .credit-main
       .credit-main-content
         %h2.credit-main-content_head
           クレジットカード情報入力
-        = form_for(root) do |f|
+        = form_for(root_path) do |f|
           .credit_form-content
             .credit_form-group
               %P.credit_form-group_label
