@@ -2,7 +2,7 @@
   padding-bottom: 40px;
   padding-top: 40px;
   text-align: center;
-  background-color: #EEEEEE;
+  background-color: rgb(245 , 245 , 245);
   img{
     height: 49px;
     width: 185px;
@@ -336,7 +336,7 @@
     z-index: 1;
     padding: 40px 0;
     text-align: center;
-    background-color: #EEEEEE;
+    background-color: rgb(245 , 245 , 245);
     &__text{
       list-style: none;
       margin-bottom: 50px;
@@ -374,7 +374,7 @@
   }
 }
 .clearfix:after{
-  content: "";
-  clear: both;
+    content: "";
+    clear: both;
   display: block;
 }
