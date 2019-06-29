@@ -16,7 +16,7 @@
 |birth_day|string|null: false|
 |phone_number|string|null: false, unique: true|
 |postal_code|string|null: false|
-|region_id|integer|null: false, foreign_key: true|
+|shipping_region_id|integer|null: false, foreign_key: true|
 |town|string|null: false|
 |card_id|integer|null: false, foreign_key: true|
 
@@ -30,7 +30,7 @@
 ## imagesテーブル
 |Column|Type|Option|
 |------|----|------|
-|image|string|null: false|
+|url|text|null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
@@ -74,7 +74,7 @@
 |number|string|null: false, unique: true|
 |limit_month|string|null: false|
 |limit_year|string|null: false|
-|security_card|string|null: false, unique: true|
+|security_code|string|null: false, unique: true|
 |user_id|string|null: false, foreign_key: true|
 
 ### Association
@@ -120,7 +120,7 @@
 ## brandsテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|------|
+|name|string|null false|
 
 ### Association
 - has_many :groups
@@ -144,7 +144,7 @@
 ## shipping-methodsテーブル
 |Column|Type|Option|
 |------|----|------|
-|method|string|null false|
+|name|string|null false|
 
 ### Association
 - has_many :items
@@ -152,7 +152,7 @@
 ## shipping-statusesテーブル
 |Column|Type|Option|
 |------|----|------|
-|status|string|null false|
+|name|string|null false|
 
 ### Association
 - has_many :items
@@ -160,7 +160,7 @@
 ## shipping-daysテーブル
 |Column|Type|Option|
 |------|----|------|
-|day|string|null false|
+|name|string|null false|
 
 ### Association
 - has_many :items
@@ -168,7 +168,7 @@
 ## shipping-burdensテーブル
 |Column|Type|Option|
 |------|----|------|
-|burden|string|null false|
+|name|string|null false|
 
 ### Association
 - has_many :items
