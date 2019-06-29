@@ -22,9 +22,9 @@
 |card_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :items
-- has_many :likes
-- has_many :images
+- has_many :items, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :images, dependent: :destroy
 - belongs_to :region
 - belongs_to :card
 
@@ -65,10 +65,10 @@
 - belogs_to :transaction
 - belongs_to :buyer, class_name: 'User'
 - belongs_to :saler, class_name: 'User'
-- has_many :categories, through: :categories_items
-- has_many :categories_items
-- has_many :images
-- has_many :likes
+- has_many :categories, through: :categories_items, dependent: :destroy
+- has_many :categories_items, dependent: :destroy
+- has_many :images, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 ## cardsテーブル
 |Column|Type|Option|
@@ -88,7 +88,7 @@
 |status|integer|null false|
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 
 ## categoriesテーブル
 |Column|Type|Option|
