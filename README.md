@@ -25,7 +25,7 @@
 - has_many :likes, dependent: :destroy
 - has_many :images, dependent: :destroy
 - belongs_to :region
-- belongs_to :card
+- has_one :card
 
 ## imagesテーブル
 |Column|Type|Option|
@@ -78,7 +78,7 @@
 |user_id|string|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :user
+- has_one :user
 
 ## transactionsテーブル
 |Column|Type|Option|
