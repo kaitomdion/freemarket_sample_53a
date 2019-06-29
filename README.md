@@ -18,7 +18,6 @@
 |postal_code|string|null: false|
 |region_id|integer|null: false, foreign_key: true|
 |town|string|null: false|
-|credit|string|null: false|
 |card_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -43,7 +42,6 @@
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
-|image|string|null: false|
 |state|text|null: false|
 |price|string|null: false|
 |shipping-region_id|integer|null: false, foreign_key: true|
