@@ -1,5 +1,5 @@
 .sign-up-header{
-  background: #eee;
+  background: rgb(245 , 245 , 245);
   height: 789px;
 .sign-up{
     display: block;
@@ -21,7 +21,7 @@
       .sign-up-content-main{
         padding: 64px;
         height: 182px;
-        border-top: 1px solid #eee;
+        border-top: 1px solid rgb(245 , 245 , 245);
 
         .sign-up-content-main-content{
           width: 320px;
@@ -30,7 +30,7 @@
 
           &_mail{
             position: relative;
-            background: #eee;
+            background: rgb(245 , 245 , 245);
             color: #000;
             display: flex;
             width: 100%;
@@ -55,8 +55,8 @@
 
 .form_actions{
   transition: all ease-out .3s;
-  background: #eee;
-  border: 1px solid #eee;
+  background: rgb(245 , 245 , 245);
+  border: 1px solid rgb(245 , 245 , 245);
   color: #fff;
   display: block;
   width: 100%;
@@ -93,19 +93,21 @@
 
 .sign-up-submit{
   color: white;
+  
 }
 
-.fa.fa-envelope-o.fa-2x{
+.far.fa-envelope.fa-2x{
   float: left;
+  margin: 10px 0 0 10px;
 }
 
-.fa.fa-facebook-square.fa-2x{
+.fab.fa-facebook-square.fa-2x{
   float: left;
-
+  margin: 10px 0 0 10px;
 }
 
 
-.fa.fa-google.fa-2x{
+.fab.fa-google.fa-2x{
   float: left;
-
+  margin: 10px 0 0 10px;
 }
