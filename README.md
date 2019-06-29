@@ -56,13 +56,13 @@
 |transaction_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belogs_to :user
-- belogs_to :shipping-region
-- belogs_to :shipping-method
-- belogs_to :shipping-status
-- belogs_to :shipping-day
-- belogs_to :shipping-burden
-- belogs_to :transaction
+- belongs_to :user
+- belongs_to :shipping-region
+- belongs_to :shipping-method
+- belongs_to :shipping-status
+- belongs_to :shipping-day
+- belongs_to :shipping-burden
+- belongs_to :transaction
 - belongs_to :buyer, class_name: 'User'
 - belongs_to :saler, class_name: 'User'
 - has_many :categories, through: :categories_items, dependent: :destroy
