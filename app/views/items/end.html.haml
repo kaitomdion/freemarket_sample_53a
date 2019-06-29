@@ -1,0 +1,55 @@
+.confirm
+  = render 'items/header_item'
+  .confirm-box
+    .confirm-box__wait
+      .confirm-box__wait__top
+        %i.far.fa-clock
+        %p.confirm-box__wait__top__shipping 発送をお待ちください
+      .confirm-box__wait__notification 出品者からの発送通知をお待ちください
+    .confirm-box__head
+      購入内容の確認
+    .confirm-box__main
+      .confirm-box__main__contents
+        .confirm-box__main__contents__image
+          = image_tag("https://static.mercdn.net/item/detail/orig/photos/m86124696873_1.jpg?1561620286", height: "250", width: "180")
+        .confirm-box__main__contents__name
+          ジーパン
+    .confirm-box__main__price
+      ¥ 50000
+      .confirm-box__main__price__text
+        送料込み
+    .buy-user-info
+      .buy-user-info__contents
+        配送先
+        .buy-user-info__contents__adress
+          〒111-1111
+          東京都　tech市camp町
+          1111-1
+          江楠波十男
+        = link_to "#", class: 'buy-user-info__contents__link' do
+          %span
+            変更する
+          %i.fa.fa-chevron-right
+    .buy-method
+      .buy-method__contents
+        支払い方法
+        .buy-method__contents__adress
+          '/'
+        = link_to "#", class: 'buy-method__contents__link' do
+          %span
+            変更する
+          %i.fa.fa-chevron-right
+    .confirm-box__flow
+      %p.confirm-box__flow__title 発送通知後の流れ
+      .confirm-box__flow__face 
+        %i.fas.fa-laugh
+        %i.fas.fa-meh
+        %i.fas.fa-frown
+      %p.confirm-box__flow__text 
+        商品を受け取ったら
+        出品者の評価をしましょう。
+        購入代金が出品者に振り込まれます。
+        評価後に取引は完了です。
+      = link_to "", class: "confirm-box__flow__link" do
+        マイページへ戻る
+  = render 'items/footer_item'
