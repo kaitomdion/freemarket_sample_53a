@@ -39,13 +39,13 @@
           .item-contents__main__form__detail__head
             商品の詳細
           .item-contents__main__form__detail__form-box
-            .item-contents__main__form__detail__form-box__form-group3
-              .item-contents__main__form__detail__form-box__form-group3__label
-                カテゴリー
-                %span.item-contents__main__form__detail__form-box__form-group3__label__action
-                  必須
-              .item-contents__main__form__detail__form-box__form-group3__select-wrap
-                = f.collection_select(:category_ids, @categories, :id, :name, {prompt: "---"}, {class: 'item-contents__main__form__detail__form-box__form-group3__select-wrap__select-box'})
+            -# .item-contents__main__form__detail__form-box__form-group3
+            -#   .item-contents__main__form__detail__form-box__form-group3__label
+            -#     カテゴリー
+            -#     %span.item-contents__main__form__detail__form-box__form-group3__label__action
+            -#       必須
+            -#   .item-contents__main__form__detail__form-box__form-group3__select-wrap
+            -#     = f.collection_select(:category_ids, @categories, :id, :name, {prompt: "---"}, {class: 'item-contents__main__form__detail__form-box__form-group3__select-wrap__select-box'})
                 
             .item-contents__main__form__detail__form-box__form-group3
               .item-contents__main__form__detail__form-box__form-group3__label
