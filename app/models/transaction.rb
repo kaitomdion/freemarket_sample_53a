@@ -1,3 +1,3 @@
 class Transaction < ApplicationRecord
-  has_many :images, dependent: :destroy
+  has_many :items, dependent: :destroy
 end
