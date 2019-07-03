@@ -15,9 +15,8 @@ $(function(){
   });
 });
 
-// TODO:実装途中
-// $(function(){
-  
+
+$(function(){
   // function buildHTML(item) {
   //   var html = ` <div class = "item-contents__main__form__detail__form-box__form-group2__label">
   //                   配送の方法
@@ -31,8 +30,8 @@ $(function(){
   //   return html;
   // }
 
-  // $('.item-contents__main__form__detail__form-box__form-group1__select-wrap__select-box').change(function(e){
-  //   $(".item-contents__main__form__detail__form-box__form-group2").css("display", "block")
+  $('.item-contents__main__form__detail__form-box__form-group1__select-wrap__select-box').change(function(e){
+    $(".item-contents__main__form__detail__form-box__form-group2").css("display", "block")
     // e.preventDefault();
     // var formData = new FormData(this);
     // var url = $(this).attr('action')
@@ -48,11 +47,11 @@ $(function(){
   //   var html = buildHTML(data);
   //   $('.item-contents__main__form__detail__form-box__form-group2').append(html)
   // });
-// });
+});
 // $('.item-contents__main__form__detail__form-box__form-group1__select-wrap__select-box').change(function(e){
 //   $(".item-contents__main__form__detail__form-box__form-group2").css("display", "none")
 // });
-// });
+});
 // $(function(){
 //   $(document).on('change', '#item_shipping_burden_id', function(){
 //     var burden = $(this).val();

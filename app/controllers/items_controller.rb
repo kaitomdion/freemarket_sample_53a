@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    # binding.pry
     Item.create(item_params)
     redirect_to root_path, notice: '商品を出品しました'
   end
@@ -25,7 +26,7 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id, :buyer_id, :saler_id, :shipping_burden_id, category_ids: [], images_attributes: [:url, :item_id])
+    params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, images_attributes: [:url, :item_id])
   end
 end
 
