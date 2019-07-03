@@ -9,7 +9,7 @@
   }
 }
 .item-contents{
-  background-color: #EEEEEE;
+  background-color: rgb(245 , 245 , 245);
   &__main{
     background-color: #fff;
     margin-left: 370px;
@@ -175,6 +175,69 @@
             }
           }
           &__form-group2{
+            display: none;
+            margin: 40px 0 0;
+            &__label{
+              &__action{
+                background: #ea352d;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            &__select-wrap{
+                margin: 8px 0 0;
+                width: 100%;
+                height: 48px;
+                &__select-box{
+                  z-index: 2;
+                  height: 48px;
+                  padding: 0 16px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                  width: 100%;
+              }
+            }
+          }
+          &__form-group3{
+            margin: 40px 0 0;
+            &__label{
+              &__action{
+                background: #ea352d;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            &__select-wrap{
+                margin: 8px 0 0;
+                width: 100%;
+                height: 48px;
+                &__select-box{
+                  z-index: 2;
+                  height: 48px;
+                  padding: 0 16px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                  width: 100%;
+              }
+            }
+          }
+          &__form-group4{
             margin: 40px 0 0;
             &__label{
               &__action{
@@ -322,6 +385,10 @@
           font-size: 14px;
           text-align: center;
           cursor: pointer;
+          &__link{
+            color: #fff;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -378,3 +445,4 @@
     clear: both;
   display: block;
 }
+

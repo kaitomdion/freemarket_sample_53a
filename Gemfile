@@ -69,8 +69,11 @@ gem 'erb2haml'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-rails'
 gem 'fog-aws'
 gem 'devise'
+gem 'enum'
+gem 'enum_help'
 
 group :production do
   gem 'unicorn', '5.4.1'

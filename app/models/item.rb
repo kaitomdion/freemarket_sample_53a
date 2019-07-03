@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   belongs_to :saler, class_name: 'User'
   has_many :category_items, dependent: :destroy
   has_many :categories, through: :category_items, dependent: :destroy
-  has_many :images, dependent: :destroy
+  has_many :images, inverse_of: :item, dependent: :destroy
+  accepts_nested_attributes_for :images
   has_many :likes, dependent: :destroy
 end
