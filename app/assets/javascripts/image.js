@@ -1,6 +1,5 @@
 $(function(){
   $('.new_item').on('change', 'input[type="file"]', function(e){
-    console.log('hoge');
     var file = e.target.files[0];
         reader = new FileReader();
         $preview = $("#file-preview");
