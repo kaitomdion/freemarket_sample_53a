@@ -12,16 +12,170 @@
               必須
           .item-contents__main__form__upload-box__description
             最大10枚までアップロードできます
-            .item-contents__main__form__upload-box__image
-              %label
-                .item-contents__main__form__upload-box__image__box
-                  .input-area
-                  .item-contents__main__form__upload-box__image__box__text
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
-                  #file-preview
-                  = f.fields_for :images do |i|
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image
+                %label
+                  .item-contents__main__form__upload-box__image__box
+                    .input-area
+                    .item-contents__main__form__upload-box__image__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview                  
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image2.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                %label
+                  .item-contents__main__form__upload-box__image2__box
+                    .input-area2
+                    .item-contents__main__form__upload-box__image2__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview2                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image2__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image3.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                %label
+                  .item-contents__main__form__upload-box__image3__box
+                    .input-area3
+                    .item-contents__main__form__upload-box__image3__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview3                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image3__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image4.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                %label
+                  .item-contents__main__form__upload-box__image4__box
+                    .input-area4
+                    .item-contents__main__form__upload-box__image4__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview4                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image4__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image5.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                .item-contents__main__form__upload-box__image5__view
+                %label
+                  .item-contents__main__form__upload-box__image5__box
+                    .input-area5
+                    .item-contents__main__form__upload-box__image5__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview5                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image5__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image6.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                .item-contents__main__form__upload-box__image5__view
+                .item-contents__main__form__upload-box__image6__view
+                %label
+                  .item-contents__main__form__upload-box__image6__box
+                    .input-area6
+                    .item-contents__main__form__upload-box__image6__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview6                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image6__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image7.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                .item-contents__main__form__upload-box__image5__view
+                .item-contents__main__form__upload-box__image6__view
+                .item-contents__main__form__upload-box__image7__view
+                %label
+                  .item-contents__main__form__upload-box__image7__box
+                    .input-area7
+                    .item-contents__main__form__upload-box__image7__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview7                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image7__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image8.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                .item-contents__main__form__upload-box__image5__view
+                .item-contents__main__form__upload-box__image6__view
+                .item-contents__main__form__upload-box__image7__view
+                .item-contents__main__form__upload-box__image8__view
+                %label
+                  .item-contents__main__form__upload-box__image8__box
+                    .input-area8
+                    .item-contents__main__form__upload-box__image8__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview8                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image8__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image9.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                .item-contents__main__form__upload-box__image5__view
+                .item-contents__main__form__upload-box__image6__view
+                .item-contents__main__form__upload-box__image7__view
+                .item-contents__main__form__upload-box__image8__view
+                .item-contents__main__form__upload-box__image9__view
+                %label
+                  .item-contents__main__form__upload-box__image9__box
+                    .input-area9
+                    .item-contents__main__form__upload-box__image9__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview9                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image9__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image10.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                .item-contents__main__form__upload-box__image5__view
+                .item-contents__main__form__upload-box__image6__view
+                .item-contents__main__form__upload-box__image7__view
+                .item-contents__main__form__upload-box__image8__view
+                .item-contents__main__form__upload-box__image9__view
+                .item-contents__main__form__upload-box__image10__view
+                %label
+                  .item-contents__main__form__upload-box__image10__box
+                    .input-area10
+                    .item-contents__main__form__upload-box__image10__box__text
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    #file-preview10                 
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image10__drop-file', type: "file"
+            = f.fields_for :images do |i|
+              .item-contents__main__form__upload-box__image11.cleafix
+                .item-contents__main__form__upload-box__image2__view
+                .item-contents__main__form__upload-box__image3__view
+                .item-contents__main__form__upload-box__image4__view
+                .item-contents__main__form__upload-box__image5__view
+                .item-contents__main__form__upload-box__image6__view
+                .item-contents__main__form__upload-box__image7__view
+                .item-contents__main__form__upload-box__image8__view
+                .item-contents__main__form__upload-box__image9__view
+                .item-contents__main__form__upload-box__image10__view
+                .item-contents__main__form__upload-box__image11__view
+                %label
+                  .item-contents__main__form__upload-box__image11__box
+                    .input-area11
+                    .item-contents__main__form__upload-box__image11__box__text
+                      
+                    #file-preview11               
+                    =i.file_field :url, class: 'item-contents__main__form__upload-box__image11__drop-file', type: "file"
         .item-contents__main__form__product
           .item-contents__main__form__product__form-group1
             .item-contents__main__form__product__form-group1__label

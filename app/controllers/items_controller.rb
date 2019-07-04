@@ -11,7 +11,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    10.times { @item.images.build }
+    # 10.times { @item.images.build }
+    @item.images.build
     @categories = Category.all
   end
 
