@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+
   # belongs_to :user
   belongs_to :shipping_method, optional:true
   belongs_to :shipping_status, optional:true

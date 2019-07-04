@@ -23,10 +23,11 @@ Rails.application.routes.draw do
       get 'account_information'
     end
   end
-  resources :items, only: [:index, :show, :new, :create] do
+  resources :items, only: [:index, :show, :new,:destroy,:create] do
     collection do
       get 'confirm'
       get 'end'
+      # get 'destroy'
     end
   end
   resources :cards, only: [:index, :new, :create] 

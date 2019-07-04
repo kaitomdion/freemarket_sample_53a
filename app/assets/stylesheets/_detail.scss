@@ -15,16 +15,24 @@
     }
     &__contents{
       margin: 16px 0 0;
-      &__item-photo{
-        float: left;
+      &__item-mainImage{
+        float:left;
         min-width: 300px;
         max-width: 300px;
         min-height: 375px;
         background: #fafafa;
-        img{
+        img.owl-lazy{
           height: 300px;
           width: 200px;
           margin-left: 50px;
+        }
+        .show__contents__item-thumbnails{
+          width:300px;
+          display:flex;
+          img.is-higher-width{
+            width:60px;
+            height:60px;
+          }
         }
       }
       &__detail-table{

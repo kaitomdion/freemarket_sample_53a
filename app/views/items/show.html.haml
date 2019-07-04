@@ -2,10 +2,17 @@
   = render "main-header"
   .show
     .show__name
-      COACH 2way ボストンバッグ　サーモンピンク
+      = @item.name 
     .show__contents.clearfix
-      .show__contents__item-photo
-        %img.owl-lazy{:alt => "COACH 2way ボストンバッグ サーモンピンク", "data-src" => "https://static.mercdn.net/item/detail/orig/photos/m10468760096_1.jpg?1561443114", :src => "https://static.mercdn.net/item/detail/orig/photos/m10468760096_1.jpg?1561443114", :style => "opacity: 1;"}/
+      .show__contents__item-mainImage
+        %img.owl-lazy{:src => "#{@item.images.first.url}"}/
+        .show__contents__item-thumbnails
+          %img.is-higher-width{:src => "#{@item.images.first.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.second.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.third.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.fourth.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.fifth.url}"}/
+        .show__contents__item-thumbnails
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -50,26 +57,26 @@
             %th
               商品の状態
             %td
-              やや傷や汚れあり
+              = @item.shipping_status.name
           %tr
             %th
               配送料の負担
             %td
-              送料込み(出品者負担)
+              = @item.shipping_burden.name
           %tr
             %th
               配送元地域
             %td
-              = link_to "#", class: 'show__contents__detail-table__delivary' do
-                大阪府
+              = @item.shipping_region.name
           %tr
             %th
               配送日の目安
             %td
-              4~7日で発送
+              = @item.shipping_day.name
     .show__text-center
       .show__text-center__price
-        ￥ 5,555
+        ￥ 
+        = @item.price
       .show__text-center__tax
         (税込)
       .show__text-center__fee
@@ -77,17 +84,7 @@
     = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
     .show__item-description
       %p.show__item-description__text
-        COACH 2wayボストンバッグご覧いただきありがとうございます。
-        こちらはコーチのショルダーバッグです。
-        サイズ
-        横→33㎝
-        縦→トッテ含め30㎝・本体18㎝
-        底→16㎝
-        ワンシーズン使用しました
-        ベルトは一度も使用していません
-        中の布も汚れはありませんが
-        二ヶ所ボールペン？汚れがあります
-        ご不明点があればコメントよろしくお願いいたします。
+        = @item.description
     .show__item-button-container.clearfix
       .show__item-button-container__left
         %button.show__item-button-container__left__like{type: "button", name: "like!"}
@@ -104,7 +101,7 @@
         = link_to "", class:'show__item-button-container__right__news' do
           %i.fa.fa-lock
           %span
-            あんしん・あんぜんへの取り組み
+            =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
   .detail-message
     .detail-message__container
       .detail-message__container__content
