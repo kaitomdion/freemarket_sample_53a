@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations",
+    passwords: "users/passwords"
+  } 
+  devise_scope :user do
+    get 'users/registration', to: 'users/registrations#registration'
+    get 'users/sms_confirmation', to: 'users/registrations#sms_confirmation'
+    get 'users/sms_confirmation_sms', to: 'users/registrations#sms_confirmation_sms'
+    get 'users/address', to: 'users/registrations#address'   
+  end
   root "items#index"
   resources :users, only: [:new, :show, :edit ,:index] do
     collection do

@@ -1,0 +1,52 @@
+.address-box
+  .header2
+    %h1.header2_logo
+      =link_to root_path, class: "header2_logo_url" do
+        = image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2342399531",alt:"mercari",class:"header2_logo_url_image")
+    = image_tag "addless.png",class:"id_head"
+
+    -# %nav.header2_bar
+    -#   %ol.header2_clearfix
+    -#     %li.header2_text1
+    -#       .header2_status 会員情報
+    -#     %li.header2_text2
+    -#       .header2_status 電話番号認証
+    -#     %li.header2_text3dddddd
+    -#       .header2_status お届け先住所
+    -#     %li.header2_text4
+    -#       .header2_status 支払い方法
+    -#     %li.header2_text5
+    -#       .header2_status 完了
+
+  .address-main
+    .address-main-content
+      %h2.address-main-content_head
+        発送元・お届け先住所入力
+      = form_for @user, url: user_registration_path do |f|
+        .address-main-content_box_input
+          .address-form-group1
+            %P.address-form-group_label
+              郵便番号
+            %span.required-tag
+              必須
+            = f.text_field :postal_code, class: "address-form-group_input", placeholder: "例)123-4567"
+          .address-form-group1
+            %P.address-form-group_label
+              都道府県
+            %span.required-tag
+              必須
+            = f.select :shipping_region_id, ShippingRegion.all.collect {|s| [s.name_i18n, s.id]}, {prompt: "---"}, {class: 'item-contents__main__form__detail__form-box__form-group3__select-wrap__select-box'}
+            .address-form-group1
+              %P.address-form-group_label
+                市区町村
+              %span.required-tag
+                必須
+            = f.text_field :town, class: "address-form-group_input", placeholder: "例)横浜市緑区"
+        .address-main-content_box_send
+          .foom__a.actions
+            = f.submit "次へ進む", class: "address-submit"
+
+
+  .registration-foot
+    = render "items/footer_item"
+  
