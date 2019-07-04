@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     collection do
       get 'confirm'
       get 'end'
-      get 'destroy'
+      # get 'destroy'
     end
   end
   resources :cards, only: [:index, :new, :create] 

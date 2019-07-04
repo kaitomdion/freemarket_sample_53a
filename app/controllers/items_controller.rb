@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @image = Image.find(params[:id])
+    # binding.pry
   end
 
   def new

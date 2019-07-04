@@ -3,7 +3,6 @@
   .show
     .show__name
       = @item.name 
-      -# itemの名前を取得し、表示
     .show__contents.clearfix
       .show__contents__item-mainImage
         %img.owl-lazy{:src => "#{@item.images.first.url}"}/
@@ -14,11 +13,6 @@
           %img.is-higher-width{:src => "#{@item.images.fourth.url}"}/
           %img.is-higher-width{:src => "#{@item.images.fifth.url}"}/
         .show__contents__item-thumbnails
-          -# %img.is-higher-width{:src => "#{@item.images.sixth.url}"}/
-          -# %img.is-higher-width{:src => "#{@item.images.seventh.url}"}/
-          -# %img.is-higher-width{:src => "#{@item.images.eighth.url}"}/
-          -# %img.is-higher-width{:src => "#{@item.images.ninth.url}"}/
-          -# %img.is-higher-width{:src => "#{@item.images.tenth.url}"}/
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -27,7 +21,6 @@
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
                 スノーマン
-              -# = @item.user.nickname
               .show__contents__detail-table__face
                 .show__contents__detail-table__face__user-ratings1
                   %i.fas.fa-laugh
@@ -64,31 +57,26 @@
             %th
               商品の状態
             %td
-              -# やや傷や汚れあり
               = @item.shipping_status.name
           %tr
             %th
               配送料の負担
             %td
-              -# 送料込み(出品者負担)
               = @item.shipping_burden.name
           %tr
             %th
               配送元地域
             %td
-              -# = link_to "#", class: 'show__contents__detail-table__delivary' do
               = @item.shipping_region.name
           %tr
             %th
               配送日の目安
             %td
-              -# 4~7日で発送
               = @item.shipping_day.name
     .show__text-center
       .show__text-center__price
         ￥ 
         = @item.price
-        -# itemの金額を取得し、表示
       .show__text-center__tax
         (税込)
       .show__text-center__fee
@@ -97,7 +85,6 @@
     .show__item-description
       %p.show__item-description__text
         = @item.description
-        -# itemの説明を取得し、表示
     .show__item-button-container.clearfix
       .show__item-button-container__left
         %button.show__item-button-container__left__like{type: "button", name: "like!"}
@@ -115,8 +102,6 @@
           %i.fa.fa-lock
           %span
             =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
-
-            -# if current_user  以下は、ログインしていないと隠しdiv
   .detail-message
     .detail-message__container
       .detail-message__container__content
