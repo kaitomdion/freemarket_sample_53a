@@ -1,10 +1,3 @@
-// $(function(){
-//   $('#p').on('click',function(){
-
-//   $("#p").text("変更したタイトル");
-//   $("open").html("<strong>変更されたコンテンツ</strong>");
-// })
-// });
 $(function() {
   // 「Open」ボタンをクリック時に、fadeInメソッドでHTML要素を表示する
   $('#delete__item-btn').on('click', function() {
