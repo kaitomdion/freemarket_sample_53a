@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @image = Image.find(params[:id])
   end
 
   def new
@@ -13,6 +15,11 @@ class ItemsController < ApplicationController
   end
 
   def end
+  end
+
+  def destroy
+    # item = Item.find(params[:id])
+    # item.destroy
   end
 
 end
