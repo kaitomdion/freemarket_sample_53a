@@ -1,3 +1,25 @@
+require 'csv'
+
+CSV.foreach('db/burden.csv', headers: true) do |row|
+  ShippingBurden.create(id: row['id'], name: row['name'], created_at: row['created_at'], updated_at: row['updated_at'])
+end
+
+CSV.foreach('db/day.csv', headers: true) do |row|
+  ShippingDay.create(id: row['id'], name: row['name'], created_at: row['created_at'], updated_at: row['updated_at'])
+end
+
+CSV.foreach('db/method.csv', headers: true) do |row|
+  ShippingMethod.create(id: row['id'], name: row['name'], created_at: row['created_at'], updated_at: row['updated_at'])
+end
+
+CSV.foreach('db/region.csv', headers: true) do |row|
+  ShippingRegion.create(id: row['id'], name: row['name'], created_at: row['created_at'], updated_at: row['updated_at'])
+end
+
+CSV.foreach('db/status.csv', headers: true) do |row|
+  ShippingStatus.create(id: row['id'], name: row['name'], created_at: row['created_at'], updated_at: row['updated_at'])
+end
+
 # 親要素
 a = Category.create(:name=>"レディース")
 b = Category.create(:name=>"メンズ")
