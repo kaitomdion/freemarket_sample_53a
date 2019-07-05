@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_30_015122) do
+ActiveRecord::Schema.define(version: 2019_07_04_031255) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,15 +33,8 @@ ActiveRecord::Schema.define(version: 2019_06_30_015122) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "category_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_items_on_category_id"
-    t.index ["item_id"], name: "index_category_items_on_item_id"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -55,19 +48,21 @@ ActiveRecord::Schema.define(version: 2019_06_30_015122) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "description", null: false
-    t.string "price", null: false
-    t.bigint "shipping_region_id", null: false
-    t.bigint "shipping_method_id", null: false
-    t.bigint "shipping_status_id", null: false
-    t.bigint "shipping_day_id", null: false
-    t.bigint "shipping_burden_id", null: false
-    t.integer "buyer_id", null: false
-    t.integer "saler_id", null: false
-    t.bigint "transaction_id", null: false
+    t.string "name"
+    t.text "description"
+    t.integer "price"
+    t.bigint "shipping_region_id"
+    t.bigint "shipping_method_id"
+    t.bigint "shipping_status_id"
+    t.bigint "shipping_day_id"
+    t.bigint "shipping_burden_id"
+    t.integer "buyer_id"
+    t.integer "saler_id"
+    t.bigint "transaction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["shipping_burden_id"], name: "index_items_on_shipping_burden_id"
     t.index ["shipping_day_id"], name: "index_items_on_shipping_day_id"
     t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id"
@@ -147,16 +142,8 @@ ActiveRecord::Schema.define(version: 2019_06_30_015122) do
   end
 
   add_foreign_key "cards", "users"
-  add_foreign_key "category_items", "categories"
-  add_foreign_key "category_items", "items"
   add_foreign_key "images", "items"
   add_foreign_key "images", "users"
-  add_foreign_key "items", "shipping_burdens"
-  add_foreign_key "items", "shipping_days"
-  add_foreign_key "items", "shipping_methods"
-  add_foreign_key "items", "shipping_regions"
-  add_foreign_key "items", "shipping_statuses"
-  add_foreign_key "items", "transactions"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "users", "shipping_regions"

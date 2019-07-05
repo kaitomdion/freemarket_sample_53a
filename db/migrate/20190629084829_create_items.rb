@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
       t.string :name
       t.text :description
-      t.string :price
+      t.integer :price
       t.references :shipping_region
       t.references :shipping_method
       t.references :shipping_status
@@ -13,7 +13,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :saler_id
       t.references :transaction
       t.timestamps
-      t.timestamps
+      t.references :category
     end
   end
 end

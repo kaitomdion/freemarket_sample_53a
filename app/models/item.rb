@@ -13,4 +13,8 @@ class Item < ApplicationRecord
   has_many :images, inverse_of: :item, dependent: :destroy
   accepts_nested_attributes_for :images
   has_many :likes, dependent: :destroy
+
+  # scope :aaaa, -> {where(category_id: 1)}
 end
+
+
