@@ -135,8 +135,10 @@ ActiveRecord::Schema.define(version: 2019_07_04_031255) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "shipping_region_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["shipping_region_id"], name: "index_users_on_shipping_region_id"
   end
 
   add_foreign_key "cards", "users"
@@ -144,4 +146,5 @@ ActiveRecord::Schema.define(version: 2019_07_04_031255) do
   add_foreign_key "images", "users"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
+  add_foreign_key "users", "shipping_regions"
 end

@@ -21,12 +21,12 @@
     .sms_confirmation-main-content
       %h2.sms_confirmation-main-content_head
         電話番号の確認
-      = form_for(new_user_path) do |f|
+      = form_for @user, url: users_address_path, method: :get do |f|
         .sms_confirmation-main-content_box_input
           .sms_confirmation-form-group-first
             %P.sms_confirmation-form-group-first_label
               携帯電話の番号
-            = f.telephone_field  :sms, class: "sms_confirmation-form-group-first_input", placeholder: "携帯電話の番号を入力"
+            = f.telephone_field  :phone_number, class: "sms_confirmation-form-group-first_input", placeholder: "携帯電話の番号を入力"
             %p.form-info_text 本人確認のため、携帯電話のSMS(ショートメッセージ)を利用して認証を行います。
             
             .foom__a.actions
