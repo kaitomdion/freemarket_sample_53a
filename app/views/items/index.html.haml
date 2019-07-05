@@ -37,50 +37,20 @@
         =link_to "", class: "items-contents__title__name" do
           メンズ新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m53907850233_1.jpg?1561362429",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ライター2本セット
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥500
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m67514043292_1.jpg?1561362429", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ジッポ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥4,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m89474258674_1.jpg?1561292857", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence サングラス
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥5,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m88529063210_1.jpg?1553688073", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence カルティエ マストライン レザー がま口 長財布 ボルドー
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥2,600
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        - @items_mens.each do |item|
+          .items-contents__boxes__box
+            =link_to "", class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag (item.images[0][:url]), size: "250x250"
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
         =link_to "", class: "items-contents__all__link" do
           すべての商品を見る

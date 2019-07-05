@@ -1,14 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
-    @items_ladies = Item.all.order("RAND()").limit(4)
-
-    # @items_ladies = Item.where(category_id: 1).order("RAND()").limit(4)
-    
+    # @items_ladies = Item.all.order("RAND()").limit(4)
     # @items_ladies = Item.aaaa
-    
-    
-    @items_mans = Item.all
+
+    @items_ladies = Item.where(category_id: 1).order("RAND()").limit(4)
+    @items_mens = Item.where(category_id: 2).order("RAND()").limit(4)
     @items_kids = Item.all
     @items_cosmetics = Item.all
     @items_chanel = Item.all
