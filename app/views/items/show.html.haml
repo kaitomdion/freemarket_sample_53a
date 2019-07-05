@@ -5,13 +5,15 @@
       = @item.name 
     .show__contents.clearfix
       .show__contents__item-mainImage
-        %img.owl-lazy{:src => "#{@item.images.first.url}"}/
+        %img.owl-lazy{:src => "#{@item.images.url}"}/
         .show__contents__item-thumbnails
-          %img.is-higher-width{:src => "#{@item.images.first.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.second.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.third.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.fourth.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.fifth.url}"}/
+        - @item.images.each do |image|
+          %img.is-higher-width{:src => "#{@item.images.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.url}"}/
+          %img.is-higher-width{:src => "#{@item.images.url}"}/
+          
         .show__contents__item-thumbnails
       %table.show__contents__detail-table
         %tbody
