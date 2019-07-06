@@ -19,8 +19,10 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @image = Image.find(params[:id])
+    # @image = Image.find(params[:id])
     # binding.pry
+    @previtem = Item.where("id < ?", @item.id).order("id DESC").first
+    @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
   end
 
   def new
@@ -44,8 +46,8 @@ class ItemsController < ApplicationController
 
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 
   
