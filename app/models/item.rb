@@ -14,7 +14,11 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   has_many :likes, dependent: :destroy
   belongs_to :categories, optional:true
-  # scope :aaaa, -> {where(category_id: 1)}
+  
+  scope :ladies,   -> {where(category_id: 1).order("RAND()").limit(4)}
+  scope :mens,     -> {where(category_id: 2).order("RAND()").limit(4)}
+  scope :kids,     -> {where(category_id: 3).order("RAND()").limit(4)}
+  scope :cosmetics,-> {where(category_id: 4).order("RAND()").limit(4)}
 end
 
 
