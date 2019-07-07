@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
   def search
     # @parents = Category.where(id: 1..13)
     # @childrens = @parents.where(id: params[:id])
+    binding.pry
     respond_to do |format|
       format.html
       format.json do
@@ -77,7 +78,30 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :item_id])
+    @params_items = params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :item_id])
+    # params_int(@params_items)
   end
+  
+  # def params_int(model_params)
+  #   model_params.each do |key,value|
+  #     unless key == 'images_attributes'
+  #       if integer_string?(value)
+  #         model_params[key] = value.to_i
+  #       end
+  #     end
+  #     if key == 'images_attributes'
+  #       model_params[key] = value
+  #     end
+  #   end
+  # end
+ 
+  # def integer_string?(str)
+  #   if str.present?
+  #   Integer(str)
+  #   true
+  #   end
+  # rescue ArgumentError
+  #   false
+  # end
 
 end

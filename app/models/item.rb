@@ -15,7 +15,7 @@ class Item < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
-  validates :price, presence: true, numericality:{less_than_or_equal_to:9999999, greater_than_equal_to:300 }
+  validates :price, presence: true, numericality:{less_than_or_equal_to:9999999, greater_than_or_equal_to:300 }
   validates :shipping_region_id, presence: true
   validates :shipping_method_id, presence: true
   validates :shipping_status_id, presence: true
