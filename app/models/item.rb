@@ -22,10 +22,10 @@ class Item < ApplicationRecord
   validates :shipping_burden_id, presence: true
   validates :category_id, presence: true
   
-  scope :ladies,   -> {where(category_id: 1).order("RAND()").limit(4)}
-  scope :mens,     -> {where(category_id: 2).order("RAND()").limit(4)}
-  scope :kids,     -> {where(category_id: 3).order("RAND()").limit(4)}
-  scope :cosmetics,-> {where(category_id: 4).order("RAND()").limit(4)}
+  scope :ladies,   -> {where(category_id: 159..337).order("RAND()").limit(4)}
+  scope :mens,     -> {where(category_id: 338..468).order("RAND()").limit(4)}
+  scope :kids,     -> {where(category_id: 469..586).order("RAND()").limit(4)}
+  scope :cosmetics,-> {where(category_id: 867..954).order("RAND()").limit(4)}
 
 end
 
