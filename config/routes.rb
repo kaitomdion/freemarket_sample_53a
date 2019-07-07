@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     collection do
       get 'confirm'
       get 'end'
+      get 'search'
     end
     member do
       get :editprev
