@@ -14,7 +14,7 @@
               出品者
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
-                =@user.nickname
+                -# =@user.nickname
               .show__contents__detail-table__face
                 .show__contents__detail-table__face__user-ratings1
                   %i.fas.fa-laugh
@@ -127,7 +127,7 @@
     .item-user-profile__container.clearfix
       .item-user-profile__container__head
         = link_to "#", class: "item-user-profile__container__head__link" do
-          = "#{@user.nickname}さんのその他の商品"
+          -# = "#{}さんのその他の商品"
       .item-user-profile__container__contents.clearfix
         .item-user-profile__container__contents__box
           =link_to "", class: "item-user-profile__container__contents__box__link" do
@@ -199,73 +199,75 @@
     .item-user-profile__container.clearfix
       .item-user-profile__container__head
         = link_to "#", class: "item-user-profile__container__head__link" do
-          = "#{@user.nickname}さんのその他の商品"
+          = "#{@category.name}のその他の商品"
       .item-user-profile__container__contents.clearfix
+      - @childitem.each do |childitem|
         .item-user-profile__container__contents__box
           =link_to "", class: "item-user-profile__container__contents__box__link" do
             .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
+            -# = image_tag (childitem.images[0][:url]), size: "213x220"
             .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
+              %h3.item-user-profile__container__contents__box__text__sentence 
+                = childitem.name
               .item-user-profile__container__contents__box__text__num
                 .item-user-profile__container__contents__box__text__num__price ￥1,555
                 .item-user-profile__container__contents__box__text__num__like 
                   %i.far.fa-heart
               .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
+        -# .item-user-profile__container__contents__box
+        -#   =link_to "", class: "item-user-profile__container__contents__box__link" do
+        -#     .item-user-profile__container__contents__box__photo
+        -#       %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
+        -#     .item-user-profile__container__contents__box__text
+        -#       %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
+        -#       .item-user-profile__container__contents__box__text__num
+        -#         .item-user-profile__container__contents__box__text__num__price ￥1,555
+        -#         .item-user-profile__container__contents__box__text__num__like 
+        -#           %i.far.fa-heart
+        -#       .item-user-profile__container__contents__box__text__tax (税込)
+        -# .item-user-profile__container__contents__box
+        -#   =link_to "", class: "item-user-profile__container__contents__box__link" do
+        -#     .item-user-profile__container__contents__box__photo
+        -#       %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
+        -#     .item-user-profile__container__contents__box__text
+        -#       %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
+        -#       .item-user-profile__container__contents__box__text__num
+        -#         .item-user-profile__container__contents__box__text__num__price ￥1,555
+        -#         .item-user-profile__container__contents__box__text__num__like 
+        -#           %i.far.fa-heart
+        -#       .item-user-profile__container__contents__box__text__tax (税込)
+        -# .item-user-profile__container__contents__box
+        -#   =link_to "", class: "item-user-profile__container__contents__box__link" do
+        -#     .item-user-profile__container__contents__box__photo
+        -#       %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
+        -#     .item-user-profile__container__contents__box__text
+        -#       %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
+        -#       .item-user-profile__container__contents__box__text__num
+        -#         .item-user-profile__container__contents__box__text__num__price ￥1,555
+        -#         .item-user-profile__container__contents__box__text__num__like 
+        -#           %i.far.fa-heart
+        -#       .item-user-profile__container__contents__box__text__tax (税込)
+        -# .item-user-profile__container__contents__box
+        -#   =link_to "", class: "item-user-profile__container__contents__box__link" do
+        -#     .item-user-profile__container__contents__box__photo
+        -#       %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
+        -#     .item-user-profile__container__contents__box__text
+        -#       %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
+        -#       .item-user-profile__container__contents__box__text__num
+        -#         .item-user-profile__container__contents__box__text__num__price ￥1,555
+        -#         .item-user-profile__container__contents__box__text__num__like 
+        -#           %i.far.fa-heart
+        -#       .item-user-profile__container__contents__box__text__tax (税込)
+        -# .item-user-profile__container__contents__box
+        -#   =link_to "", class: "item-user-profile__container__contents__box__link" do
+        -#     .item-user-profile__container__contents__box__photo
+        -#       %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
+        -#     .item-user-profile__container__contents__box__text
+        -#       %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
+        -#       .item-user-profile__container__contents__box__text__num
+        -#         .item-user-profile__container__contents__box__text__num__price ￥1,555
+        -#         .item-user-profile__container__contents__box__text__num__like 
+        -#           %i.far.fa-heart
+        -#       .item-user-profile__container__contents__box__text__tax (税込)
   = render "item_banner"
   = render "main-footer"
