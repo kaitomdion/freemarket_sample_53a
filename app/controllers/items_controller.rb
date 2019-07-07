@@ -62,11 +62,15 @@ class ItemsController < ApplicationController
 
   def end
   end
-
+  
+  def editprev
+    @item = Item.find(params[:id])
+  end
 
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    redirect_to controller: 'users', action: 'show'
   end
 
   
