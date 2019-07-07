@@ -16,8 +16,10 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @category = Category.find_by(id: @item.category_id)
+    @categoryall = @category.item.all
     # @image = Image.find(params[:id])
-    # binding.pry
+    binding.pry
+    @user = User.find(params[:id])
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
     @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
   end
