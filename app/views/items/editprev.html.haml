@@ -1,0 +1,117 @@
+.show-item
+  = render "main-header"
+  .show
+    .show__name
+      = @item.name
+    .show__contents.clearfix
+      .show__contents__item-photo
+        - @item.images.each do |image|
+          = image_tag (@item.images[0][:url]), size: "250x250"
+      %table.show__contents__detail-table
+        %tbody
+          %tr
+            %th
+              出品者
+            %td
+              = link_to "#", class: 'show__contents__detail-table__name' do
+                スノーマン
+              .show__contents__detail-table__face
+                .show__contents__detail-table__face__user-ratings1
+                  %i.fas.fa-laugh
+                  %span
+                    228
+                .show__contents__detail-table__face__user-ratings2
+                  
+                  %i.fas.fa-meh
+                  %span
+                    6
+                .show__contents__detail-table__face__user-ratings3
+                  %i.fas.fa-frown
+                  %span
+                    4
+          %tr
+            %th
+              カテゴリー
+            %td
+              = link_to "#", class: 'show__contents__detail-table__category1' do
+                = @category.parent.parent.name
+              = link_to "#", class: 'show__contents__detail-table__category2' do
+                %i.fa.fa-chevron-right
+                = @category.parent.name
+              = link_to "#", class: 'show__contents__detail-table__category3' do
+                %i.fa.fa-chevron-right
+                = @category.name
+          %tr 
+            %th 
+              ブランド
+            %td
+              = link_to "#", class: 'show__contents__detail-table__brand' do
+                コーチ
+          %tr
+            %th
+              商品の状態
+            %td
+              = @item.shipping_status.name_i18n
+          %tr
+            %th
+              配送料の負担
+            %td
+              = @item.shipping_burden.name_i18n
+          %tr
+            %th
+              配送元地域
+            %td
+              = link_to "#", class: 'show__contents__detail-table__delivary' do
+                = @item.shipping_region.name_i18n
+          %tr
+            %th
+              配送日の目安
+            %td
+              = @item.shipping_day.name_i18n
+    .show__text-center
+      .show__text-center__price
+        ￥ 
+        = @item.price
+      .show__text-center__tax
+        (税込)
+      .show__text-center__fee
+        送料込み
+    = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
+    .show__item-description
+      %p.show__item-description__text
+        = @item.description
+  .detail-btn-box
+    = link_to "商品の編集", new_item_path, id: 'edit__item-btn'
+    %br
+    = link_to "出品を一旦停止する", "#", id: 'stop__item-btn'
+    -# = link_to "この商品を削除する", "#", id: 'delete__item-btn'    
+    %btn#delete__item-btn この商品を削除する
+  .detail-message
+    .detail-message__container
+      .detail-message__container__content
+        = form_for (root_path) do |f|
+          %p.detail-message__container__content__text
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = f.text_area :text, class: 'detail-message__container__content__textarea', type: 'text'
+          = f.submit 'コメントする', class: 'detail-message__container__content__submit'
+
+
+#overlay
+#modalWindow
+  .modal-body
+    .modal-head.bold 確認
+    .modal-head.text
+      削除すると二度と復活できません。
+      %br>/
+      削除する代わりに停止することもできます。
+      %br/
+      = succeed "\u{672c}\u{5f53}\u{306b}\u{524a}\u{9664}\u{3057}\u{307e}\u{3059}\u{304b}\u{ff1f}" do
+        %br/
+  .clearfix
+    .btn-cancel-div
+      %button#modal-btn-cancel{"data-close" => "modal"} キャンセル
+    .mo
+    %form.modalform{:action => "/jp/items/cancel/m26056369093/", :method => "POST", :novalidate => "novalidate"}
+      %input.inputmodal{:name => "__csrf_value", :type => "hidden", :value => "2b69939eda8517e27e650ea055c6d7a9c88604b6edfa6dfbe5083a654d0aacefcb1c723bfa2e131dbd4d6b9b4ebc77175cbd05179955a43cddf28ad786884d59d"}
+      = link_to '削除する', "/items/#{@item.id}", method: :delete
+      %button.modal-btn-delete{:type => "submit"}

@@ -62,11 +62,16 @@ class ItemsController < ApplicationController
 
   def end
   end
-
+  
+  def editprev
+    @item = Item.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
+  end
 
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    redirect_to controller: 'users', action: 'show'
   end
 
   
