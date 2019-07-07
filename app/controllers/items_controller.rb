@@ -65,6 +65,7 @@ class ItemsController < ApplicationController
   
   def editprev
     @item = Item.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
   end
 
   def destroy
