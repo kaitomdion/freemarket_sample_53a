@@ -1,16 +1,12 @@
 class ItemsController < ApplicationController
 
   def index
-    @items_ladies = Item.all.order("RAND()").limit(4)
-
+    # @items_ladies = Item.all.order("RAND()").limit(4)
     # @items_ladies = Item.where(category_id: 1).order("RAND()").limit(4)
-    
-    # @items_ladies = Item.aaaa
-    
-    
-    @items_mans = Item.all
-    @items_kids = Item.all
-    @items_cosmetics = Item.all
+    @items_ladies = Item.ladies
+    @items_mens = Item.mens
+    @items_kids = Item.kids
+    @items_cosmetics = Item.cosmetics
     @items_chanel = Item.all
     @items_louisvuitton = Item.all
     @items_supreme = Item.all
@@ -22,6 +18,8 @@ class ItemsController < ApplicationController
     @category = Category.find_by(id: @item.category_id)
     # @image = Image.find(params[:id])
     # binding.pry
+    @previtem = Item.where("id < ?", @item.id).order("id DESC").first
+    @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
   end
 
   def new
@@ -78,4 +76,3 @@ class ItemsController < ApplicationController
   end
 
 end
-
