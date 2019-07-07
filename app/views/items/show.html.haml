@@ -5,14 +5,8 @@
       = @item.name 
     .show__contents.clearfix
       .show__contents__item-mainImage
-        %img.owl-lazy{:src => "#{@item.images.first.url}"}/
-        .show__contents__item-thumbnails
-          %img.is-higher-width{:src => "#{@item.images.first.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.second.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.third.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.fourth.url}"}/
-          %img.is-higher-width{:src => "#{@item.images.fifth.url}"}/
-        .show__contents__item-thumbnails
+      - @item.images.each do |image|
+        = image_tag (@item.images[0][:url]), size: "250x250"
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -40,13 +34,13 @@
               カテゴリー
             %td
               = link_to "#", class: 'show__contents__detail-table__category1' do
-                レディース
+                = @category.parent.parent.name
               = link_to "#", class: 'show__contents__detail-table__category2' do
                 %i.fa.fa-chevron-right
-                バッグ
+                = @category.parent.name
               = link_to "#", class: 'show__contents__detail-table__category3' do
                 %i.fa.fa-chevron-right
-                ショルダーバッグ
+                = @category.name
           %tr 
             %th 
               ブランド
@@ -57,22 +51,22 @@
             %th
               商品の状態
             %td
-              = @item.shipping_status.name
+              = @item.shipping_status.name_i18n
           %tr
             %th
               配送料の負担
             %td
-              = @item.shipping_burden.name
+              = @item.shipping_burden.name_i18n
           %tr
             %th
               配送元地域
             %td
-              = @item.shipping_region.name
+              = @item.shipping_region.name_i18n
           %tr
             %th
               配送日の目安
             %td
-              = @item.shipping_day.name
+              = @item.shipping_day.name_i18n
     .show__text-center
       .show__text-center__price
         ￥ 

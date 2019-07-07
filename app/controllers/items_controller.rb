@@ -19,7 +19,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @image = Image.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
+    # @image = Image.find(params[:id])
     # binding.pry
   end
 
@@ -27,13 +28,35 @@ class ItemsController < ApplicationController
     @item = Item.new
     # 10.times { @item.images.build }
     @item.images.build
-    @categories = Category.all
+    # @categories = Category.all
+    # @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.where(id: 1..13)
   end
 
   def create
     # binding.pry
-    Item.create(item_params)
-    redirect_to root_path, notice: '商品を出品しました'
+    @item = Item.new(item_params)
+    unless @item.valid?
+      render '/items/new'
+    else  
+      @item.save
+      redirect_to root_path, notice: '商品を出品しました'  
+    end
+  end
+
+  def search
+    # @parents = Category.where(id: 1..13)
+    # @childrens = @parents.where(id: params[:id])
+    respond_to do |format|
+      format.html
+      format.json do
+        if params[:parent_id]
+          @children = Category.find(params[:parent_id]).children
+         else
+          @grandchildren = Category.find(params[:children_id]).children
+        end
+      end
+    end
   end
 
   def confirm
@@ -51,7 +74,7 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, images_attributes: [:url, :item_id])
+    params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :item_id])
   end
 
 end
