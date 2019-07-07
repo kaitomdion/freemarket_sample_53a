@@ -45,7 +45,6 @@ class ItemsController < ApplicationController
   def search
     # @parents = Category.where(id: 1..13)
     # @childrens = @parents.where(id: params[:id])
-    binding.pry
     respond_to do |format|
       format.html
       format.json do
