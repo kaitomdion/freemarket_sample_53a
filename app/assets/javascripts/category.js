@@ -92,14 +92,13 @@ $(document).on('turbolinks:load',function(){
   $('#grandchild-form').css("display" , "none");
   $(".item-contents__main__form__detail__form-box__form-group3__select-wrap1").on("change",function(){
     var parentValue = document.getElementById("parent-form").value;
-    var url = window.location.protocol + '//' + window.location.host + '/items/search'
     if (parentValue == "") {
       $('#child-form').css("display" , "none");
       $('#grandchild-form').css("display" , "none");
     } else {
       $.ajax({
         type:    'GET',
-        url:     url,
+        url:     '/items/search',
         data:    { parent_id: parentValue },
         dataType: 'json'
       })
@@ -124,13 +123,12 @@ $(document).on('turbolinks:load',function(){
   $(".item-contents__main__form__detail__form-box__form-group3__select-wrap2").on("change",function(){
     // $(".item-contents__main__form__detail__form-box__form-group3__select-wrap2").each(function(){
     var childrenValue = document.getElementById("child-form").value;
-    var url = window.location.protocol + '//' + window.location.host + '/items/search'
     if (childrenValue == "" || childrenValue == "---") {
       $('#grandchild-form').css("display" , "none");
     } else {
       $.ajax({
         type:    'GET',
-        url:     url,
+        url:     '/items/search',
         data:    { parent_id: childrenValue },
         dataType: 'json'
       })
