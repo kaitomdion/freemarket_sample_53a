@@ -5,15 +5,8 @@
       = @item.name 
     .show__contents.clearfix
       .show__contents__item-mainImage
-      - @item.images.each do |image|
-        %img.owl-lazy{:src => image.url}/
-        -# .show__contents__item-thumbnails
-        -#   %img.is-higher-width{:src => "#{@item.images.first.url}"}/
-        -#   %img.is-higher-width{:src => "#{@item.images.second.url}"}/
-        -#   %img.is-higher-width{:src => "#{@item.images.third.url}"}/
-        -#   %img.is-higher-width{:src => "#{@item.images.fourth.url}"}/
-        -#   %img.is-higher-width{:src => "#{@item.images.fifth.url}"}/
-        -# .show__contents__item-thumbnails
+        - @item.images.each do |image|
+          = image_tag (@item.images[0][:url]),size:"250x250"
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -111,15 +104,17 @@
             相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
           = f.text_area :text, class: 'detail-message__container__content__textarea', type: 'text'
           = f.submit 'コメントする', class: 'detail-message__container__content__submit'
-  %ul.navi-item.clearfix
-    %li.navi-item__link-prev
-      = link_to "#", class: 'navi-item__link-prev__text' do
-        %i.fa.fa-chevron-left
-        *ハンドメイドピアス* 155
-    %li.navi-item__link-next
-      = link_to "#", class: 'navi-item__link-next__text' do
-        金文字で[日本一の兵　真田幸村] 前後　肩プリントTシャツ
-        %i.fa.fa-chevron-right
+    %ul.navi-item.clearfix
+      %li.navi-item__link-prev
+      -if @previtem.present?
+        = link_to item_path(@previtem), class: 'navi-item__link-prev__text' do
+          %i.fa.fa-chevron-left
+          = @previtem.name  
+      %li.navi-item__link-next
+      -if @nextitem.present? 
+        = link_to item_path(@nextitem), class: 'navi-item__link-next__text' do
+          = @nextitem.name
+          %i.fa.fa-chevron-right
   .item-social
     .item-social__media-box
       = link_to "#", class: 'item-social__media-box__facebook' do

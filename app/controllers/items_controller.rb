@@ -21,6 +21,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     # @image = Image.find(params[:id])
     # binding.pry
+    @previtem = Item.where("id < ?", @item.id).order("id DESC").first
+    @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
+    # @saleritem = Item.where(user_id: current_user.id).order("RAND()").limit(6)
+    # @categoryitem = Item.where().order("RAND()").limit(6)
   end
 
   def new
@@ -42,10 +46,21 @@ class ItemsController < ApplicationController
   def end
   end
 
+  def edit
+@item = Item.find(params[:id])
+  end
+  
+  def update
+  end
+
+  def editprev
+    @item = Item.find(params[:id])
+  end
 
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    redirect_to controller: 'users', action: 'show'
   end
 
   
