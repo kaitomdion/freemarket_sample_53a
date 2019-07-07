@@ -91,7 +91,9 @@ $(document).on('turbolinks:load',function(){
   $('#child-form').css("display" , "none");
   $('#grandchild-form').css("display" , "none");
   $(".item-contents__main__form__detail__form-box__form-group3__select-wrap1").on("change",function(){
+    console.log('hoge')
     var parentValue = document.getElementById("parent-form").value;
+    console.log(parentValue)
     if (parentValue == "") {
       $('#child-form').css("display" , "none");
       $('#grandchild-form').css("display" , "none");
@@ -103,7 +105,7 @@ $(document).on('turbolinks:load',function(){
         dataType: 'json'
       })
       .done(function(child){
-        
+        console.log(url)
         $('#child-form').empty();
         // $('#child-form').parent().css("display", "");
         $("#child-form").append(Selecthtml);
