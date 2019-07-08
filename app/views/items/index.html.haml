@@ -9,213 +9,94 @@
   .contents
     %h2.items-head ピックアップカテゴリー
     .items-contents
+      -# = render partial: '/items/items_category/ladies', collection: @items_ladies
       %h3.items-contents__title.clearfix 
         =link_to "", class: "items-contents__title__name" do
           レディース新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m71731197792_1.jpg?1553731165",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence アメリカンアパレル ショートパンツ ターコイズ 28/29
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥800
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m33579173488_1.jpg?1561354655", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence 個性的 ゴールドピアス
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥1,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m20890562627_1.jpg?1560998685", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence アンティーク ロザリオ シルバー製一点物 デッドストック
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥3,650
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m16418831732_1.jpg?1561358344", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence PRADA巾着ポーチ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥2,500
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        - @items_ladies.each do |item|
+          .items-contents__boxes__box
+            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag (item.images[0][:url]), size: "213x220"
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        
     .items-contents
       %h3.items-contents__title.clearfix 
         =link_to "", class: "items-contents__title__name" do
           メンズ新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m53907850233_1.jpg?1561362429",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ライター2本セット
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥500
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m67514043292_1.jpg?1561362429", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ジッポ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥4,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m89474258674_1.jpg?1561292857", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence サングラス
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥5,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m88529063210_1.jpg?1553688073", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence カルティエ マストライン レザー がま口 長財布 ボルドー
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥2,600
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        -# = render partial: 'item', collection: @items_ladies
+        - @items_mens.each do |item|
+          .items-contents__boxes__box
+            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag (item.images[0][:url]), size: "213x220"
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
     .items-contents
       %h3.items-contents__title.clearfix 
         =link_to "", class: "items-contents__title__name" do
           ベビー・キッズ新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m18389054034_1.jpg?1560585704",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence 地球儀
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥1,500
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m43988486283_1.jpg?1561362398", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ダブルビー DOUBLE.B
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥600
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m33409927806_1.jpg?1548074966", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence 70 80 新品 紺 POLO ポロ タイツ 模様あり a-261 20
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥444
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m16763541993_1.jpg?1561362398", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence セラフ スカート インナーパンツ付き 110cm
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥300
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        -# = render partial: 'item', collection: @items_ladies
+        - @items_kids.each do |item|
+          .items-contents__boxes__box
+            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag (item.images[0][:url]), size: "213x220"
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
     .items-contents
       %h3.items-contents__title.clearfix 
         =link_to "", class: "items-contents__title__name" do
           コスメ・香水・美容 新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence YSL グロス 39
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥1,555
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m51813457071_1.jpg?1561362398", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence よーじや あぶらとり紙
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥300
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m70502557113_1.jpg?1561362398", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence すごくおいしいフルーツ青汁 ゴクリッチ29個
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥1,250
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m85141085154_1.jpg?1561362397", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ビタブリッドC フェイス ブライトニング 3g
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥3,600
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        -# = render partial: 'item', collection: @items_ladies
+        - @items_cosmetics.each do |item|
+          .items-contents__boxes__box
+            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag (item.images[0][:url]), size: "213x220"
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
   .contents
     %h2.items-head ピックアップブランド
     .items-contents

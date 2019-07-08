@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_30_015122) do
+ActiveRecord::Schema.define(version: 2019_06_29_095614) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,17 +31,9 @@ ActiveRecord::Schema.define(version: 2019_06_30_015122) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.string "ancestry"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "category_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category_id"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_items_on_category_id"
-    t.index ["item_id"], name: "index_category_items_on_item_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_06_30_015122) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "price"
+    t.integer "price"
     t.bigint "shipping_region_id"
     t.bigint "shipping_method_id"
     t.bigint "shipping_status_id"
@@ -68,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_06_30_015122) do
     t.bigint "transaction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["shipping_burden_id"], name: "index_items_on_shipping_burden_id"
     t.index ["shipping_day_id"], name: "index_items_on_shipping_day_id"
     t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id"
@@ -111,12 +105,6 @@ ActiveRecord::Schema.define(version: 2019_06_30_015122) do
 
   create_table "shipping_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

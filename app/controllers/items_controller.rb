@@ -1,21 +1,60 @@
 class ItemsController < ApplicationController
 
   def index
+    # @items_ladies = Item.all.order("RAND()").limit(4)
+    # @items_ladies = Item.where(category_id: 1).order("RAND()").limit(4)
+    @items_ladies = Item.ladies
+    @items_mens = Item.mens
+    @items_kids = Item.kids
+    @items_cosmetics = Item.cosmetics
+    @items_chanel = Item.all
+    @items_louisvuitton = Item.all
+    @items_supreme = Item.all
+    @items_nike = Item.all
   end
 
   def show
+    @item = Item.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
+    # @image = Image.find(params[:id])
+    # binding.pry
+    @previtem = Item.where("id < ?", @item.id).order("id DESC").first
+    @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
   end
 
   def new
     @item = Item.new
-    10.times { @item.images.build }
-    @categories = Category.all
+    # 10.times { @item.images.build }
+    @item.images.build
+    # @categories = Category.all
+    # @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.where(id: 1..13)
   end
 
   def create
     # binding.pry
-    Item.create(item_params)
-    redirect_to root_path, notice: '商品を出品しました'
+    @item = Item.new(item_params)
+    unless @item.valid?
+      render '/items/new'
+    else  
+      @item.save
+      redirect_to root_path, notice: '商品を出品しました'  
+    end
+  end
+
+  def search
+    # @parents = Category.where(id: 1..13)
+    # @childrens = @parents.where(id: params[:id])
+    respond_to do |format|
+      format.html
+      format.json do
+        if params[:parent_id]
+          @children = Category.find(params[:parent_id]).children
+         else
+          @grandchildren = Category.find(params[:children_id]).children
+        end
+      end
+    end
   end
 
   def confirm
@@ -24,9 +63,44 @@ class ItemsController < ApplicationController
   def end
   end
   
+  def editprev
+    @item = Item.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to controller: 'users', action: 'show'
+  end
+
+  
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, images_attributes: [:url, :item_id])
+    @params_items = params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :item_id])
+    # params_int(@params_items)
   end
-end
+  
+  # def params_int(model_params)
+  #   model_params.each do |key,value|
+  #     unless key == 'images_attributes'
+  #       if integer_string?(value)
+  #         model_params[key] = value.to_i
+  #       end
+  #     end
+  #     if key == 'images_attributes'
+  #       model_params[key] = value
+  #     end
+  #   end
+  # end
+ 
+  # def integer_string?(str)
+  #   if str.present?
+  #   Integer(str)
+  #   true
+  #   end
+  # rescue ArgumentError
+  #   false
+  # end
 
+end

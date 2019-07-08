@@ -23,10 +23,14 @@ Rails.application.routes.draw do
       get 'account_information'
     end
   end
-  resources :items, only: [:index, :show, :new, :create] do
+  resources :items, only: [:index, :show, :new,:destroy,:create,:edit] do
     collection do
       get 'confirm'
       get 'end'
+      get 'search'
+    end
+    member do
+      get :editprev
     end
   end
   resources :cards, only: [:index, :new, :create] 
