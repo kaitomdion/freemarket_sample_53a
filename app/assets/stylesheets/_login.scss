@@ -1,11 +1,11 @@
-.login-up-header{
+.login-header{
   background: rgb(245 , 245 , 245);
   height: 789px;
 .login-up{
     display: block;
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 
-    .login-up-content{
+    &-content{
       width: 500px;
       height: 600px;
       margin: 0 auto;
@@ -18,12 +18,12 @@
         font-weight: bold;
       }
 
-      .login-up-content-main{
+      &-main{
         padding: 64px;
         height: 182px;
         border-top: 1px solid rgb(245 , 245 , 245);
 
-        .login-up-content-main-content{
+        &-content{
           width: 320px;
           height: 182px;
           margin: 0 auto;
