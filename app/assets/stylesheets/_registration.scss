@@ -53,6 +53,10 @@
               font-weight: 600;
               display: inline-block;
               font-size: 14px;
+              &__error {
+                color: red;
+                margin-top: 5px;
+              }
             }
             &_input{
               width: 100%;

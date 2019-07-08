@@ -27,6 +27,8 @@
             %P.sms_confirmation-form-group-first_label
               携帯電話の番号
             = f.telephone_field  :phone_number, class: "sms_confirmation-form-group-first_input", placeholder: "携帯電話の番号を入力"
+            - if @user.errors.any? && @user.phone_number.blank?
+              .sms_confirmation-form-group-first_label__error 電話番号を入力してください
             %p.form-info_text 本人確認のため、携帯電話のSMS(ショートメッセージ)を利用して認証を行います。
             
             .foom__a.actions

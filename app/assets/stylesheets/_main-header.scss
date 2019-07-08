@@ -175,6 +175,23 @@
               line-height: 30px;
               border-radius: 4px;
             }
+            &__page {
+              color: black;
+              text-decoration: none;
+              margin-right: 10px;
+              .fa-heart {
+                color: #ccc;
+              }
+              .fa-bell {
+                color: #ccc;
+              }
+              .fa-check {
+                color: #ccc;
+              }
+            }
+            &__page:hover {
+              color: #0099e8;
+            }
           }
         }
       }
