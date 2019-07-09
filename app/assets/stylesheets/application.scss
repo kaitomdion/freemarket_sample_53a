@@ -1,6 +1,8 @@
 @import "./config/reset";
 @import "font-awesome";
 @import "./items.index";
+@import "slick-theme"; 
+@import "slick";
 @import "./detail";
 @import "./exhibition";
 @import "./cards.index";
@@ -32,3 +34,4 @@
 @import "./cards.create";
 @import "./items.banner";
 @import "editprev";
+

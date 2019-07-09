@@ -42,6 +42,23 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    # binding.pry
+    item.update(item_params)
+    
+    # if @item.update
+     redirect_to root_path(@item), notice: 'itemを編集しました'
+    # else
+    #   render :edit
+    # end
+  end
+
+
   def search
     # @parents = Category.where(id: 1..13)
     # @childrens = @parents.where(id: params[:id])
@@ -77,7 +94,7 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    @params_items = params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :item_id])
+    @params_items = params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id])
     # params_int(@params_items)
   end
   
