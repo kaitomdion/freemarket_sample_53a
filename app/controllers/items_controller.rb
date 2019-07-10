@@ -65,6 +65,7 @@ class ItemsController < ApplicationController
   
   def editprev
     @item = Item.find(params[:id])
+    @images = @item.images
     @category = Category.find_by(id: @item.category_id)
   end
 
