@@ -15,11 +15,13 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @images = @item.images
     @category = Category.find_by(id: @item.category_id)
-    # @image = Image.find(params[:id])
-    # binding.pry
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
     @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
+    @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order("RAND()").limit(6)
+    @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order("RAND()").limit(6)
+    @user = User.where(saler_id: @item.saler_id)
   end
 
   def new
