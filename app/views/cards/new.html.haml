@@ -7,7 +7,7 @@
       .credit-main-content
         %h2.credit-main-content_head
           クレジットカード情報入力
-        = form_for(root_path) do |f|
+        = form_with model: @card do |f|
           .credit_form-content
             .credit_form-group
               %P.credit_form-group_label
@@ -81,5 +81,5 @@
                   %span.quiestion-tag
                   カード裏面の番号とは？
             #card_token
-            = submit_tag "追加する", id: "token_submit", class:"credit_form_btn"
+            = f.submit_tag "追加する", id: "token_submit", class:"credit_form_btn"
 = render 'items/main-footer'
