@@ -17,8 +17,9 @@
         %a{:href => "/jp/sell/"}  出品する
         %i.fa.fa-chevron-right
       %li
-        %a{:href => "/jp/mypage/listings/listing/"}  出品した商品-出品中
-        %i.fa.fa-chevron-right
+        = link_to itemlist_user_path(current_user.id) do
+          出品した商品-出品中
+          %i.fa.fa-chevron-right
       %li
         %a{:href => "/jp/mypage/listings/in progress/"}  出品した商品-取引中
         %i.fa.fa-chevron-right
