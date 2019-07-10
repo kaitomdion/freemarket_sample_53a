@@ -6,14 +6,14 @@
       %section.l-chapter-container
         %h2.l-chapter-header プロフィール
         %form
-          %input{:name => "__csrf_value", :type => "hidden", :value => "a948a725c9396101846ac1f803a7c842401a3dde08ae1c38871065ce8ac2a24055ef8ecbfb0c4081bb8828522fa7e7e22d62f74d15b9873ddb459461e9703a8f1"}/
+          %input{name: "__csrf_value", type: "hidden", value: "a948a725c9396101846ac1f803a7c842401a3dde08ae1c38871065ce8ac2a24055ef8ecbfb0c4081bb8828522fa7e7e22d62f74d15b9873ddb459461e9703a8f1"}/
           .setting-profile-icon
             %figure.profile-profile
-              %img.image-image{:height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+              %img.image-image{height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width:  "60"}/
             %input.input-default{name: "nickname", placeholder: "例)AYA☆セール中", type: "text", value: ""}/
           .setting-profile-content
-            %textarea.textarea-default{:name => "introduction", :placeholder => "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
-            %button.btn-default.btn-red{:type => "submit"} 変更する
+            %textarea.textarea-default{name: "introduction", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+            %button.btn-default.btn-red{type: "submit"} 変更する
     = render 'side-bar'
   .aside
   = render 'items/main-footer'
