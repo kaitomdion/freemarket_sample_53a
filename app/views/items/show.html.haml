@@ -2,11 +2,19 @@
   = render "main-header"
   .show
     .show__name
-      = @item.name 
+      = @item.name
     .show__contents.clearfix
       .show__contents__item-mainImage
-        - @item.images.each do |image|
-          = image_tag (@item.images[0][:url]), size: "250x250"
+        %div.slick
+          #wrap
+            %ul#slider
+              %li.slide-item
+              - @images.each do |image|
+                = image_tag(image.url.url, size: "225x300",class:"main-image")
+            %ul#thumbnail-list
+              %li.thumbnail-item
+              - @images.each do|image|
+                = image_tag(image.url.url,size:"60x60")
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -127,73 +135,41 @@
     .item-user-profile__container.clearfix
       .item-user-profile__container__head
         = link_to "#", class: "item-user-profile__container__head__link" do
-          ◯◯さんのその他の作品
+          -# ="#{@user.nickname}さんのその他の作品"
       .item-user-profile__container__contents.clearfix
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
-        .item-user-profile__container__contents__box
-          =link_to "", class: "item-user-profile__container__contents__box__link" do
-            .item-user-profile__container__contents__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m59685340502_1.jpg?1561362398",height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" }
-            .item-user-profile__container__contents__box__text
-              %h3.item-user-profile__container__contents__box__text__sentence YSL グロス 39
-              .item-user-profile__container__contents__box__text__num
-                .item-user-profile__container__contents__box__text__num__price ￥1,555
-                .item-user-profile__container__contents__box__text__num__like 
-                  %i.far.fa-heart
-              .item-user-profile__container__contents__box__text__tax (税込)
+        - @useritem.each do |useritem|
+          .item-user-profile__container__contents__box
+            =link_to "", class: "item-user-profile__container__contents__box__link" do
+              .item-user-profile__container__contents__box__photo
+                = image_tag (useritem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
+              .item-user-profile__container__contents__box__text
+                %h3.item-user-profile__container__contents__box__text__sentence 
+                  = useritem.name
+                .item-user-profile__container__contents__box__text__num
+                  .item-user-profile__container__contents__box__text__num__price 
+                    = number_to_currency useritem.price
+                  .item-user-profile__container__contents__box__text__num__like 
+                    %i.far.fa-heart
+                .item-user-profile__container__contents__box__text__tax (税込)
+  .item-user-profile
+    .item-user-profile__container.clearfix
+      .item-user-profile__container__head
+        = link_to "#", class: "item-user-profile__container__head__link" do
+          = "#{@category.name}のその他の商品"
+      .item-user-profile__container__contents.clearfix
+        - @childitem.each do |childitem|
+          .item-user-profile__container__contents__box
+            =link_to "", class: "item-user-profile__container__contents__box__link" do
+              .item-user-profile__container__contents__box__photo
+                = image_tag (childitem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
+              .item-user-profile__container__contents__box__text
+                %h3.item-user-profile__container__contents__box__text__sentence 
+                  = childitem.name
+                .item-user-profile__container__contents__box__text__num
+                  .item-user-profile__container__contents__box__text__num__price 
+                    = number_to_currency childitem.price
+                  .item-user-profile__container__contents__box__text__num__like 
+                    %i.far.fa-heart
+                .item-user-profile__container__contents__box__text__tax (税込)        
   = render "item_banner"
   = render "main-footer"
