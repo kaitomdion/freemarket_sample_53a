@@ -1,0 +1,340 @@
+.main-container{
+  margin:40px auto 0;
+  width:1020px;
+  height:1292px;
+  display:block;
+  padding:0 0 40px;
+  .main-content{
+    float:right;
+    width:700px;
+    height:1189px;
+    .tabs {
+      // margin-top: 12px;
+      // width:100%;
+      .tab-label1 {
+        // height:74px;
+        // width:345px;
+        // display: inline-block;
+        // border-top: 1px solid #999;
+        // background-color: #f3f3f3;
+        // border-bottom: none;
+        // font-size:18px;
+        // text-align:center;
+        // vertical-align:center;
+        display:block;
+        height:72px;
+        width:50%;
+        float:left;
+        text-align:center;
+        line-height:74px;
+        background:#eee;
+        // border-top:2px solid red;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .tab-label2 {
+        display:block;
+        height:74px;
+        width:50%;
+        float:right;
+        text-align:center;
+        line-height:74px;
+        background:#eee;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      input[name="tab-radio"] {
+        display: none;
+      }
+      .tab-content {
+        display: none;
+        // border: 1px solid #999;
+        // padding: 10px;
+        min-height: 200px;
+        width:700px;
+        .main-content-tabs__line__list__notice{
+          list-style:none;
+          border-bottom:1px solid rgb(245,245,245);
+          .main-content-tabs__line__list__notice__field{
+            box-sizing: border-box;
+            display:flex;
+            min-height: 80px;
+            padding: 16px;
+            color: #333;
+            text-decoration: none;
+            margin:0;
+            width:100%;
+            .main-content-tabs__line__list__notice__field__figure{
+              position: relative;
+              overflow: hidden;
+              float: left;
+              width: 48px;
+              height: 48px;
+              margin:0;
+              padding:0;
+              .main-content-tabs__line__list__notice__field__figure__image{
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: 1;
+              width:100%;
+              height:100%;
+              }
+            }
+          }
+          .mypage-item-body.show-stock-item{
+            .mypage-item-text{
+
+            }
+            .mypage-item-body{
+              .listing-item-count{
+              .icon-like-border{
+
+              }
+              }
+              .mypage-item-status.bold.awaiting{
+                font-size:13px;
+                background-color:blue;
+                font-weight: 600;
+                color:white;
+                width:40px;
+              }
+            }
+          }
+        }
+        .main-content-tabs__line__list__back{
+          display: block;
+          height: 60px;
+          padding: 16px;
+          color: #333;
+          background-color:white;
+          &-text{
+            display: block;
+            height: 56px;
+            margin: 0 auto;
+            background: #eee;
+            color: #333;
+            line-height: 56px;
+            text-align: center;
+          }
+      }
+        .mypage-item-not-found.bold{
+        margin-top:50px;
+        padding: 160px 0 60px;
+        background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?61790013);
+        background-repeat: no-repeat;
+        background-position: center 40px;
+        background-size: 78px 85px;
+        text-align: center;
+        font-size: 16px;
+        color: #ccc;
+        }
+      }
+      #tab-1:checked ~ .tab-1-content, #tab-2:checked ~ .tab-2-content {
+        display: block;
+      }
+      input[name="tab-radio"]:checked + .tab-label1 {
+        background-color: #fff;
+        border-top:2px solid red;
+      }
+      input[name="tab-radio"]:checked + .tab-label2 {
+        background-color: #fff;
+        border-top:2px solid red;
+      }
+    }
+    .main-content-purchace{
+      margin: 80px 0 0;
+      background: #fff;
+      min-height:382px;
+      width:700px;
+      &__head{
+        padding:0 16px;
+        background: #fafafa;
+        font-size: 16px;
+        line-height: 72px;
+        font-weight:550;
+      }
+      .tabs{
+        .tab-label3 {
+          // height:74px;
+          // width:345px;
+          // display: inline-block;
+          // border-top: 1px solid #999;
+          // background-color: #f3f3f3;
+          // border-bottom: none;
+          // font-size:18px;
+          // text-align:center;
+          // vertical-align:center;
+          display:inline-block;
+          height:72px;
+          width:233px;
+          // float:left;
+          text-align:center;
+          line-height:74px;
+          background:#eee;
+          // border-top:2px solid red;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        .tab-label4 {
+          display:inline-block;
+          height:74px;
+          width:233px;
+          // float:right;
+          text-align:center;
+          line-height:74px;
+          background:#eee;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        .tab-label5 {
+          display:inline-block;
+          height:74px;
+          width:233px;
+          // float:right;
+          text-align:center;
+          line-height:74px;
+          background:#eee;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        input[name="tab-tv"] {
+          display: none;
+        }
+        .tab-content {
+          display: none;
+          border: 1px solid #999;
+          // padding: 10px;
+          min-height: 200px;
+          width:700px;
+          // .main-content-tabs__line__list__todo{
+          //   list-style:none;
+          //   border-bottom:1px solid rgb(245,245,245);
+          //   &__field{
+          //     box-sizing: border-box;
+          //     display:flex;
+          //     min-height: 80px;
+          //     padding: 16px;
+          //     color: #333;
+          //     text-decoration: none;
+          //     margin:0;
+          //     width:100%;
+          //     &__figure{
+          //       position: relative;
+          //       overflow: hidden;
+          //       float: left;
+          //       width: 48px;
+          //       height: 48px;
+          //       margin:0;
+          //       padding:0;
+          //       &__image{
+          //         position: absolute;
+          //         top: 0;
+          //         right: 0;
+          //         bottom: 0;
+          //         left: 0;
+          //         z-index: 1;
+          //         width:100%;
+          //         height:100%;
+          //         }
+          //     }
+          //     .main-content-tabs__line__list__todo--textarea{
+          //       margin: 0 40px 0 28px;
+          //       position:relative;
+          //       width:560px;
+          //       &__text{
+          //       box-sizing:border-box;
+          //       max-height: 4.4em;
+          //       -webkit-line-clamp: 3;
+          //       -webkit-box-orient: vertical;
+          //       line-height: 1.5;
+          //       min-height:21px;
+          //       font-size:14px;
+          //       display:inline-block;
+          //       }
+          //       &__timebox{
+          //         display:block;
+          //         &-trihiki{
+          //           margin: 8px 0 0 0;
+          //           padding: 5px 6px;
+          //           border-radius: 2px;
+          //           font-size: 12px;
+          //           color: #fff;
+          //           background: #888;
+          //           width: 50px;
+          //           font-weight:600;
+          //         }
+          //       }
+          //       .fa.fa-chevron-right{
+          //         display:inline-block;
+          //         margin:auto;
+          //         color:gray;
+          //       }
+          //     }
+          //   }
+          // }
+          .main-content-tabs__line__list__notice
+          .main-content-tabs__line__list__back{
+            display: block;
+            height: 60px;
+            padding: 16px;
+            color: #333;
+            background-color:white;
+            &-text{
+              display: block;
+              height: 56px;
+              margin: 0 auto;
+              background: #eee;
+              color: #333;
+              line-height: 56px;
+              text-align: center;
+            }
+        }
+          .mypage-item-not-found.bold{
+          margin-top:50px;
+          padding: 160px 0 60px;
+          background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?61790013);
+          background-repeat: no-repeat;
+          background-position: center 40px;
+          background-size: 78px 85px;
+          text-align: center;
+          font-size: 16px;
+          color: #ccc;
+          }
+        }
+        #tab-3:checked ~ .tab-3-content, #tab-4:checked ~ .tab-4-content, #tab-5:checked ~ .tab-5-content {
+          display: block;
+        }
+        input[name="tab-tv"]:checked + .tab-label3 {
+          background-color: #fff;
+          border-top:2px solid red;
+        }
+        input[name="tab-tv"]:checked + .tab-label4 {
+          background-color: #fff;
+          border-top:2px solid red;
+        }
+        input[name="tab-tv"]:checked + .tab-label5 {
+          background-color: #fff;
+          border-top:2px solid red;
+        }
+      }
+    }
+    }
+  }
+.aside{
+  height:260px;
+  width:1280px;
+  background-color: orange
+}
+.footer{
+  height:391px;
+  width:1280px;
+  background-color: aqua;
+}
