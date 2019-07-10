@@ -8,18 +8,18 @@
         %h2.main-content-purchace__head
           出品した商品
         .tabs
-          %input#tab-5{:checked => "checked", :name => "tab-tv", :type => "radio"}/
-          %label.tab-label5{:for => "tab-5"} 取引中
-          %input#tab-6{:name => "tab-tv", :type => "radio"}/
-          %label.tab-label6{:for => "tab-6"} 過去の取引
-          %input#tab-7{:name =>"tab-tv", :type => "radio"}/
-          %label#tab-label7{:for => "tab-7"} 売却済み
+          %input#tab-5{:checked : "checked", :name : "tab-tv", :type : "radio"}/
+          %label.tab-label5{:for : "tab-5"} 取引中
+          %input#tab-6{:name : "tab-tv", :type : "radio"}/
+          %label.tab-label6{:for : "tab-6"} 過去の取引
+          %input#tab-7{:name : "tab-tv", :type : "radio"}/
+          %label#tab-label7{:for : "tab-7"} 売却済み
           .tab-content.tab-5-content
             - @saleitem.each do |saleitem|
               %li.main-content-tabs__line__list__notice
-                %a.main-content-tabs__line__list__notice__field{:href =>"/items/#{saleitem.id}/editprev"}
+                %a.main-content-tabs__line__list__notice__field{:href : "/items/#{saleitem.id}/editprev"}
                   %figure.main-content-tabs__line__list__notice__field__figure
-                    = image_tag (saleitem.images[0][:url]), size: "40x40"
+                    = image_tag (saleitem.images.first.url.url), size: "40x40"
                   .mypage-item-body.show-stock-item
                     .mypage-item-text
                       = saleitem.name
@@ -34,7 +34,7 @@
                         出品中
                   %i.icon-arrow-right
             %li.main-content-tabs__line__list__back
-              %a.main-content-tabs__line__list__back-text{:href => "/jp/mypage/notification/"} 一覧を見る
+              %a.main-content-tabs__line__list__back-text{:href : "/jp/mypage/notification/"} 一覧を見る
           .tab-content.tab-6-content
             %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
               %li.mypage-item-not-found.bold 取引中の商品がありません

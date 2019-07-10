@@ -1,20 +1,4 @@
-// .wrapper{
-//   background-color: rgb(245,245,245);
-//   height:2132px;
-//   // width:1280px;
-//   padding:0;
-//   margin:0;
-  // .header{
-  // height:100px;
-  // width:1280px;
-  // background-color:white;
-  // }
-  // .nav{
-  //   height:49px;
-  //   width:1280px;
-  //   background-color:darkmagenta;
-  // }
-  .main-container{
+.main-container{
     margin:40px auto 0;
     width:1020px;
     height:1292px;
@@ -83,18 +67,7 @@
        }
       }
       .tabs {
-        // margin-top: 12px;
-        // width:100%;
         .tab-label1 {
-          // height:74px;
-          // width:345px;
-          // display: inline-block;
-          // border-top: 1px solid #999;
-          // background-color: #f3f3f3;
-          // border-bottom: none;
-          // font-size:18px;
-          // text-align:center;
-          // vertical-align:center;
           display:block;
           height:72px;
           width:50%;
@@ -102,7 +75,6 @@
           text-align:center;
           line-height:74px;
           background:#eee;
-          // border-top:2px solid red;
           &:hover {
             opacity: 0.7;
           }
@@ -125,7 +97,6 @@
         .tab-content {
           display: none;
           border: 1px solid #999;
-          // padding: 10px;
           min-height: 200px;
           width:700px;
           .main-content-tabs__line__list__notice{
@@ -256,15 +227,6 @@
         }
         .tabs{
           .tab-label3 {
-            // height:74px;
-            // width:345px;
-            // display: inline-block;
-            // border-top: 1px solid #999;
-            // background-color: #f3f3f3;
-            // border-bottom: none;
-            // font-size:18px;
-            // text-align:center;
-            // vertical-align:center;
             display:block;
             height:72px;
             width:50%;
@@ -272,7 +234,6 @@
             text-align:center;
             line-height:74px;
             background:#eee;
-            // border-top:2px solid red;
             &:hover {
               opacity: 0.7;
             }
@@ -295,7 +256,6 @@
           .tab-content {
             display: none;
             border: 1px solid #999;
-            // padding: 10px;
             min-height: 200px;
             width:700px;
             .main-content-tabs__line__list__todo{
