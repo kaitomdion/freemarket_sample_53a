@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       get :itemlist
     end
   end
-  resources :items, only: [:index, :show, :new,:destroy,:create,:edit] do
+  resources :items, only: [:index, :show, :new,:destroy,:create,:edit,:update] do
     collection do
       get 'confirm'
       get 'end'
@@ -37,4 +37,5 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create] 
+  resources :brands, only: [:index]
 end

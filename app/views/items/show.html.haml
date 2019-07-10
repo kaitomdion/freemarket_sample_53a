@@ -10,11 +10,11 @@
             %ul#slider
               %li.slide-item
               - @images.each do |image|
-                = image_tag(image[:url], size: "225x300",class:"main-image")
+                = image_tag(image.url.url, size: "225x300",class:"main-image")
             %ul#thumbnail-list
               %li.thumbnail-item
               - @images.each do|image|
-                = image_tag(image[:url],size:"60x60")
+                = image_tag(image.url.url,size:"60x60")
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -141,7 +141,7 @@
           .item-user-profile__container__contents__box
             =link_to "", class: "item-user-profile__container__contents__box__link" do
               .item-user-profile__container__contents__box__photo
-                = image_tag (useritem.images[0][:url]),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
+                = image_tag (useritem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
               .item-user-profile__container__contents__box__text
                 %h3.item-user-profile__container__contents__box__text__sentence 
                   = useritem.name
@@ -161,7 +161,7 @@
           .item-user-profile__container__contents__box
             =link_to "", class: "item-user-profile__container__contents__box__link" do
               .item-user-profile__container__contents__box__photo
-                = image_tag (childitem.images[0][:url]),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
+                = image_tag (childitem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
               .item-user-profile__container__contents__box__text
                 %h3.item-user-profile__container__contents__box__text__sentence 
                   = childitem.name
