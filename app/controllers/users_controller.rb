@@ -38,4 +38,7 @@ class UsersController < ApplicationController
   def account_information
   end
   
+  def itemlist
+    @saleitem = Item.where(saler_id:3)
+  end
 end
