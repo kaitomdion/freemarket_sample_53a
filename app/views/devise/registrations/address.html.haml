@@ -30,18 +30,24 @@
             %span.required-tag
               必須
             = f.text_field :postal_code, class: "address-form-group_input", placeholder: "例)123-4567"
+            - if @user.errors.any? && @user.postal_code.blank?
+              .address-form-group_label__error 郵便番号を入力してください
           .address-form-group1
             %P.address-form-group_label
               都道府県
             %span.required-tag
               必須
             = f.select :shipping_region_id, ShippingRegion.all.collect {|s| [s.name_i18n, s.id]}, {prompt: "---"}, {class: 'item-contents__main__form__detail__form-box__form-group3__select-wrap__select-box'}
-            .address-form-group1
-              %P.address-form-group_label
-                市区町村
-              %span.required-tag
-                必須
+            - if @user.errors.any? && @user.shipping_region_id.blank?
+              .address-form-group_label__error 都道府県を選択してください
+          .address-form-group1
+            %P.address-form-group_label
+              市区町村
+            %span.required-tag
+              必須
             = f.text_field :town, class: "address-form-group_input", placeholder: "例)横浜市緑区"
+            - if @user.errors.any? && @user.town.blank?
+              .address-form-group_label__error 市区町村を入力してください
         .address-main-content_box_send
           .foom__a.actions
             = f.submit "次へ進む", class: "address-submit"

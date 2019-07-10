@@ -66,34 +66,42 @@
   
 
  &-facebook{
-  transition: all ease-out .3s;
-  margin: 16px 0 0;
-  background: #385185;
-  border: 1px solid transparent;
-  color: white;
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  text-align: center;
+    transition: all ease-out .3s;
+    margin: 16px 0 0;
+    background: #385185;
+    border: 1px solid transparent;
+    color: white;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+    &__link {
+      color: white;
+      text-decoration: none;
+    }
 }
 
  &-google{
-  margin: 16px 0 0;
-  border: 1px solid gray;
-  color: yellow;
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  text-align: center;
-  background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+    margin: 16px 0 0;
+    border: 1px solid gray;
+    color: yellow;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+    background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+    &__link {
+      color: black;
+      text-decoration: none;
+    }
 }
 }
 
 .sign-up-submit{
-  color: white;
-  
+  color: black;
+  text-decoration: none;
 }
 
 .far.fa-envelope.fa-2x{

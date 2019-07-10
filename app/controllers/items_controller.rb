@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
 
   def index
-    # @items_ladies = Item.all.order("RAND()").limit(4)
-    # @items_ladies = Item.where(category_id: 1).order("RAND()").limit(4)
     @items_ladies = Item.ladies
     @items_mens = Item.mens
     @items_kids = Item.kids
@@ -17,9 +15,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images
     @category = Category.find_by(id: @item.category_id)
-    # @image = Image.find(params[:id])
-    # binding.pry
-    # @user = User.find(params[:id])
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
     @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
     @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
@@ -29,15 +24,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # 10.times { @item.images.build }
     @item.images.build
-    # @categories = Category.all
-    # @parents = Category.all.order("id ASC").limit(13)
     @parents = Category.where(id: 1..13)
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
     unless @item.valid?
       render '/items/new'
@@ -65,8 +56,6 @@ class ItemsController < ApplicationController
 
 
   def search
-    # @parents = Category.where(id: 1..13)
-    # @childrens = @parents.where(id: params[:id])
     respond_to do |format|
       format.html
       format.json do
@@ -99,30 +88,6 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    @params_items = params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id])
-    # params_int(@params_items)
+    @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id])
   end
-  
-  # def params_int(model_params)
-  #   model_params.each do |key,value|
-  #     unless key == 'images_attributes'
-  #       if integer_string?(value)
-  #         model_params[key] = value.to_i
-  #       end
-  #     end
-  #     if key == 'images_attributes'
-  #       model_params[key] = value
-  #     end
-  #   end
-  # end
- 
-  # def integer_string?(str)
-  #   if str.present?
-  #   Integer(str)
-  #   true
-  #   end
-  # rescue ArgumentError
-  #   false
-  # end
-
 end
