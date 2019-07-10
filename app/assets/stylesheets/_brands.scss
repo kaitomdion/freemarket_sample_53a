@@ -1,0 +1,29 @@
+// Place all the styles related to the brands controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.brand-group{
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  &__name{
+  }
+}
+
+.brand-group-item{
+  margin: 8px 0 0;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  width: 92%;
+  &__name{
+    padding-top: 10px;
+  }
+}

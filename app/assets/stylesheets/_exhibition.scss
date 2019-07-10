@@ -80,20 +80,48 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc(533px / 5 * 1);
+            height: 162px;
+            width: 114px ;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8;
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8;
+                cursor: pointer;
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc((533px / 5 * 4) - 3px);
+              width: calc((533px / 5 * 4) - 23px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -102,40 +130,70 @@
               cursor: pointer;
               position: relative;
               display: block;
-              &__text{
-                font-size: 14px;
-                line-height: 1.5;
-                text-align: center;
-                position: absolute;
-                top: 45%;
-                left: 16px;
-                right: 35px;
-                transform: translate(0, -50%);
-                pointer-events: none;
-                white-space: pre-wrap;
-                word-wrap: break-word;
-                }
-            }
-          
+            &__text{
+              font-size: 14px;
+              line-height: 1.5;
+              text-align: center;
+              position: absolute;
+              top: 45%;
+              left: 16px;
+              right: 35px;
+              transform: translate(0, -50%);
+              pointer-events: none;
+              white-space: pre-wrap;
+              word-wrap: break-word;
+              }
+              .preview{
+                height: 100px;
+                width: 100px;
+              }
+          }     
         }
         &__image3{
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc((533px / 5 * 1) - 3px);
+            height: 162px;
+            width: 114px;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc(533px / 5 * 3);
+              width: calc((533px / 5 * 3) - 40px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -164,20 +222,47 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc((533px / 5 * 1) - 3px);
+            height: 162px;
+            width: 114px ;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc(533px / 5 * 2);
+              width: calc((533px / 5 * 2) - 60px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -206,20 +291,47 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc((533px / 5 * 1) - 3px);
+            height: 162px;
+            width: 114px ;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc(533px / 5 * 1);
+              width: calc((533px / 5 * 1) - 77px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -248,17 +360,43 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
-          // &__view{
-          //   height: 80px;
-          //   width: calc((533px / 5 * 1) - 3px);
-          //   float: left;
-          // }
+          &__view{
+            height: 162px;
+            width: 114px ;
+            float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
+          }
           &__box{
               float: right;
               width: 533px;
@@ -270,6 +408,7 @@
               cursor: pointer;
               position: relative;
               display: block;
+              margin-top: 20px;
               &__text{
                 font-size: 14px;
                 line-height: 1.5;
@@ -290,20 +429,48 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc((533px / 5 * 1) - 3px);
+            height: 162px;
+            width: 114px ;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            margin-top: 20px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc(533px / 5 * 4);
+              width: calc((533px / 5 * 4) - 23px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -312,6 +479,7 @@
               cursor: pointer;
               position: relative;
               display: block;
+              margin-top: 20px;
               &__text{
                 font-size: 14px;
                 line-height: 1.5;
@@ -332,20 +500,48 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc((533px / 5 * 1) - 3px);
+            height: 162px;
+            width: 114px ;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            margin-top: 20px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc(533px / 5 * 3);
+              width: calc((533px / 5 * 3) - 40px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -354,6 +550,7 @@
               cursor: pointer;
               position: relative;
               display: block;
+              margin-top: 20px;
               &__text{
                 font-size: 14px;
                 line-height: 1.5;
@@ -381,13 +578,42 @@
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc((533px / 5 * 1) - 3px);
+            height: 162px;
+            width: 114px ;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            margin-top: 20px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc(533px / 5 * 2);
+              width: calc((533px / 5 * 2) - 60px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -396,6 +622,7 @@
               cursor: pointer;
               position: relative;
               display: block;
+              margin-top: 20px;
               &__text{
                 font-size: 14px;
                 line-height: 1.5;
@@ -416,20 +643,48 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
           &__view{
-            height: 80px;
-            width: calc((533px / 5 * 1) - 3px);
+            height: 162px;
+            width: 114px ;
             float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-right: 7px;
+            margin-top: 20px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
           }
           &__box{
               float: right;
-              width: calc(533px / 5 * 1);
+              width: calc((533px / 5 * 1) - 77px);
               height: 80px;
               padding: 40px;
               background: #f5f5f5;
@@ -438,6 +693,7 @@
               cursor: pointer;
               position: relative;
               display: block;
+              margin-top: 20px;
               &__text{
                 font-size: 14px;
                 line-height: 1.5;
@@ -458,43 +714,44 @@
           width: 614px;
           height: 154px;
           margin: 16px auto 0;
-          // padding-left: 109px;
           display: none;
           &__drop-file{
             background-color: transparent;
             display: none;
           }
-          // &__view{
-          //   height: 80px;
-          //   width: calc((533px / 5 * 1) - 3px);
-          //   float: left;
-          // }
-          // &__box{
-          //     float: right;
-          //     width: 533px;
-          //     height: 80px;
-          //     padding: 40px;
-          //     background: #f5f5f5;
-          //     border: 1px dashed #ccc;
-          //     text-align: center;
-          //     cursor: pointer;
-          //     position: relative;
-          //     display: block;
-          //     &__text{
-          //       font-size: 14px;
-          //       line-height: 1.5;
-          //       text-align: center;
-          //       position: absolute;
-          //       top: 45%;
-          //       left: 16px;
-          //       right: 35px;
-          //       transform: translate(0, -50%);
-          //       pointer-events: none;
-          //       white-space: pre-wrap;
-          //       word-wrap: break-word;
-          //       }
-          //   }
-          
+          &__view{
+            height: 162px;
+            width: 114px ;
+            float: left;
+            background: #f5f5f5;
+            border: 1px dashed #ccc;
+            margin-top: 20px;
+            &__file{
+              height: 120px;
+              width: 100px; 
+              &__preview{
+                object-fit: contain;
+                height: 100px;
+                width: 114px ;
+                padding-top: 10px;
+                
+              }
+            }
+            &__btn{
+              &__left{
+                float: left;
+                padding-left: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+              &__right{
+                float: right;
+                padding-right: 20px;
+                padding-top: 10px;
+                color: #0099e8
+              }
+            }
+          }          
         }
       }
       &__product{
@@ -658,9 +915,6 @@
               }
             }
             &__select-wrap1{
-              // margin: 8px 0 0;
-              // width: 100%;
-              // height: 48px;
               &__select-box{
                 z-index: 2;
                 height: 48px;
@@ -675,9 +929,6 @@
             }
           }
             &__select-wrap2{
-              // margin: 8px 0 0;
-              // width: 100%;
-              // height: 48px;
               &__select-box{
                 z-index: 2;
                 height: 48px;
@@ -693,9 +944,6 @@
             }
           }
           &__select-wrap3{
-            // margin: 8px 0 0;
-            // width: 100%;
-            // height: 48px;
             &__select-box{
               z-index: 2;
               height: 48px;
@@ -712,6 +960,69 @@
         }
           }
           &__form-group4{
+            margin: 40px 0 0;
+            &__label{
+              &__action{
+                background: #ea352d;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            &__select-wrap{
+                margin: 8px 0 0;
+                width: 100%;
+                height: 48px;
+                &__select-box{
+                  z-index: 2;
+                  height: 48px;
+                  padding: 0 16px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                  width: 100%;
+              }
+            }
+          }
+          &__form-group5{
+            display: none;
+            margin: 40px 0 0;
+            &__label{
+              &__action{
+                background: gray;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                color: #fff;
+                font-size: 12px;
+                vertical-align: top;
+              }
+            }
+            &__select-wrap{
+                margin: 8px 0 0;
+                width: 400px;
+                height: 48px;
+                &__select-box{
+                  z-index: 2;
+                  height: 48px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                  width: 400px;
+              }
+            }
+          }
+          &__form-group6{
+            display: none;
             margin: 40px 0 0;
             &__label{
               &__action{
