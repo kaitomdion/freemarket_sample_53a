@@ -1,4 +1,4 @@
-  .show-item
+.show-item
   = render "main-header"
   .show
     .show__name
@@ -6,15 +6,15 @@
     .show__contents.clearfix
       .show__contents__item-mainImage
         %div.slick
-          #wrap
-            %ul#slider
-              %li.slide-item
-              - @images.each do |image|
-                = image_tag(image[:url], size: "225x300",class:"main-image")
-            %ul#thumbnail-list
-              %li.thumbnail-item
-              - @images.each do|image|
-                = image_tag(image[:url],size:"60x60")
+        #wrap
+          %ul#slider
+            %li.slide-item
+            - @images.each do |image|
+              = image_tag(image[:url], size: "225x300",class:"main-image")
+          %ul#thumbnail-list
+            %li.thumbnail-item
+            - @images.each do|image|
+              = image_tag(image[:url],size:"60x60")
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -135,7 +135,7 @@
     .item-user-profile__container.clearfix
       .item-user-profile__container__head
         = link_to "#", class: "item-user-profile__container__head__link" do
-          -# ="#{@user.nickname}さんのその他の作品"
+          ="#{current_user.nickname}さんのその他の作品"
       .item-user-profile__container__contents.clearfix
         - @useritem.each do |useritem|
           .item-user-profile__container__contents__box
