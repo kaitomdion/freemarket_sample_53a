@@ -5,13 +5,21 @@
       = @item.name
     .show__contents.clearfix
       .show__contents__item-photo
-        - @item.images.each do |image|
-          = image_tag (@item.images[0][:url]), size: "250x250"
+        %div.slick
+          #wrap
+            %ul#slider
+              %li.slide-item
+              - @images.each do |image|
+                = image_tag(image[:url], size: "225x300",class:"main-image")
+            %ul#thumbnail-list
+              %li.thumbnail-item
+              - @images.each do|image|
+                = image_tag(image[:url],size:"60x60")
       %table.show__contents__detail-table
         %tbody
           %tr
             %th
-              出品者
+              
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
                 スノーマン
