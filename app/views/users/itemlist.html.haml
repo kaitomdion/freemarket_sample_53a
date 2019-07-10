@@ -1,0 +1,56 @@
+.wrapper
+  = render '/items/main-header'
+  .nav
+    nav-bar
+  .main-container
+    .main-content
+      %section.main-content-purchace
+        %h2.main-content-purchace__head
+          購入した商品
+        .tabs
+          %input#tab-3{:checked => "checked", :name => "tab-tv", :type => "radio"}/
+          %label.tab-label3{:for => "tab-3"} 取引中
+          %input#tab-4{:name => "tab-tv", :type => "radio"}/
+          %label.tab-label4{:for => "tab-4"} 過去の取引
+          %input#tab-5{:name =>"tab-tv",:type => "radio"}/
+          %label#tab-label5{:for => "tab-5"} 売却済み
+          .tab-content.tab-3-content
+            -# %li.main-content-tabs__line__list__todo
+            -#   %a.main-content-tabs__line__list__todo__field{:href => "https://mercari.com/jp/"}
+            -#     %figure.main-content-tabs__line__list__todo__field__figure
+            -#       %img.main-content-tabs__line__list__todo__field__figure__image{:alt => "", "data-src" => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+            -#     .main-content-tabs__line__list__todo--textarea
+            -#       .main-content-tabs__line__list__todo--textarea__text いいね！しました
+            -#       .main-content-tabs__line__list--todo--textarea__timebox
+            -#         %span.main-content-tabs__line__list--todo--textarea__timebox-trihiki 取引完了
+            -#     %i.fa.fa-chevron-right
+            - @saleitem.each do |saleitem|
+              %li.main-content-tabs__line__list__notice
+                %a.main-content-tabs__line__list__notice__field{:href =>"/items/#{saleitem.id}/editprev"}
+                  %figure.main-content-tabs__line__list__notice__field__figure
+                    = image_tag (saleitem.images[0][:url]), size: "40x40"
+                  .mypage-item-body.show-stock-item
+                    .mypage-item-text
+                      = saleitem.name
+                    %div
+                      %span.listing-item-count
+                        %i.icon-like-border
+                        %span 
+                      %span.listing-item-count
+                        %i.icon-message
+                        %span 
+                      .mypage-item-status.bold.awaiting
+                        出品中
+                  %i.icon-arrow-right
+            %li.main-content-tabs__line__list__back
+              %a.main-content-tabs__line__list__back-text{:href => "/jp/mypage/notification/"} 一覧を見る
+          .tab-content.tab-4-content
+            %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+              %li.mypage-item-not-found.bold 取引中の商品がありません
+          .tab-content.tab-5-content
+            %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+              %li.mypage-item-not-found.bold 売却済みの商品はありません
+    = render 'side-bar'
+  .aside
+    aside
+  = render 'items/main-footer'

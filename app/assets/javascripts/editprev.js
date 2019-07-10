@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function() { 
 $(function() {
   // 「Open」ボタンをクリック時に、fadeInメソッドでHTML要素を表示する
   $('#delete__item-btn').on('click', function() {
@@ -25,4 +26,5 @@ $(function() {
       'top': ((h - ch) / 2) + 'px'
     });
   }
+});
 });
