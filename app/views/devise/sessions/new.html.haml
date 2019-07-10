@@ -1,0 +1,30 @@
+.login-header
+  = render "items/header_item"
+  %main.login-up
+    %section.login-up-content
+      %h2.login-up-content_header ログイン
+      .login-up-content-main
+        .login-up-content-main-content
+          .form_actions
+            %i.far.fa-envelope.fa-2x
+            = link_to "メールアドレスで登録する", registration_users_path, class: "sign-up-submit"
+          .form_actions-facebook
+            %i.fab.fa-facebook-square.fa-2x
+            = link_to "Facebookで登録する", "", class: "form_actions-facebook__link"
+          .form_actions-google
+            %i.fab.fa-google.fa-2x  
+            = link_to "Googleで登録する", "", class: "form_actions-google__link"
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "form_actions__confirm", placeholder: "メールアドレス"
+              - if resource.errors.any? && resource.email.empty?
+                %p メールアドレスを入力してください
+            .field
+              = f.password_field :password, autocomplete: "current-password", class: "form_actions__confirm", placeholder: "パスワード"
+              - if resource.errors.any? && resource.password.empty?
+                %p パスワードを入力してください
+            .actions
+              = f.submit "ログイン", class: "actions__btn"
+
+  .login-foot
+    = render "items/footer_item"
