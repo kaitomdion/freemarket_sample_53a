@@ -5,7 +5,18 @@
       .thumbnail__outer__show{style: "left: 0px; width: 100%;"}
         .thumbnail__outer__show__item{style: "width: 100%;"}
           = link_to "", class: "thumbnail__outer__show__item__image" do
-            = image_tag("https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg", class: "thumbnail__outer__show__item__image__p") 
+            #wrap
+              %ul#slider
+                %li.slide-item
+                  %span.slide-inner
+                    %img{:alt => "画像", :src => "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"}/
+                %li.slide-item
+                  %span
+                    = image_tag "home.png", size: "1440x390"
+
+
+            -# -# = image_tag("https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg", class: "thumbnail__outer__show__item__image__p") 
+            -# %img{:alt => "画像", :src => "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"}/
   .contents
     %h2.items-head ピックアップカテゴリー
     .items-contents
@@ -18,7 +29,8 @@
           .items-contents__boxes__box
             =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
-              = image_tag (item.images[0][:url]), size: "213x220"
+              -# = image_tag item.images.first.url, size: "213x220"
+              = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
                 %h3.items-contents__boxes__box__text__sentence 
                   = item.name
@@ -41,7 +53,7 @@
           .items-contents__boxes__box
             =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
-              = image_tag (item.images[0][:url]), size: "213x220"
+              = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
                 %h3.items-contents__boxes__box__text__sentence 
                   = item.name
@@ -63,7 +75,7 @@
           .items-contents__boxes__box
             =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
-              = image_tag (item.images[0][:url]), size: "213x220"
+              = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
                 %h3.items-contents__boxes__box__text__sentence 
                   = item.name

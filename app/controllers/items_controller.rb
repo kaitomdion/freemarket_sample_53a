@@ -1,8 +1,6 @@
 class ItemsController < ApplicationController
 
   def index
-    # @items_ladies = Item.all.order("RAND()").limit(4)
-    # @items_ladies = Item.where(category_id: 1).order("RAND()").limit(4)
     @items_ladies = Item.ladies
     @items_mens = Item.mens
     @items_kids = Item.kids
@@ -15,24 +13,22 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @images = @item.images
     @category = Category.find_by(id: @item.category_id)
-    # @image = Image.find(params[:id])
-    # binding.pry
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
     @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
+    @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
+    @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
+    @user = User.where(saler_id: @item.saler_id)
   end
 
   def new
     @item = Item.new
-    # 10.times { @item.images.build }
     @item.images.build
-    # @categories = Category.all
-    # @parents = Category.all.order("id ASC").limit(13)
     @parents = Category.where(id: 1..13)
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
     unless @item.valid?
       render '/items/new'
@@ -42,9 +38,24 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    # binding.pry
+    item.update(item_params)
+    
+    # if @item.update
+     redirect_to root_path(@item), notice: 'itemを編集しました'
+    # else
+    #   render :edit
+    # end
+  end
+
+
   def search
-    # @parents = Category.where(id: 1..13)
-    # @childrens = @parents.where(id: params[:id])
     respond_to do |format|
       format.html
       format.json do
@@ -77,30 +88,6 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    @params_items = params.require(:item).permit(:name, :description, :price, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :item_id])
-    # params_int(@params_items)
+    @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id])
   end
-  
-  # def params_int(model_params)
-  #   model_params.each do |key,value|
-  #     unless key == 'images_attributes'
-  #       if integer_string?(value)
-  #         model_params[key] = value.to_i
-  #       end
-  #     end
-  #     if key == 'images_attributes'
-  #       model_params[key] = value
-  #     end
-  #   end
-  # end
- 
-  # def integer_string?(str)
-  #   if str.present?
-  #   Integer(str)
-  #   true
-  #   end
-  # rescue ArgumentError
-  #   false
-  # end
-
 end
