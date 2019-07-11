@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'merukari53a'
-  config.asset_host = 'https://ap-northeast-1.amazonaws.com/merukari53a'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/merukari53a'
 end

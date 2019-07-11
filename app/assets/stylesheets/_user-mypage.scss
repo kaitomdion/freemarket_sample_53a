@@ -8,7 +8,7 @@
       float:right;
       width:700px;
       height:1189px;
-      .main-content-mypage-user{
+      &-mypage-user{
         box-sizing:border-box;
         position: relative;
         height:200px;
@@ -45,7 +45,7 @@
             font-weight:600;
             text-align: center;
           }
-        .main-content-mypage-number{
+        &-mypage-number{
           font-size:0;
           margin:8px 0 0;
           &__evaluation{
@@ -99,10 +99,10 @@
           border: 1px solid #999;
           min-height: 200px;
           width:700px;
-          .main-content-tabs__line__list__notice{
+          &-tabs__line__list__notice{
             list-style:none;
             border-bottom:1px solid rgb(245,245,245);
-            .main-content-tabs__line__list__notice__field{
+            &__field{
               box-sizing: border-box;
               display:flex;
               min-height: 80px;
@@ -111,7 +111,7 @@
               text-decoration: none;
               margin:0;
               width:100%;
-              .main-content-tabs__line__list__notice__field__figure{
+              &__figure{
                 position: relative;
                 overflow: hidden;
                 float: left;
@@ -119,7 +119,7 @@
                 height: 48px;
                 margin:0;
                 padding:0;
-                .main-content-tabs__line__list__notice__field__figure__image{
+                &__image{
                 position: absolute;
                 top: 0;
                 right: 0;
@@ -130,11 +130,11 @@
                 height:100%;
                 }
               }
-              .main-content-tabs__line__list--textarea{
+              &--textarea{
                 margin: 0 40px 0 28px;
                 position:relative;
                 width:560px;
-                .main-content-tabs__line__list--textarea__text{
+                &__text{
                 box-sizing:border-box;
                 max-height: 4.4em;
                 -webkit-line-clamp: 3;
@@ -144,7 +144,7 @@
                 font-size:14px;
                 display:inline-block;
                 }
-                .main-content-tabs__line__list--textarea__timebox{
+                &__timebox{
                   display:block;
                   .fa.fa-clock-o{
                     font-family: 'icon-font';
@@ -289,7 +289,7 @@
                     height:100%;
                     }
                 }
-                .main-content-tabs__line__list__todo--textarea{
+                &--textarea{
                   margin: 0 40px 0 28px;
                   position:relative;
                   width:560px;
@@ -323,33 +323,6 @@
                   }
                 }
               }
-            }
-            .main-content-tabs__line__list__back{
-              display: block;
-              height: 60px;
-              padding: 16px;
-              color: #333;
-              background-color:white;
-              &-text{
-                display: block;
-                height: 56px;
-                margin: 0 auto;
-                background: #eee;
-                color: #333;
-                line-height: 56px;
-                text-align: center;
-              }
-          }
-            .mypage-item-not-found.bold{
-            margin-top:50px;
-            padding: 160px 0 60px;
-            background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?61790013);
-            background-repeat: no-repeat;
-            background-position: center 40px;
-            background-size: 78px 85px;
-            text-align: center;
-            font-size: 16px;
-            color: #ccc;
             }
           }
           #tab-3:checked ~ .tab-3-content, #tab-4:checked ~ .tab-4-content {

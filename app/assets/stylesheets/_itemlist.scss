@@ -8,7 +8,7 @@
     float:right;
     width:700px;
     height:1189px;
-    .tabs {
+    .tabs{
       input[name="tab-radio"] {
         display: none;
       }
@@ -19,7 +19,7 @@
         .main-content-tabs__line__list__notice{
           list-style:none;
           border-bottom:1px solid rgb(245,245,245);
-          .main-content-tabs__line__list__notice__field{
+          &__field{
             box-sizing: border-box;
             display:flex;
             min-height: 80px;
@@ -28,7 +28,7 @@
             text-decoration: none;
             margin:0;
             width:100%;
-            .main-content-tabs__line__list__notice__field__figure{
+            &__figure{
               position: relative;
               overflow: hidden;
               float: left;
@@ -36,7 +36,7 @@
               height: 48px;
               margin:0;
               padding:0;
-              .main-content-tabs__line__list__notice__field__figure__image{
+              &__image{
               position: absolute;
               top: 0;
               right: 0;
@@ -49,15 +49,6 @@
             }
           }
           .mypage-item-body.show-stock-item{
-            .mypage-item-text{
-
-            }
-            .mypage-item-body{
-              .listing-item-count{
-              .icon-like-border{
-
-              }
-              }
               .mypage-item-status.bold.awaiting{
                 font-size:13px;
                 background-color:blue;
@@ -65,7 +56,6 @@
                 color:white;
                 width:40px;
               }
-            }
           }
         }
         .main-content-tabs__line__list__back{
@@ -129,7 +119,6 @@
           border: 1px solid #999;
           min-height: 200px;
           width:700px;
-          .main-content-tabs__line__list__notice
           .main-content-tabs__line__list__back{
             display: block;
             height: 60px;
