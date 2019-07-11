@@ -31,6 +31,12 @@ class Item < ApplicationRecord
   scope :supreme,  -> {where(brand_id: 24).limit(4)}
   scope :nike,     -> {where(brand_id: 41).limit(4)}
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where(['name LIKE ?', "%#{search}%"])
+  end
+
+
 end
 
 

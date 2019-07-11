@@ -1,5 +1,8 @@
 .show-item
   = render "main-header"
+  - breadcrumb :item, @item
+  .breadcrumb
+    = breadcrumbs pretext: "", separator: " &rsaquo; "
   .show
     .show__name
       = @item.name
@@ -22,7 +25,7 @@
               出品者
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
-                スノーマン
+                =@user.nickname
               .show__contents__detail-table__face
                 .show__contents__detail-table__face__user-ratings1
                   %i.fas.fa-laugh
@@ -54,7 +57,7 @@
               ブランド
             %td
               = link_to "#", class: 'show__contents__detail-table__brand' do
-                コーチ
+                = @brand.name
           %tr
             %th
               商品の状態
@@ -77,8 +80,7 @@
               = @item.shipping_day.name_i18n
     .show__text-center
       .show__text-center__price
-        ￥ 
-        = @item.price
+        = number_to_currency @item.price
       .show__text-center__tax
         (税込)
       .show__text-center__fee
@@ -135,7 +137,7 @@
     .item-user-profile__container.clearfix
       .item-user-profile__container__head
         = link_to "#", class: "item-user-profile__container__head__link" do
-          -# ="#{@user.nickname}さんのその他の作品"
+          ="#{current_user.nickname}さんのその他の作品"
       .item-user-profile__container__contents.clearfix
         - @useritem.each do |useritem|
           .item-user-profile__container__contents__box
@@ -170,6 +172,6 @@
                     = number_to_currency childitem.price
                   .item-user-profile__container__contents__box__text__num__like 
                     %i.far.fa-heart
-                .item-user-profile__container__contents__box__text__tax (税込)        
+                .item-user-profile__container__contents__box__text__tax (税込)
   = render "item_banner"
   = render "main-footer"

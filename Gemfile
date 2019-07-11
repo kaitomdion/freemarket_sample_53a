@@ -76,6 +76,7 @@ gem "ancestry"
 
 gem 'enum'
 gem 'enum_help'
+gem "gretel"
 
 
 group :production do
@@ -95,3 +96,5 @@ group :development do
 
   gem 'spring'
 end
+
+gem 'payjp'

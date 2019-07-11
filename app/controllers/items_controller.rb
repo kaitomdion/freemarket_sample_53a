@@ -14,12 +14,13 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = @item.images
+    @brand =Brand.find_by(id: @item.brand_id)
     @category = Category.find_by(id: @item.category_id)
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
     @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
     @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
     @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
-    @user = User.where(saler_id: @item.saler_id)
+    @user = User.find_by(id: @item.saler_id)
   end
 
   def new
@@ -56,6 +57,7 @@ class ItemsController < ApplicationController
 
 
   def search
+    @items = Item.search(params[:search])
     respond_to do |format|
       format.html
       format.json do
@@ -76,6 +78,7 @@ class ItemsController < ApplicationController
   
   def editprev
     @item = Item.find(params[:id])
+    @images = @item.images
     @category = Category.find_by(id: @item.category_id)
   end
 
@@ -88,6 +91,6 @@ class ItemsController < ApplicationController
   
   private
   def item_params
-    @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id])
+    @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id]).merge(saler_id: current_user.id)
   end
 end
