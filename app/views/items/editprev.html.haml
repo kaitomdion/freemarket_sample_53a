@@ -5,21 +5,13 @@
       = @item.name
     .show__contents.clearfix
       .show__contents__item-photo
-        %div.slick
-          #wrap
-            %ul#slider
-              %li.slide-item
-              - @images.each do |image|
-                = image_tag(image.url.url, size: "225x300", class:"main-image")
-            %ul#thumbnail-list
-              %li.thumbnail-item
-              - @images.each do|image|
-                = image_tag(image.url.url,size:"60x60")
+        - @item.images.each do |image|
+          = image_tag (@item.images.first.url.url), size: "250x250"
       %table.show__contents__detail-table
         %tbody
           %tr
             %th
-              
+              出品者
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
                 スノーマン
@@ -119,7 +111,7 @@
     .btn-cancel-div
       %button#modal-btn-cancel{"data-close" => "modal"} キャンセル
     .mo
-    %form.modalform{:action => "/jp/items/cancel/m26056369093/", :method => "POST", :novalidate => "novalidate"}
-      %input.inputmodal{:name => "__csrf_value", :type => "hidden", :value => "2b69939eda8517e27e650ea055c6d7a9c88604b6edfa6dfbe5083a654d0aacefcb1c723bfa2e131dbd4d6b9b4ebc77175cbd05179955a43cddf28ad786884d59d"}
+    %form.modalform{action: "/jp/items/cancel/m26056369093/",method: "POST", novalidate:"novalidate"}
+      %input.inputmodal{name: "__csrf_value", type: "hidden", value: "2b69939eda8517e27e650ea055c6d7a9c88604b6edfa6dfbe5083a654d0aacefcb1c723bfa2e131dbd4d6b9b4ebc77175cbd05179955a43cddf28ad786884d59d"}
       = link_to '削除する', "/items/#{@item.id}", method: :delete
-      %button.modal-btn-delete{:type => "submit"}
+      %button.modal-btn-delete{type: "submit"}
