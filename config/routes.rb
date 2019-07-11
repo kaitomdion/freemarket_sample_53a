@@ -37,5 +37,6 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create] 
+  resources :categories, only: [:show]
   resources :brands, only: [:index]
 end
