@@ -3,6 +3,13 @@
   width: 100%;
   background-color: rgb(245 , 245 , 245);
   z-index:0;
+  .breadcrumb{
+    border-top: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    height: 45px;
+    line-height: 45px;
+  }
   .show{
     width: 620px;
     background: #fff;
