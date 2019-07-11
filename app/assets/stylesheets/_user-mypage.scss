@@ -1,19 +1,11 @@
-// .wrapper{
-//   background-color: rgb(245,245,245);
-//   height:2132px;
-//   // width:1280px;
-//   padding:0;
-//   margin:0;
-  // .header{
-  // height:100px;
-  // width:1280px;
-  // background-color:white;
-  // }
-  // .nav{
-  //   height:49px;
-  //   width:1280px;
-  //   background-color:darkmagenta;
-  // }
+  .breadcrumb{
+    border-top: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    height: 45px;
+    line-height: 45px;
+  }
+
   .main-container{
     margin:40px auto 0;
     width:1020px;
@@ -24,7 +16,7 @@
       float:right;
       width:700px;
       height:1189px;
-      .main-content-mypage-user{
+      &-mypage-user{
         box-sizing:border-box;
         position: relative;
         height:200px;
@@ -61,7 +53,7 @@
             font-weight:600;
             text-align: center;
           }
-        .main-content-mypage-number{
+        &-mypage-number{
           font-size:0;
           margin:8px 0 0;
           &__evaluation{
@@ -82,134 +74,151 @@
         }
        }
       }
-      .main-content-tabs{
-        width:700px;
-        margin:0;
-        &__list{
+      .tabs {
+        .tab-label1 {
+          display:block;
           height:72px;
-          width:100%;
-          list-style: none;
-          background:white;
-          &-notice{
-            height:72px;
-            width:50%;
-            float:left;
-            text-align:center;
-            line-height:74px;
-            border-top:2px solid red;
-          }
-          &-todo{
-            height:74px;
-            width:50%;
-            float:right;
-            text-align:center;
-            line-height:74px;
-            h3{
-              a{
-                text-decoration:none;
-              }
-            }
+          width:50%;
+          float:left;
+          text-align:center;
+          line-height:74px;
+          background:#eee;
+          &:hover {
+            opacity: 0.7;
           }
         }
-        .main-content-tabs__line{
+        .tab-label2 {
+          display:block;
+          height:74px;
+          width:50%;
+          float:right;
+          text-align:center;
+          line-height:74px;
+          background:#eee;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        input[name="tab-radio"] {
+          display: none;
+        }
+        .tab-content {
+          display: none;
+          border: 1px solid #999;
+          min-height: 200px;
           width:700px;
-          top:0;
-          text-decoration: none;
-          &__list{
-            display:block;
-            &__notice{
-              border-bottom: #eee solid 1px;
-              background-color: white;
+          &-tabs__line__list__notice{
+            list-style:none;
+            border-bottom:1px solid rgb(245,245,245);
+            &__field{
+              box-sizing: border-box;
+              display:flex;
+              min-height: 80px;
+              padding: 16px;
+              color: #333;
               text-decoration: none;
-              &__field{
-                box-sizing: border-box;
-                display:flex;
-                min-height: 80px;
-                padding: 16px;
-                color: #333;
-                text-decoration: none;
-                &__figure{
-                  position: relative;
-                  overflow: hidden;
-                  float: left;
-                  width: 48px;
-                  height: 48px;
-                  margin:0;
-                  padding:0;
-                  &__image{
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    z-index: 1;
-                    width:100%;
-                    height:100%;
-                  }
+              margin:0;
+              width:100%;
+              &__figure{
+                position: relative;
+                overflow: hidden;
+                float: left;
+                width: 48px;
+                height: 48px;
+                margin:0;
+                padding:0;
+                &__image{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width:100%;
+                height:100%;
                 }
-                .main-content-tabs__line__list--textarea{
-                  margin: 0 40px 0 28px;
-                  position:relative;
-                  width:560px;
-                  &__text{
-                    box-sizing:border-box;
-                    max-height: 4.4em;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    text-overflow: ellipsis;
-                    line-height: 1.5;
-                    min-height:21px;
-                    font-size:14px;
-                    display:inline-block;
+              }
+              &--textarea{
+                margin: 0 40px 0 28px;
+                position:relative;
+                width:560px;
+                &__text{
+                box-sizing:border-box;
+                max-height: 4.4em;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                line-height: 1.5;
+                min-height:21px;
+                font-size:14px;
+                display:inline-block;
+                }
+                &__timebox{
+                  display:block;
+                  .fa.fa-clock-o{
+                    font-family: 'icon-font';
+                    speak: none;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    font-size: 16px;
+                    vertical-align: middle;
+                    margin:0 8px 0 0;
                   }
-                  &__timebox{
-                    display:block;
-
-                    .fa.fa-clock{
-                      font-family: 'icon-font';
-                      speak: none;
-                      font-style: normal;
-                      font-weight: 400;
-                      font-variant: normal;
-                      text-transform: none;
-                      line-height: 1;
-                      -webkit-font-smoothing: antialiased;
-                      font-size: 16px;
-                      vertical-align: middle;
-                      margin:0 8px 0 0;
-                    }
-                    .day-time{
+                  .day-time{
                     vertical-align: middle;
                     height:18px;
                     font-size:12px;
-                    }
                   }
                 }
-              .fa.fa-chevron-right{
-                display:inline-block;
-                margin:auto;
-                color:gray;
-              }
+                .fa.fa-chevron-right{
+                  display:inline-block;
+                  margin:auto;
+                  color:gray;
+                }
               }
             }
-            .main-content-tabs__line__list__back{
+          }
+          .main-content-tabs__line__list__back{
+            display: block;
+            height: 60px;
+            padding: 16px;
+            color: #333;
+            background-color:white;
+            &-text{
               display: block;
-              height: 60px;
-              padding: 16px;
+              height: 56px;
+              margin: 0 auto;
+              background: #eee;
               color: #333;
-              background-color:white;
-              &-text{
-                display: block;
-                height: 56px;
-                margin: 0 auto;
-                background: #eee;
-                color: #333;
-                line-height: 56px;
-                text-align: center;
-              }
+              line-height: 56px;
+              text-align: center;
+            }
+        }
+          .mypage-item-not-found.bold{
+          margin-top:50px;
+          padding: 160px 0 60px;
+          background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?61790013);
+          background-repeat: no-repeat;
+          background-position: center 40px;
+          background-size: 78px 85px;
+          text-align: center;
+          font-size: 16px;
+          color: #ccc;
           }
-
-          }
+        }
+        #tab-1:checked ~ .tab-1-content, #tab-2:checked ~ .tab-2-content {
+          display: block;
+        }
+        input[name="tab-radio"]:checked + .tab-label1 {
+          background-color: #fff;
+          border-top:2px solid red;
+        }
+        input[name="tab-radio"]:checked + .tab-label2 {
+          background-color: #fff;
+          border-top:2px solid red;
         }
       }
       .main-content-purchace{
@@ -224,35 +233,42 @@
           line-height: 72px;
           font-weight:550;
         }
-        &__tabs{
-          width:700px;
-          height:74px;
-          list-style: none;
-          font-weight:600;
-          background: #eee;
-          &-tab{
-            height:74px;
+        .tabs{
+          .tab-label3 {
+            display:block;
+            height:72px;
             width:50%;
             float:left;
             text-align:center;
             line-height:74px;
-            &__text{
-              font-weight:600;
-              position: relative;
-              display:inline-block;
-              color: #333;
-              font-size: 16px;
-              line-height: 72px;
+            background:#eee;
+            &:hover {
+              opacity: 0.7;
             }
           }
-        }
-        .main-content-purchace__box{
-          .main-content-purchace__box-lists{
-            display: block;
-            &__list{
-              border-bottom: #eee solid 1px;
-              background-color: white;
-              text-decoration: none;
+          .tab-label4 {
+            display:block;
+            height:74px;
+            width:50%;
+            float:right;
+            text-align:center;
+            line-height:74px;
+            background:#eee;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          input[name="tab-tv"] {
+            display: none;
+          }
+          .tab-content {
+            display: none;
+            border: 1px solid #999;
+            min-height: 200px;
+            width:700px;
+            .main-content-tabs__line__list__todo{
+              list-style:none;
+              border-bottom:1px solid rgb(245,245,245);
               &__field{
                 box-sizing: border-box;
                 display:flex;
@@ -260,6 +276,8 @@
                 padding: 16px;
                 color: #333;
                 text-decoration: none;
+                margin:0;
+                width:100%;
                 &__figure{
                   position: relative;
                   overflow: hidden;
@@ -277,106 +295,59 @@
                     z-index: 1;
                     width:100%;
                     height:100%;
-                  }
+                    }
                 }
-                .main-content-purchace__box-lists__list__field__box{
+                &--textarea{
                   margin: 0 40px 0 28px;
                   position:relative;
                   width:560px;
-                  &-text{
-                    box-sizing:border-box;
-                    max-height: 4.4em;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    text-overflow: ellipsis;
-                    line-height: 1.5;
-                    height:21px;
-                    font-size:14px;
+                  &__text{
+                  box-sizing:border-box;
+                  max-height: 4.4em;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  line-height: 1.5;
+                  min-height:21px;
+                  font-size:14px;
+                  display:inline-block;
+                  }
+                  &__timebox{
+                    display:block;
+                    &-trihiki{
+                      margin: 8px 0 0 0;
+                      padding: 5px 6px;
+                      border-radius: 2px;
+                      font-size: 12px;
+                      color: #fff;
+                      background: #888;
+                      width: 50px;
+                      font-weight:600;
+                    }
+                  }
+                  .fa.fa-chevron-right{
                     display:inline-block;
-                  }
-                  &-icon{
-                    margin: 8px 0 0 0;
-                    padding: 5px 6px;
-                    border-radius: 2px;
-                    font-size: 12px;
-                    color: #fff;
-                    background: #888;
-                    width: 50px;
-                    font-weight:600;
+                    margin:auto;
+                    color:gray;
                   }
                 }
-              .fa.fa-chevron-right{
-                display:inline-block;
-                margin:auto;
-                color:gray;
               }
-            }
-              }
-              .main-content-tabs__line__list__back{
-                display: block;
-                height: 60px;
-                padding: 16px;
-                color: #333;
-                background-color:white;
-                &-text{
-                  display: block;
-                  height: 56px;
-                  margin: 0 auto;
-                  background: #eee;
-                  color: #333;
-                  line-height: 56px;
-                  text-align: center;
-                }
             }
           }
+          #tab-3:checked ~ .tab-3-content, #tab-4:checked ~ .tab-4-content {
+            display: block;
+          }
+          input[name="tab-tv"]:checked + .tab-label3 {
+            background-color: #fff;
+            border-top:2px solid red;
+          }
+          input[name="tab-tv"]:checked + .tab-label4 {
+            background-color: #fff;
+            border-top:2px solid red;
+          }
         }
-     }
+      }
       }
     }
-    .side-bar{
-      float:left;
-      width:280px;
-      margin:0 40px 0 0;
-      &__box{
-        ul{
-          list-style:none;
-          text-decoration: none;
-          li{
-            background-color:#fff ;
-            border-top:1px solid  #eee;
-            height:48px;
-            display:flex;
-            align-items: center;
-            position:relative;
-            .mypage{
-              font-weight:bold;
-              text-decoration: none;
-              background:#eee;
-            }
-            a{
-              padding:16px;
-              font-size:14px;
-              width:100%;
-              text-decoration:none;
-            }
-            .fa.fa-chevron-right{
-              position:absolute;
-              right:16px;
-              color:#eee;
-              // &:hover{
-              //   color:black;
-              //   right:15px;
-              // }
-            }
-          }
-        }
-        h3{
-          font-size:16px;
-          margin:40px 0 0;
-          font-weight:bold;
-        }
-        }
-      }
   .aside{
     height:260px;
     width:1280px;
@@ -387,4 +358,3 @@
     width:1280px;
     background-color: aqua;
   }
-// }

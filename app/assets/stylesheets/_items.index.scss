@@ -1,8 +1,37 @@
 @import "./main-header";
 @import "./main-footer";
 
+#wrap{
+  background-color: #ddd;
+  padding: 0px 0;
+
+  #slider{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    .slide-item{
+      background-color: #666;
+      span{
+        display: block;
+        line-height: 100px;
+        font-size: 20px;
+        color:#fff;
+        text-align: center;
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+      }
+    }
+  }
+}
 .container {
   background-color: rgb(230, 227, 227);
+  .breadcrumb{
+    border-top: 1px solid #eee;
+    background: #fff;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    height: 45px;
+    line-height: 45px;
+  }
   
   .thumbnail {
     height: 400px;
@@ -22,6 +51,7 @@
               background-size: cover;
               background-position: center;
               display: block;
+              
             }
           }
         }
@@ -73,6 +103,8 @@
           &__photo {
             &__image {
               width: 213px;
+              height: 220px;
+
               
             }
           }
