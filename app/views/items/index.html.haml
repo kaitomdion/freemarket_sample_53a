@@ -23,7 +23,7 @@
       .items-contents__boxes.clearfix
         - @items_ladies.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -45,7 +45,7 @@
       .items-contents__boxes.clearfix
         - @items_mens.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -66,7 +66,7 @@
       .items-contents__boxes.clearfix
         - @items_kids.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -87,7 +87,7 @@
       .items-contents__boxes.clearfix
         - @items_cosmetics.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -110,7 +110,7 @@
       .items-contents__boxes.clearfix
         - @items_chanel.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -131,7 +131,7 @@
       .items-contents__boxes.clearfix
         - @items_louisvuitton.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -152,7 +152,7 @@
       .items-contents__boxes.clearfix
         - @items_supreme.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -173,7 +173,7 @@
       .items-contents__boxes.clearfix
         - @items_nike.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
