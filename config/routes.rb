@@ -36,7 +36,11 @@ Rails.application.routes.draw do
       get :editprev
     end
   end
-  resources :cards, only: [:index, :new, :create] 
+  resources :cards, only: [:index, :new, :create] do
+  collection do
+    post 'pay', to: 'purchase#pay'
+  end
+  end
   resources :categories, only: [:show]
   resources :brands, only: [:index]
 end

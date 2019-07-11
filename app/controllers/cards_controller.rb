@@ -2,8 +2,7 @@ class CardsController < ApplicationController
 
   require "payjp"
 
-  def index
-  end
+
 
   def new
     card = Card.where(user_id: current_user.id)
@@ -30,6 +29,33 @@ class CardsController < ApplicationController
         
       end
     end
- end
+  end
+
+  def buy 
+
+  if card.blank?
+    redirect_to action: "new"
+    flash[:alert] = '購入にはクレジットカード登録が必要です'
+  else
+    @item = Item.find(params[:item_id])
+  
+    card = current_user.card
+    Payjp.api_key = Rails.application.credentials.pay_jp[:secret_access_key]
+    Payjp::Charge.create(
+    amount: @item.price,
+    customer: card.customer_id, 
+    currency: 'jpy', 
+    )
+    
+    if @item.update(status: 1, buyer_id: current_user.id)
+      flash[:notice] = '購入しました。'
+      redirect_to controller: "items", action: 'index'
+    else
+      flash[:alert] = '購入に失敗しました。'
+      redirect_to controller: "items", action: 'create'
+    end
+    
+  end
+end
 end
 
