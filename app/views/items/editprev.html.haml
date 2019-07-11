@@ -77,9 +77,8 @@
             %td
               = @item.shipping_day.name_i18n
     .show__text-center
-      .show__text-center__price
-        ￥ 
-        = @item.price
+      .show__text-center__price 
+        = number_to_currency @item.price
       .show__text-center__tax
         (税込)
       .show__text-center__fee

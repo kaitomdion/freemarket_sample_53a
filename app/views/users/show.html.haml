@@ -5,18 +5,19 @@
     = breadcrumbs pretext: "", separator: " &rsaquo; "
   .main-container
     .main-content
-      %section.main-content-mypage-user
-        %a.main-content-mypage-user__field
-          %figure.main-content-mypage-user__field__figure
-            %img.main-content-mypage-user__field__figure__image{alt: "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}/
-          %h2.main-content-mypage-user__field__name ケンピー
-          .main-content-mypage-number
-            .main-content-mypage-number__evaluation
+      %section.main-content__mypage-user
+        %a.main-content__mypage-user__field
+          %figure.main-content__mypage-user__field__figure
+            %img.main-content__mypage-user__field__figure__image{alt: "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}/
+          %h2.main-content__mypage-user__field__name 
+            = current_user.nickname
+          .main-content__mypage-user__field__number.clearfix
+            .main-content__mypage-user__field__number__evaluation
               評価
-              %span.main-content-mypage-number__evaluation__count 36
-            .main-content-mypage-number__sells
+              %span.main-content__mypage-user__field____evaluation__count 36
+            .main-content__mypage-user__field__number__sells
               出品数
-              %span.main-content-mypage-number__sells__count 33
+              %span.main-content__mypage-user__field__sells__count 33
       .tabs
         %input#tab-1{checked: "checked", name: "tab-radio", type: "radio"}/
         %label.tab-label1{for: "tab-1"} お知らせ
@@ -119,6 +120,5 @@
             %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
               %li.mypage-item-not-found.bold 現在、やることリストはありません
     = render 'side-bar'
-  .aside
-    aside
+  = render 'items/item_banner'
   = render 'items/main-footer'

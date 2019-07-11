@@ -137,7 +137,7 @@
     .item-user-profile__container.clearfix
       .item-user-profile__container__head
         = link_to "#", class: "item-user-profile__container__head__link" do
-          ="#{current_user.nickname}さんのその他の作品"
+          ="#{@user.nickname}さんのその他の作品"
       .item-user-profile__container__contents.clearfix
         - @useritem.each do |useritem|
           .item-user-profile__container__contents__box
