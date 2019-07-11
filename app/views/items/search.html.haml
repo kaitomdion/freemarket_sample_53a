@@ -4,7 +4,6 @@
     .search-container__main
       .search-container__main__item-box.clearfix
         .search-container__main__item-box__head
-          = @item
           %span.search-container__main__item-box__head__text
             検索結果
         .search-container__main__item-box__result
@@ -14,7 +13,7 @@
         .search-container__main__item-box__content.clearfix
           - @items.each do |item|
             .search-container__main__item-box__content__items
-              =link_to "/items/#{item.id}", class:"search-link"do
+              =link_to item_path(item.id), class:"search-link"do
                 .search-container__main__item-box__content__items__photo
                   = image_tag (item.images[0][:url]), size: "213x220", class: "search-container__main__item-box__content__items__photo__img"
                 .search-container__main__item-box__content__items__body
