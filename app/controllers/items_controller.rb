@@ -5,10 +5,10 @@ class ItemsController < ApplicationController
     @items_mens = Item.mens
     @items_kids = Item.kids
     @items_cosmetics = Item.cosmetics
-    @items_chanel = Item.all
-    @items_louisvuitton = Item.all
-    @items_supreme = Item.all
-    @items_nike = Item.all
+    @items_chanel = Item.chanel
+    @items_louisvuitton = Item.louisvuitton
+    @items_supreme = Item.supreme
+    @items_nike = Item.nike
   end
 
   def show
