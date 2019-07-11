@@ -27,6 +27,12 @@ class Item < ApplicationRecord
   scope :kids,     -> {where(category_id: 469..586).limit(4)}
   scope :cosmetics,-> {where(category_id: 867..954).limit(4)}
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where(['name LIKE ?', "%#{search}%"])
+  end
+
+
 end
 
 
