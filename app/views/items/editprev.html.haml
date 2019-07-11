@@ -6,7 +6,7 @@
     .show__contents.clearfix
       .show__contents__item-photo
         - @item.images.each do |image|
-          = image_tag (@item.images[0][:url]), size: "250x250"
+          = image_tag (@item.images.first.url.url), size: "250x250"
       %table.show__contents__detail-table
         %tbody
           %tr
