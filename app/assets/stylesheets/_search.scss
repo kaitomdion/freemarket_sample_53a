@@ -1,0 +1,114 @@
+ .search{ 
+  background-color: rgb(245 , 245 , 245);
+  .search-container{
+    position: relative;
+    margin: 0 auto 0;
+    width: 1020px;
+    padding: 40px 0 40px;
+    display: block;
+    &__main{
+      float: right;
+      width: 700px;
+      display: block;
+      &__item-box{
+        display: block;
+        &__head{
+          font-size: 22px;
+          margin: 0 0 8px;
+          font-weight: 600;
+          line-height: 1.4;
+          display: block;
+          &__text{
+            font-size: 18px;
+            margin:0 0 0 4px;
+            font-weight: 400; 
+          }
+        }
+        &__result{
+          margin: 16px 0;
+          font-size: 12px;
+          color:#888;
+        }
+        &__content{
+          width: auto;
+          margin: 0 auto;
+          &__items{
+            margin: 0 20px 20px 0;
+            width:160px;
+            height: 218px;
+            background: #fff;
+            float: left;
+            position: relative;
+            &__photo{
+              width: 160px;
+              height: 160px;
+              overflow: hidden;
+              position: relative;
+              &__img{
+                width: 160px;
+                left: 50%;
+                right: auto;
+                height: 160px;
+                transform: translate(-50%, 0);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+                opacity: 1;
+                vertical-align: middle;
+              }
+            }
+          }
+          &__body{
+            position: relative;
+            height: 58px;
+            padding: 8px 12px;
+            &__name{
+              font-size: 14px;
+              overflow: hidden;
+              position: relative;
+              font-weight: 400;
+              height: 3em;
+              line-height: 1.5;
+              word-break: break-word;
+              white-space: normal;
+              color: #333;
+            }
+            &__num{
+              margin-top: 2px;
+              display: flex;
+              -webkit-box-align: center;
+              align-items: center;
+              -webkit-box-pack: justify;
+              justify-content: space-between;
+              margin: 8px 0 0;
+              &__price{
+                z-index: 2;
+                position: absolute;
+                top: -30px;
+                left: 0;
+                padding: 4px 12px 4px 8px;
+                border-radius: 0 16px 16px 0;
+                font-weight: 600;
+                color: #fff;
+                background-color: rgba(0,0,0,0.3);
+                font-size: 17px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__side{
+      float: left;
+      width: 280px;
+      margin: 0 40px 0 0;
+      
+      display: block;
+    }
+  }
+ }
+
+ .search-link{
+   text-decoration: none;
+ }

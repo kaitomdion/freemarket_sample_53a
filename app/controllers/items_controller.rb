@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def search
+    @items = Item.search(params[:search])
     respond_to do |format|
       format.html
       format.json do
