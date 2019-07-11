@@ -1,12 +1,16 @@
 class CardsController < ApplicationController
 
+  require "payjp"
+
   def index
   end
 
   def new
+    card = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if card.exists?
   end
 
-  def create #クレジットカード登録
+  def create #クレジットカード登
     Payjp.api_key =  Rails.application.credentials.pay_jp[:secret_access_key]
     # ここでテスト鍵をセットしてあげる(環境変数にしても良い)
     if params['payjpToken'].blank?
@@ -24,7 +28,7 @@ class CardsController < ApplicationController
         redirect_to controller: "items", action: 'index'
         flash[:notice] = 'クレジットカードの登録が完了しました'
       else
-        redirect_to controller: "items", action: 'index'
+        redirect_to controller: "cards", action: 'new'
         flash[:alert] = 'クレジットカード登録に失敗しました'
       end
     end
