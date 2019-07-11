@@ -110,35 +110,13 @@
         font-weight:550;
       }
       .tabs{
-        .tab-label5 {
+        .tab-label {
           display:inline-block;
           height:72px;
           width:233px;
           text-align:center;
           line-height:74px;
           background:#eee;
-          &:hover {
-            opacity: 0.7;
-          }
-        }
-        .tab-label6 {
-          display:inline-block;
-          height:74px;
-          width:233px;
-          text-align:center;
-          line-height:74px;
-          background:#eee;
-          &:hover {
-            opacity: 0.7;
-          }
-        }
-        .tab-label7 {
-          display: inline-block;
-          height: 74px;
-          width: 233px;
-          text-align: center;
-          line-height: 74px;
-          background: #eee;
           &:hover {
             opacity: 0.7;
           }
