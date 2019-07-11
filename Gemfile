@@ -76,6 +76,7 @@ gem "ancestry"
 
 gem 'enum'
 gem 'enum_help'
+gem "gretel"
 
 
 group :production do

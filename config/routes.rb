@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get 'account_information'
     end
   end
-  resources :items, only: [:index, :show, :new,:destroy,:create,:edit] do
+  resources :items, only: [:index, :show, :new,:destroy,:create,:edit,:update] do
     collection do
       get 'confirm'
       get 'end'
@@ -34,5 +34,6 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create] 
+  resources :categories, only: [:show]
   resources :brands, only: [:index]
 end
