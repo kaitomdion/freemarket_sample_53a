@@ -37,31 +37,31 @@
 
 $(document).on('turbolinks:load', function() {
   var form = $("#card_form");
-  Payjp.setPublicKey('pk_test_731ea1b57bd2b5a7ec83783a');
+  Payjp.setPublicKey("pk_test_731ea1b57bd2b5a7ec83783a");
+  $(document).on("click", "#submit-button", function(e) {
 
-  $("card_form").on("click", "token_submit", function(e) {
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
+
     var card = {
-        number: parseInt($("#card_number").val()),
-        cvc: parseInt($("#cvc").val()),
-        exp_month: parseInt($("#exp_month").val()),
-        exp_year: parseInt($("#exp_year").val())
+        number: $("#payment_card_no").val(),
+        cvc: $("#payment_card_cvc").val(),
+        exp_month: $("#payment_expiration_date_1i").val(),
+        exp_year: $("#payment_expiration_date_2i").val(),
     };
-    Payjp.createToken(card, function(status, response) {
+    Payjp.createToken(card, function(s, response) {
       if (response.error) {
-        alert("error")
-        form.find('button').prop('disabled', false);
+        alert('トークン作成エラー発生');
       }
       else {
         $(".number").removeAttr("name");
         $(".cvc").removeAttr("name");
         $(".exp_month").removeAttr("name");
         $(".exp_year").removeAttr("name");
-
         var token = response.id;
-        $("#card_form").append($('<input type="hidden" name="payjp_token" class="credit_form_btn" />').val(token));
-        $("#card_form").get(0).submit();
+
+        form.append($('<input type="hidden" name="payjpToken" />').val(token));
+        form.get(0).submit();
       }
     });
   });

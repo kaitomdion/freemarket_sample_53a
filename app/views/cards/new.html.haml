@@ -7,13 +7,14 @@
       .credit-main-content
         %h2.credit-main-content_head
           クレジットカード情報入力
-        = form_with model: @card do |f|
+        = form_tag("/payments", method: :post, id: 'charge-form') do
           .credit_form-content
             .credit_form-group
               %P.credit_form-group_label
                 カード番号
               %span.required-tag 必須
-              = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", class: "credit_form_input"
+              %input.credit_form_input{maxlength: "16", name: "number", placeholder: "カード番号", type: "text", id: "payment_card_no"}/
+              -# = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", class: "credit_form_input"
               %ul.credit-brand_list
                 = image_tag "credit_brand.png", class:"creditimage"
                 %li
@@ -75,11 +76,14 @@
               %P.credit_form-group_label
                 セキュリティーコード
               %span.required-tag 必須
-              = text_field_tag "cvc", "", class: "credit_form_input", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+              -# = text_field_tag "cvc", "", class: "credit_form_input", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
+              %input.credit_form_input.input-default{maxlength: "3", name: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", type: "text", id: "payment_card_cvc"}
               .credit_form_what-code
                 .credit_form_what-code_text
                   %span.quiestion-tag
                   カード裏面の番号とは？
-            #card_token
-            = f.submit_tag "追加する", id: "token_submit", class:"credit_form_btn"
+            -# #card_token
+            -# = f.submit_tag "追加する", id: "token_submit", class:"credit_form_btn"
+            .actions
+              %button.credit_form_btn#submit-button{type: "submit"} 登録完了
 = render 'items/main-footer'
