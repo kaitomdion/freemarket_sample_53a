@@ -16,7 +16,7 @@
       float:right;
       width:700px;
       height:1189px;
-      &-mypage-user{
+      &__mypage-user{
         box-sizing:border-box;
         position: relative;
         height:200px;
@@ -53,8 +53,8 @@
             font-weight:600;
             text-align: center;
           }
-        &-mypage-number{
-          font-size:0;
+        &__number{
+          // font-size:0;
           margin:8px 0 0;
           &__evaluation{
             display:inline-block;
