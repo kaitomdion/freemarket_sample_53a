@@ -1,5 +1,8 @@
 .show-item
   = render "main-header"
+  - breadcrumb :item, @item
+  .breadcrumb
+    = breadcrumbs pretext: "", separator: " &rsaquo; "
   .show
     .show__name
       = @item.name

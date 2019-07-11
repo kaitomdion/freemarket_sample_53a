@@ -1,0 +1,25 @@
+.container
+  = render "items/main-header"
+  - breadcrumb :category, @category
+  .breadcrumb
+    = breadcrumbs pretext: "", separator: " &rsaquo; "
+  .contents
+    .contents-title
+      = @category.name
+      の商品一覧
+      - @category.items.each do |item|
+        .items-contents__boxes__box
+          =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            .items-contents__boxes__box__photo
+            = image_tag(item.images[0].url.url, size: "100x100")
+            .items-contents__boxes__box__text
+              %h3.items-contents__boxes__box__text__sentence 
+                = item.name
+              .items-contents__boxes__box__text__num
+                .items-contents__boxes__box__text__num__price
+                  = number_to_currency item.price
+                .items-contents__boxes__box__text__num__like 
+                  %i.far.fa-heart
+              .items-contents__boxes__box__text__tax (税込)
+  = render "items/item_banner"
+  = render "items/main-footer"
