@@ -1,4 +1,11 @@
 $(document).on('turbolinks:load',function(){
+  var new_url = window.location.protocol + '//' + window.location.host + '/items/new' 
+  if(location.href == new_url){
+  $('#child-form').css("display" , "none");
+  $('#grandchild-form').css("display" , "none");
+  }
+     
+
   var Selecthtml = `<option value="---">---</option>`;
   function childselect(child){
          var html =
@@ -12,8 +19,6 @@ $(document).on('turbolinks:load',function(){
      return html;
    };
 
-  $('#child-form').css("display" , "none");
-  $('#grandchild-form').css("display" , "none");
   $(".item-contents__main__form__detail__form-box__form-group3__select-wrap1").on("change",function(){
     var parentValue = document.getElementById("parent-form").value;
     if (parentValue == "") {
