@@ -28,15 +28,20 @@ Rails.application.routes.draw do
   end
   resources :items, only: [:index, :show, :new,:destroy,:create,:edit,:update] do
     collection do
-      get 'confirm'
+
       get 'end'
       get 'search'
     end
     member do
       get :editprev
+      get 'confirm'
     end
   end
-  resources :cards, only: [:index, :new, :create] 
+  resources :cards, only: [:index, :new, :create] do
+    member do
+    get 'pay'
+  end
+  end
   resources :categories, only: [:show]
   resources :brands, only: [:index]
 end

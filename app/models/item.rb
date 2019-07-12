@@ -12,6 +12,9 @@ class Item < ApplicationRecord
   has_many :likes, dependent: :destroy
   belongs_to :category, optional:true
 
+  belongs_to :item_status
+
+
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
   validates :price, presence: true, numericality:{less_than_or_equal_to:9999999, greater_than_or_equal_to:300 }
