@@ -116,7 +116,5 @@
     .btn-cancel-div
       %button#modal-btn-cancel{"data-close" => "modal"} キャンセル
     .mo
-    %form.modalform{action: "/jp/items/cancel/m26056369093/",method: "POST", novalidate: "novalidate"}
-      %input.inputmodal{name: "__csrf_value", type: "hidden", value: "2b69939eda8517e27e650ea055c6d7a9c88604b6edfa6dfbe5083a654d0aacefcb1c723bfa2e131dbd4d6b9b4ebc77175cbd05179955a43cddf28ad786884d59d"}/
-      = link_to '削除する', "/items/#{@item.id}", method: :delete
-      %button.modal-btn-delete{type: "submit"}
+    = link_to '削除する', "/items/#{@item.id}", method: :delete
+    %button.modal-btn-delete{type: "submit"}
