@@ -61,19 +61,19 @@ ActiveRecord::Schema.define(version: 2019_07_12_100439) do
     t.bigint "shipping_burden_id"
     t.integer "buyer_id"
     t.integer "saler_id"
-    t.bigint "transaction_id"
+    t.bigint "item_status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["item_status_id"], name: "index_items_on_item_status_id"
     t.index ["shipping_burden_id"], name: "index_items_on_shipping_burden_id"
     t.index ["shipping_day_id"], name: "index_items_on_shipping_day_id"
     t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id"
     t.index ["shipping_region_id"], name: "index_items_on_shipping_region_id"
     t.index ["shipping_status_id"], name: "index_items_on_shipping_status_id"
-    t.index ["transaction_id"], name: "index_items_on_transaction_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

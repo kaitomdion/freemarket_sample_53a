@@ -11,7 +11,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :shipping_burden
       t.integer :buyer_id
       t.integer :saler_id
-      t.references :transaction
+      t.references :item_status
       t.timestamps
       t.references :category
     end
