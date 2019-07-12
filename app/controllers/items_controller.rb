@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    # binding.pry
     @item = Item.find(params[:id])
     @images = @item.images
     @brand =Brand.find_by(id: @item.brand_id)
@@ -71,7 +72,9 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+   
     @item = Item.find(params[:id])
+    #  binding.pry
   end
 
   def end

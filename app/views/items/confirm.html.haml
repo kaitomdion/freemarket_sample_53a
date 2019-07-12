@@ -8,9 +8,9 @@
         .buy-item__main__contents__image
           = image_tag("https://static.mercdn.net/item/detail/orig/photos/m86124696873_1.jpg?1561620286", height: "250", width: "180")
         .buy-item__main__contents__name
-          ジーパン
+          =@item.name
         .buy-item__main__contents__price
-          =@items.price
+          ="¥ #{@item.price}"
           .buy-item__main__contents__price__text
             送料込み
         %ul.buy-item__main__contents__point
@@ -22,11 +22,11 @@
             .buy-item__main__contents__total__table__text
               支払い金額
             .buy-item__main__contents__total__table__price
-              ¥ 400
+              ="¥ #{@item.price}"
         %ul.buy-item__main__contents__btn
           %li.buy-item__main__contents__btn__box
             .buy-item__main__contents__btn__box__name
-              購入する
+              =link_to"購入する",pay_card_path(@item)
     .buy-user-info
       .buy-user-info__contents
         配送先
