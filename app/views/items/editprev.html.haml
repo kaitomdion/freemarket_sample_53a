@@ -5,16 +5,16 @@
       = @item.name
     .show__contents.clearfix
       .show__contents__item-photo
-        %div.slick
-          #wrap
-            %ul#slider
-              %li.slide-item
-              - @images.each do |image|
-                = image_tag(image.url.url, size: "225x300",class:"main-image")
-            %ul#thumbnail-list
-              %li.thumbnail-item
-              - @images.each do|image|
-                = image_tag(image.url.url,size:"60x60")
+        -# %div.slick
+        -#   #wrap
+        -#     %ul#slider
+        -#       %li.slide-item
+        -#       - @images.each do |image|
+        -#         = image_tag(image.url.url, size: "225x300",class:"main-image")
+        -#     %ul#thumbnail-list
+        -#       %li.thumbnail-item
+        -#       - @images.each do|image|
+        -#         = image_tag(image.url.url,size:"60x60")
       %table.show__contents__detail-table
         %tbody
           %tr

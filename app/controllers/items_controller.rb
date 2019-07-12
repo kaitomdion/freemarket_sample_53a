@@ -83,6 +83,7 @@ class ItemsController < ApplicationController
     @user = User.find_by(id: @item.saler_id)
   end
 
+
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
