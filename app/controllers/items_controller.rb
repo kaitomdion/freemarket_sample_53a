@@ -41,6 +41,19 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
+    
+    # respond_to do |format|
+    #   format.html
+    #   format.json do
+    #       @grandchildren = @category.id
+    #       @children = @category.parent.id
+    #       @parent = @category.parent.parent
+    #       @child = @category.parent.parent.children.ids
+    #       @grand =  @category.parent.children
+    #       # @a = @child.index
+    #   end
+    # end
   end
 
   def update
