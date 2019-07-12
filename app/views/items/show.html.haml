@@ -85,27 +85,50 @@
         (税込)
       .show__text-center__fee
         送料込み
-    = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
-    .show__item-description
-      %p.show__item-description__text
-        = @item.description
-    .show__item-button-container.clearfix
-      .show__item-button-container__left
-        %button.show__item-button-container__left__like{type: "button", name: "like!"}
-          %i.far.fa-heart
-          %span
-            いいね！
-          %span.show__item-button-container__left__like__count
-            0
-        =link_to "", class: 'show__item-button-container__left__report' do
-          %i.far.fa-flag
-          %span
-            不適切な商品の登録
-      .show__item-button-container__right
-        = link_to "", class:'show__item-button-container__right__news' do
-          %i.fa.fa-lock
-          %span
-            =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
+    - if user_signed_in? && current_user.id == @item.saler_id
+      -# = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
+      .show__item-description
+        %p.show__item-description__text
+          = @item.description
+      .show__item-button-container.clearfix
+        .show__item-button-container__left
+          %button.show__item-button-container__left__like{type: "button", name: "like!"}
+            %i.far.fa-heart
+            %span
+              いいね！
+            %span.show__item-button-container__left__like__count
+              0
+          =link_to "", class: 'show__item-button-container__left__report' do
+            %i.far.fa-flag
+            %span
+              不適切な商品の登録
+        .show__item-button-container__right
+          = link_to "", class:'show__item-button-container__right__news' do
+            %i.fa.fa-lock
+            %span
+              =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
+    - else
+      = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
+      .show__item-description
+        %p.show__item-description__text
+          = @item.description
+      .show__item-button-container.clearfix
+        .show__item-button-container__left
+          %button.show__item-button-container__left__like{type: "button", name: "like!"}
+            %i.far.fa-heart
+            %span
+              いいね！
+            %span.show__item-button-container__left__like__count
+              0
+          =link_to "", class: 'show__item-button-container__left__report' do
+            %i.far.fa-flag
+            %span
+              不適切な商品の登録
+        .show__item-button-container__right
+          = link_to "", class:'show__item-button-container__right__news' do
+            %i.fa.fa-lock
+            %span
+              =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
   .detail-message
     .detail-message__container
       .detail-message__container__content
