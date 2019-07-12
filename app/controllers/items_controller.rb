@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit ,:update ,:editprev ,:destroy]
 
   def index
     @items_ladies = Item.ladies
@@ -12,15 +13,14 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @images = @item.images
-    @brand =Brand.find_by(id: @item.brand_id)
-    @category = Category.find_by(id: @item.category_id)
+    @brand =Brand.find(@item.brand_id)
+    @category = Category.find(@item.category_id)
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
     @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
     @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
     @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
-    @user = User.find_by(id: @item.saler_id)
+    @user = User.find(@item.saler_id)
   end
 
   def new
@@ -40,9 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    @category = Category.find_by(id: @item.category_id)
-    
+    @category = Category.find(@item.category_id)    
     # respond_to do |format|
     #   format.html
     #   format.json do
@@ -57,7 +55,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
     # binding.pry
     item.update(item_params)
     
@@ -90,15 +87,19 @@ class ItemsController < ApplicationController
   end
   
   def editprev
-    @item = Item.find(params[:id])
     @images = @item.images
-    @category = Category.find_by(id: @item.category_id)
+    @category = Category.find(@item.category_id)
+    @user = User.find(@item.saler_id)
   end
 
+
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to user_path(current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
   private

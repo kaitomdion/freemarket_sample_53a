@@ -3,18 +3,20 @@
   .show
     .show__name
       = @item.name
-    .show__contents.clearfix
-      .show__contents__item-photo
-        %div.slick
-          #wrap
-            %ul#slider
-              %li.slide-item
+    .show-content.clearfix
+      .show-content__photo
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage{ style: 'left:0px',width: '900px'}
               - @images.each do |image|
-                = image_tag(image.url.url, size: "225x300",class:"main-image")
-            %ul#thumbnail-list
-              %li.thumbnail-item
-              - @images.each do|image|
-                = image_tag(image.url.url,size:"60x60")
+                .owl-item{ style: 'width:300px'}
+                  .owl-item__inner.is-higher-width
+                    = image_tag image.url.url
+          .owl-dots
+            - @images.each do |image|
+              .owl-dot
+                .owl-dot-inner
+                  = image_tag image.url.url
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -22,7 +24,7 @@
               出品者
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
-                スノーマン
+                = @user.nickname
               .show__contents__detail-table__face
                 .show__contents__detail-table__face__user-ratings1
                   %i.fas.fa-laugh
@@ -83,7 +85,6 @@
         (税込)
       .show__text-center__fee
         送料込み
-    = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
     .show__item-description
       %p.show__item-description__text
         = @item.description
