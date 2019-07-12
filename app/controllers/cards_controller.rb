@@ -32,14 +32,14 @@ class CardsController < ApplicationController
   end
 
   def pay
-     card = Card.where(user_id: current_user.id)
+     card = Card.find_by(user_id: current_user.id)
   if card.blank?
     redirect_to action: "new"
     flash[:alert] = '購入にはクレジットカード登録が必要です'
   else
     # binding.pry
     @item = Item.find(params[:id])
-    binding.pry
+    # binding.pry
     Payjp.api_key = Rails.application.credentials.pay_jp[:secret_access_key]
     Payjp::Charge.create(
     amount: @item.price,
