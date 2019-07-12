@@ -1,4 +1,5 @@
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
+  $(function() {
   //始めにactionを追加
   $('.owl-dots .owl-dot:first-child').addClass('active');
   $('.owl-dots .owl-dot:first-child').css({'opacity':'1','pointer':'default'});
