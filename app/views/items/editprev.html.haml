@@ -91,8 +91,8 @@
     = link_to "商品の編集", new_item_path, id: 'edit__item-btn'
     %br
     = link_to "出品を一旦停止する", "#", id: 'stop__item-btn'
-    -# = link_to "この商品を削除する", "#", id: 'delete__item-btn'    
-    %btn#delete__item-btn この商品を削除する
+    %btn#delete__item-btn 
+      この商品を削除する
   .detail-message
     .detail-message__container
       .detail-message__container__content
@@ -101,8 +101,6 @@
             相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
           = f.text_area :text, class: 'detail-message__container__content__textarea', type: 'text'
           = f.submit 'コメントする', class: 'detail-message__container__content__submit'
-
-
 #overlay
 #modalWindow
   .modal-body
@@ -118,7 +116,5 @@
     .btn-cancel-div
       %button#modal-btn-cancel{"data-close" => "modal"} キャンセル
     .mo
-    %form.modalform{action: "/jp/items/cancel/m26056369093/",method: "POST", novalidate:"novalidate"}
-      %input.inputmodal{name: "__csrf_value", type: "hidden", value: "2b69939eda8517e27e650ea055c6d7a9c88604b6edfa6dfbe5083a654d0aacefcb1c723bfa2e131dbd4d6b9b4ebc77175cbd05179955a43cddf28ad786884d59d"}
-      = link_to '削除する', "/items/#{@item.id}", method: :delete
-      %button.modal-btn-delete{type: "submit"}
+    = link_to '削除する', "/items/#{@item.id}", method: :delete
+    %button.modal-btn-delete{type: "submit"}

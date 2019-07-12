@@ -37,4 +37,5 @@ $(function(){
     $(thumbnailItem+'[data-index="'+nextSlide+'"]').addClass("thumbnail-current");
   });
 });
+
 });

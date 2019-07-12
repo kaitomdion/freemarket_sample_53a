@@ -96,12 +96,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    redirect_to controller: 'users', action: 'show'
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to user_path(current_user.id)
   end
 
-  
   private
   def item_params
     @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id]).merge(saler_id: current_user.id)
