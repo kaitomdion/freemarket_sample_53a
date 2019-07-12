@@ -40,8 +40,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    @category = Category.find_by(id: @item.category_id)
+    @category = Category.find(@item.category_id)
     
     # respond_to do |format|
     #   format.html
