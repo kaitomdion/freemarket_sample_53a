@@ -3,18 +3,20 @@
   .show
     .show__name
       = @item.name
-    .show__contents.clearfix
-      .show__contents__item-photo
-        %div.slick
-          #wrap
-            %ul#slider
-              %li.slide-item
+    .show-content.clearfix
+      .show-content__photo
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage{ style: 'left:0px',width: '900px'}
               - @images.each do |image|
-                = image_tag(image.url.url, size: "225x300",class:"main-image")
-            %ul#thumbnail-list
-              %li.thumbnail-item
-              - @images.each do|image|
-                = image_tag(image.url.url,size:"60x60")
+                .owl-item{ style: 'width:300px'}
+                  .owl-item__inner.is-higher-width
+                    = image_tag image.url.url
+          .owl-dots
+            - @images.each do |image|
+              .owl-dot
+                .owl-dot-inner
+                  = image_tag image.url.url
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -22,7 +24,7 @@
               出品者
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
-                スノーマン
+                = @user.nickname
               .show__contents__detail-table__face
                 .show__contents__detail-table__face__user-ratings1
                   %i.fas.fa-laugh
@@ -77,14 +79,12 @@
             %td
               = @item.shipping_day.name_i18n
     .show__text-center
-      .show__text-center__price
-        ￥ 
-        = @item.price
+      .show__text-center__price 
+        = number_to_currency @item.price
       .show__text-center__tax
         (税込)
       .show__text-center__fee
         送料込み
-    = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
     .show__item-description
       %p.show__item-description__text
         = @item.description
@@ -92,8 +92,8 @@
     = link_to "商品の編集", new_item_path, id: 'edit__item-btn'
     %br
     = link_to "出品を一旦停止する", "#", id: 'stop__item-btn'
-    -# = link_to "この商品を削除する", "#", id: 'delete__item-btn'    
-    %btn#delete__item-btn この商品を削除する
+    %btn#delete__item-btn 
+      この商品を削除する
   .detail-message
     .detail-message__container
       .detail-message__container__content
@@ -102,8 +102,6 @@
             相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
           = f.text_area :text, class: 'detail-message__container__content__textarea', type: 'text'
           = f.submit 'コメントする', class: 'detail-message__container__content__submit'
-
-
 #overlay
 #modalWindow
   .modal-body
@@ -119,7 +117,5 @@
     .btn-cancel-div
       %button#modal-btn-cancel{"data-close" => "modal"} キャンセル
     .mo
-    %form.modalform{action: "/jp/items/cancel/m26056369093/",method: "POST", novalidate:"novalidate"}
-      %input.inputmodal{name: "__csrf_value", type: "hidden", value: "2b69939eda8517e27e650ea055c6d7a9c88604b6edfa6dfbe5083a654d0aacefcb1c723bfa2e131dbd4d6b9b4ebc77175cbd05179955a43cddf28ad786884d59d"}
-      = link_to '削除する', "/items/#{@item.id}", method: :delete
-      %button.modal-btn-delete{type: "submit"}
+    = link_to '削除する', "/items/#{@item.id}", method: :delete
+    %button.modal-btn-delete{type: "submit"}

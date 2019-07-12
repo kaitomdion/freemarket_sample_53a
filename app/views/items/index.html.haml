@@ -13,10 +13,6 @@
                 %li.slide-item
                   %span
                     = image_tag "home.png", size: "1440x390"
-
-
-            -# -# = image_tag("https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg", class: "thumbnail__outer__show__item__image__p") 
-            -# %img{:alt => "画像", :src => "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"}/
   .contents
     %h2.items-head ピックアップカテゴリー
     .items-contents
@@ -27,9 +23,8 @@
       .items-contents__boxes.clearfix
         - @items_ladies.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
-              -# = image_tag item.images.first.url, size: "213x220"
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
                 %h3.items-contents__boxes__box__text__sentence 
@@ -48,10 +43,9 @@
         =link_to "", class: "items-contents__title__name" do
           メンズ新着アイテム
       .items-contents__boxes.clearfix
-        -# = render partial: 'item', collection: @items_ladies
         - @items_mens.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -70,10 +64,9 @@
         =link_to "", class: "items-contents__title__name" do
           ベビー・キッズ新着アイテム
       .items-contents__boxes.clearfix
-        -# = render partial: 'item', collection: @items_ladies
         - @items_kids.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
               = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
@@ -92,12 +85,11 @@
         =link_to "", class: "items-contents__title__name" do
           コスメ・香水・美容 新着アイテム
       .items-contents__boxes.clearfix
-        -# = render partial: 'item', collection: @items_ladies
         - @items_cosmetics.each do |item|
           .items-contents__boxes__box
-            =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
               .items-contents__boxes__box__photo
-              = image_tag (item.images[0][:url]), size: "213x220"
+              = image_tag(item.images.first.url.url, size: "213x220")
               .items-contents__boxes__box__text
                 %h3.items-contents__boxes__box__text__sentence 
                   = item.name
@@ -116,209 +108,86 @@
         =link_to "", class: "items-contents__title__name" do
           シャネル 新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m88463847150_1.jpg?1561340165",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence Saeサエ様専用になりました‼️シャネル チャンス オーフレッシュ ヘアミスト
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥3,500
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m14424240037_1.jpg?1560861136", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ショルダーバッグ お値下げ最終off
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥223,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m48126947740_1.jpg?1561297578", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence CHANEL ルージュ アリュール グロス クリック No.17
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥1,800
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m78567424606_1.jpg?1552772598", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence CHANEL ☆サンダル☆
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥25,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        - @items_chanel.each do |item|
+          .items-contents__boxes__box
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag(item.images.first.url.url, size: "213x220")
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
     .items-contents
       %h3.items-contents__title.clearfix 
         =link_to "", class: "items-contents__title__name" do
           ルイ ヴィトン新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m78120284747_1.jpg?1559195440",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ❤️美品 ルイヴィトン モノグラム サラ 長財布 正規品 鑑定済み❤️
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥25,300
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m25838435723_1.jpg?1561362392", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ルイヴィトン モノグラム ショルダーバッグ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥25,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m53134030150_1.jpg?1561362367", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence 正規品✳︎ルイヴィトンモノグラム✳︎3つ折長財布✳︎ルイヴィトン長財布✳︎
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥8,999
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m47449033322_1.jpg?1561362350", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ルイヴィトン アズールアクセサリーポーチ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥14,800
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        - @items_louisvuitton.each do |item|
+          .items-contents__boxes__box
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag(item.images.first.url.url, size: "213x220")
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
     .items-contents
       %h3.items-contents__title.clearfix 
         =link_to "", class: "items-contents__title__name" do
           シュプリーム新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m92757847072_1.jpg?1561362394",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence 新品！PUBLISH ボンタン ワイド テーパードパンツ！シェフパンツ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥5,000
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m85776999635_1.jpg?1551666082", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence carhartt  ナイロンジャケット
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥3,700
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m24264121543_1.jpg?1561362375", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence XXL 2016 Tシャツ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥5,555
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m27927515591_1.jpg?1556342654", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence FAIR PLAY ナイロン
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥6,666
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        - @items_supreme.each do |item|
+          .items-contents__boxes__box
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag(item.images.first.url.url, size: "213x220")
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
     .items-contents
       %h3.items-contents__title.clearfix 
         =link_to "", class: "items-contents__title__name" do
           ナイキ 新着アイテム
       .items-contents__boxes.clearfix
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m66503664521_1.jpg?1560841021",height: "250", width: "250", class: "items-contents__boxes__box__photo__image" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence エア フライトワン ペニー ハーダウェイ 29センチ flight one 29
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥3,333
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m65292476809_1.jpg?1560614044", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence NIKE AIR Jordan 1 retro crimson tint
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥20,200
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m14868453514_1.jpg?1561357700", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence ナイキ レディース サイズL セットアップ
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥3,800
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-        .items-contents__boxes__box
-          =link_to "", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-              %img{ src: "https://static.mercdn.net/thumb/photos/m23965925885_1.jpg?1560841152", height: "250", width: "250" }
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence エア ジョーダン8 29.5センチ 黒 Jordan8 29.5cm black
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price ￥6,600
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
+        - @items_nike.each do |item|
+          .items-contents__boxes__box
+            =link_to item_path(item.id), class: "items-contents__boxes__box__link" do
+              .items-contents__boxes__box__photo
+              = image_tag(item.images.first.url.url, size: "213x220")
+              .items-contents__boxes__box__text
+                %h3.items-contents__boxes__box__text__sentence 
+                  = item.name
+                .items-contents__boxes__box__text__num
+                  .items-contents__boxes__box__text__num__price
+                    = number_to_currency item.price
+                  .items-contents__boxes__box__text__num__like 
+                    %i.far.fa-heart
+                .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "", class: "items-contents__all__link" do
-          すべての商品を見る
+        =link_to "すべての商品をみる", class: "items-contents__all__link"
+
   .bottom-banner
     .bottom-banner__photo
       .bottom-banner__photo__logo

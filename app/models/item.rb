@@ -11,8 +11,9 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   has_many :likes, dependent: :destroy
   belongs_to :category, optional:true
+
   belongs_to :item_status
-  mount_uploader :url, ImageUploader
+
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :description, presence: true, length: { maximum: 1000 }
@@ -27,6 +28,10 @@ class Item < ApplicationRecord
   scope :mens,     -> {where(category_id: 338..468).limit(4)}
   scope :kids,     -> {where(category_id: 469..586).limit(4)}
   scope :cosmetics,-> {where(category_id: 867..954).limit(4)}
+  scope :chanel,   -> {where(brand_id: 23).limit(4)}
+  scope :louisvuitton,-> {where(brand_id: 82).limit(4)}
+  scope :supreme,  -> {where(brand_id: 24).limit(4)}
+  scope :nike,     -> {where(brand_id: 41).limit(4)}
 
   def self.search(search)
     return Item.all unless search
