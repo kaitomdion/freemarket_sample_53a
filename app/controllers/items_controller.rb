@@ -80,6 +80,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images
     @category = Category.find_by(id: @item.category_id)
+    @user = User.find_by(id: @item.saler_id)
   end
 
   def destroy
