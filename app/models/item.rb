@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   has_many :likes, dependent: :destroy
   belongs_to :category, optional:true
+  belongs_to :item_status
   mount_uploader :url, ImageUploader
 
   validates :name, presence: true, length: { maximum: 40 }
