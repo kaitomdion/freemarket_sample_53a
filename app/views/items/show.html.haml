@@ -85,7 +85,7 @@
         (税込)
       .show__text-center__fee
         送料込み
-    = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
+    = link_to "購入画面に進む", confirm_items_path(@item), class: 'show__item-buy-btn'  
     .show__item-description
       %p.show__item-description__text
         = @item.description
