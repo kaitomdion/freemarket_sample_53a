@@ -582,6 +582,53 @@
             font-size: 14px;
 
     }
-    
+
+}
+.item-social{
+  margin: 24px auto;
+  padding: 32px 0 24px;
+  width: 700px;
+  background: #fff;
+  &__media-box{
+    text-align: center;
+    margin: 16px 0 0;
+    list-style: none;
+    &__facebook{
+      text-decoration: none;
+      .fa-facebook-square{
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        line-height: 44px;
+        font-size: 26px;
+        color: #fff;
+        background: #385185;
+      }
+    }
+    &__twitter{
+      text-decoration: none;
+      .fa-twitter{
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        line-height: 44px;
+        font-size: 26px;
+        color: #fff;
+        background: #5d9dc9;
+      }
+    }
+    &__pinterest{
+      text-decoration: none;
+      .fa-pinterest{
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        line-height: 44px;
+        font-size: 26px;
+        color: #fff;
+        background: #aa262a;
+      }
+    }
+  }
 }
 }
