@@ -15,7 +15,7 @@
             .search-container__main__item-box__content__items
               =link_to item_path(item.id), class:"search-link"do
                 .search-container__main__item-box__content__items__photo
-                  = image_tag (item.images[0][:url]), size: "213x220", class: "search-container__main__item-box__content__items__photo__img"
+                  = image_tag (item.images.first.url.url), class: "search-container__main__item-box__content__items__photo__img"
                 .search-container__main__item-box__content__items__body
                   .search-container__main__item-box__content__items__body__name
                     = item.name
