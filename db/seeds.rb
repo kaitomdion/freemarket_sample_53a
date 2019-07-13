@@ -24,6 +24,9 @@ CSV.foreach('db/brand.csv', headers: true) do |row|
   Brand.create(id: row['id'], name: row['name'], created_at: row['created_at'], updated_at: row['updated_at'])
 end
 
+CSV.foreach('db/itemstatus.csv', headers: true) do |row|
+  ItemStatus.create(id: row['id'], status: row['status'], created_at: row['created_at'], updated_at: row['updated_at'])
+end
 # 親要素
 a = Category.create(:name=>"レディース")
 b = Category.create(:name=>"メンズ")

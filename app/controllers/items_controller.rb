@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit ,:update ,:editprev ,:destroy]
 
   def index
     @items_ladies = Item.ladies
@@ -12,15 +13,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+
     @images = @item.images
-    @brand =Brand.find_by(id: @item.brand_id)
-    @category = Category.find_by(id: @item.category_id)
+    @brand =Brand.find(@item.brand_id)
+    @category = Category.find(@item.category_id)
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
     @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
     @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
     @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
-    @user = User.find_by(id: @item.saler_id)
+    @user = User.find(@item.saler_id)
   end
 
   def new
@@ -58,7 +59,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
     # binding.pry
     item.update(item_params) 
     # if @item.update
@@ -84,25 +84,32 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+   
+    @item = Item.find(params[:id])
+    #  binding.pry
   end
 
   def end
   end
   
   def editprev
-    @item = Item.find(params[:id])
     @images = @item.images
-    @category = Category.find_by(id: @item.category_id)
+    @category = Category.find(@item.category_id)
+    @user = User.find(@item.saler_id)
   end
 
+
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to user_path(current_user.id)
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   private
   def item_params
-    @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id]).merge(saler_id: current_user.id)
+    @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id]).merge(saler_id: current_user.id,item_status_id: 1)
   end
 end
