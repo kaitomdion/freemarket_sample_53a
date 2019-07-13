@@ -1,7 +1,8 @@
 class CardsController < ApplicationController
 
   require "payjp"
-
+  
+  before_action :move_to_index
 
 
   def new
@@ -58,5 +59,10 @@ class CardsController < ApplicationController
     
   end
 end
+private
+  def move_to_index
+    redirect_to new_user_path unless user_signed_in?
+  end
+
 end
 
