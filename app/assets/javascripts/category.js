@@ -5,7 +5,6 @@ $(document).on('turbolinks:load',function(){
   $('#grandchild-form').css("display" , "none");
   }
      
-
   var Selecthtml = `<option value="---">---</option>`;
   function childselect(child){
          var html =
@@ -73,6 +72,7 @@ $(document).on('turbolinks:load',function(){
   });
 $(".item-contents__main__form__detail__form-box__form-group3__select-wrap3").on("change",function(){
   var grandchildrenValue = document.getElementById("grandchild-form").value;
+  $('.item-contents__main__form__detail__form-box__form-group5__select-wrap__select-box').val('');
     if (grandchildrenValue == "" || grandchildrenValue == "---") {
       $('.item-contents__main__form__detail__form-box__form-group5').css("display" , "none");
     }else {

@@ -41,7 +41,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category = Category.find(@item.category_id)    
+    @item = Item.find(params[:id])
+    @category = Category.find_by(id: @item.category_id)
+    @brand = Brand.find_by(id: @item.brand_id)
+    @image = Image.where(item_id: @item.id)
     # respond_to do |format|
     #   format.html
     #   format.json do
@@ -57,8 +60,7 @@ class ItemsController < ApplicationController
 
   def update
     # binding.pry
-    item.update(item_params)
-    
+    item.update(item_params) 
     # if @item.update
      redirect_to root_path(@item), notice: 'itemを編集しました'
     # else

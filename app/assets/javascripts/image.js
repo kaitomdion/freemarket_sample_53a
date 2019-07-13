@@ -1,4 +1,19 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
+
+  var new_url = window.location.protocol + '//' + window.location.host + '/items/new' 
+  if(location.href == new_url){
+  $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+  }
+
   $('.item-contents__main__form__upload-box__image').on('change', 'input[type="file"]', function(e){
     var imagefile =$(".item-contents__main__form__upload-box__image")
     var imagefile2 =$(".item-contents__main__form__upload-box__image2")
@@ -21,9 +36,9 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
+
+
   $('.item-contents__main__form__upload-box__image2').on('change', 'input[type="file"]', function(e){
     var imagefile2 =$(".item-contents__main__form__upload-box__image2")
     var imagefile3 =$(".item-contents__main__form__upload-box__image3")
@@ -45,9 +60,9 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
+
+
   $('.item-contents__main__form__upload-box__image3').on('change', 'input[type="file"]', function(e){
     var imagefile3 =$(".item-contents__main__form__upload-box__image3")
     var imagefile4 =$(".item-contents__main__form__upload-box__image4")
@@ -69,9 +84,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
   $('.item-contents__main__form__upload-box__image4').on('change', 'input[type="file"]', function(e){
     var imagefile4 =$(".item-contents__main__form__upload-box__image4")
     var imagefile5 =$(".item-contents__main__form__upload-box__image5")
@@ -97,9 +110,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
   $('.item-contents__main__form__upload-box__image5').on('change', 'input[type="file"]', function(e){
     var height =$(".item-contents__main__form__upload-box")
     var imagefile5 =$(".item-contents__main__form__upload-box__image5")
@@ -125,9 +136,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
   $('.item-contents__main__form__upload-box__image6').on('change', 'input[type="file"]', function(e){
     var height =$(".item-contents__main__form__upload-box")
     var imagefile6 =$(".item-contents__main__form__upload-box__image6")
@@ -153,9 +162,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
   $('.item-contents__main__form__upload-box__image7').on('change', 'input[type="file"]', function(e){
     var height =$(".item-contents__main__form__upload-box")
     var imagefile7 =$(".item-contents__main__form__upload-box__image7")
@@ -181,9 +188,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
   $('.item-contents__main__form__upload-box__image8').on('change', 'input[type="file"]', function(e){
     var height =$(".item-contents__main__form__upload-box")
     var imagefile8 =$(".item-contents__main__form__upload-box__image8")
@@ -209,9 +214,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
   $('.item-contents__main__form__upload-box__image9').on('change', 'input[type="file"]', function(e){
     var height =$(".item-contents__main__form__upload-box")
     var imagefile9 =$(".item-contents__main__form__upload-box__image9")
@@ -237,9 +240,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
 
-$(function(){
   $('.item-contents__main__form__upload-box__image10').on('change', 'input[type="file"]', function(e){
     var height =$(".item-contents__main__form__upload-box")
     var imagefile10 =$(".item-contents__main__form__upload-box__image10")
@@ -265,7 +266,7 @@ $(function(){
     })(file);
      reader.readAsDataURL(file);
   })
-})
+
 
 $(document).on('click', '.item-contents__main__form__upload-box__image2__view__btn__right', function(){
     $('#file1').after('<input type="file" id="file_new" name="file">');
@@ -370,4 +371,6 @@ $(document).on('click', '.item-contents__main__form__upload-box__image11__view__
   $(".item-contents__main__form__upload-box__image10").css("display", "block")
   $(".item-contents__main__form__upload-box__image10__drop-file").css("display", "none")
   $("#file10").css("display", "none")
+})
+
 })

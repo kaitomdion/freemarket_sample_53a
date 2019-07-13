@@ -1,5 +1,8 @@
 $(document).on('turbolinks:load', function(){
-
+  var new_url = window.location.protocol + '//' + window.location.host + '/items/new' 
+  if(location.href == new_url){
+  $('.item-contents__main__form__detail__form-box__form-group5').css("display" , "none");
+  }
   var search_list = $("#brand-search-result");
   
   function appendUser(brand){
@@ -8,11 +11,10 @@ $(document).on('turbolinks:load', function(){
                 </div>`
     search_list.append(html);
 }
-function appendAddUser(name, id){
-  var html = `<div class='brand-group-item clearfix' id='${id}'>
-                <input name='item[brand_id]' type='hidden' value='${id}'>
-                <p class='brand-group-item__name'>${name}</p>
-              </div>`
+function appendAddUser(id){
+  var html = `
+                <input name='item[brand_id]' type='hidden' value='${id}'>      
+              `
   return html
 }
   $(".item-contents__main__form__detail__form-box__form-group5__select-wrap__select-box").on('keyup', function(){
@@ -39,13 +41,13 @@ function appendAddUser(name, id){
 
   $("#brand-search-result").on("click", ".brand-group__name", function() { 
     $("brand-group-item").remove()
-    $('.item-contents__main__form__detail__form-box__form-group5__select-wrap__select-box').val(''); 
-    $('.item-contents__main__form__detail__form-box__form-group5__select-wrap__select-box').css('display', 'none'); 
+    // $('.item-contents__main__form__detail__form-box__form-group5__select-wrap__select-box').val(''); 
+    // $('.item-contents__main__form__detail__form-box__form-group5__select-wrap__select-box').css('display', 'none'); 
     $('.brand-group').css('display', 'none');  
-    
     var name = $(this).data('brand-name');
     var id = $(this).data('brand-id');
-    var html = appendAddUser(name, id);
+    var html = appendAddUser(id);
+    $('.item-contents__main__form__detail__form-box__form-group5__select-wrap__select-box').val(name); 
     $('#brand-group-item').append(html);
     $(this).parent().remove();
   });
