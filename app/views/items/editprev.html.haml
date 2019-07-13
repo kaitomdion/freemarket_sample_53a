@@ -88,7 +88,7 @@
       %p.show__item-description__text
         = @item.description
   .detail-btn-box
-    = link_to "商品の編集", new_item_path, id: 'edit__item-btn'
+    = link_to "商品の編集", edit_item_path, id: 'edit__item-btn'
     %br
     = link_to "出品を一旦停止する", "#", id: 'stop__item-btn'
     %btn#delete__item-btn 
