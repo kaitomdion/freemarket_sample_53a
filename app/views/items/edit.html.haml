@@ -40,6 +40,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image2__drop-file', type: "file" , id: 'file2'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image3.cleafix
+              - if Image.where(item_id: @item.id)[1].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -62,6 +63,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image3__drop-file', type: "file" , id: 'file3'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image4.cleafix
+              - if Image.where(item_id: @item.id)[2].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -90,6 +92,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image4__drop-file', type: "file", id: 'file4'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image5.cleafix
+              - if Image.where(item_id: @item.id)[3].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -124,6 +127,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image5__drop-file', type: "file", id: 'file5'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image6.cleafix
+              - if Image.where(item_id: @item.id)[4].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -144,7 +148,7 @@
                       %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
                 .item-contents__main__form__upload-box__image5__view
                   .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3.url.url}
+                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
                     .item-contents__main__form__upload-box__image5__view__btn
                       %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
                       %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
@@ -164,6 +168,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image6__drop-file', type: "file", id: 'file6'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image7.cleafix
+              - if Image.where(item_id: @item.id)[5].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -210,6 +215,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image7__drop-file', type: "file", id: 'file7'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image8.cleafix
+              - if Image.where(item_id: @item.id)[6].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -262,6 +268,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image8__drop-file', type: "file", id: 'file8'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image9.cleafix
+              - if Image.where(item_id: @item.id)[7].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -320,6 +327,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image9__drop-file', type: "file", id: 'file9'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image10.cleafix
+              - if Image.where(item_id: @item.id)[8].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
@@ -384,6 +392,7 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image10__drop-file', type: "file", id: 'file10'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image11.cleafix
+              - if Image.where(item_id: @item.id)[9].present?
                 .item-contents__main__form__upload-box__image2__view
                   .item-contents__main__form__upload-box__image2__view__file
                     %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
