@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   
+  before_action :move_to_index, except: [:new]
+
+
   def index
   end
   
@@ -44,4 +47,10 @@ class UsersController < ApplicationController
   def itemlist
     @saleitem = Item.where(saler_id:current_user.id)
   end
+
+  private
+  def move_to_index
+    redirect_to new_user_path unless user_signed_in?
+  end
+
 end

@@ -59,8 +59,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
-    item.update(item_params) 
+    @item.update(item_params) 
     # if @item.update
      redirect_to root_path(@item), notice: 'itemを編集しました'
     # else
