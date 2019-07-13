@@ -2,7 +2,7 @@
   .top-header__container
     .top-header__container__search
       %h1
-        =link_to "", class: "top-header__container__search__image" do
+        =link_to root_path, class: "top-header__container__search__image" do
           = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2334484240", height: "36", width: "134") 
       = form_tag(search_items_path, method: 'get',class:'top-header__container__search__form') do
         = text_field_tag :search, '', class: 'top-header__container__search__form__input'
