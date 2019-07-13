@@ -44,4 +44,8 @@ class UsersController < ApplicationController
   def itemlist
     @saleitem = Item.where(saler_id:current_user.id)
   end
+
+  def itemlist_trading
+    @tradeitem = Item.where(buyer_id:current_user.id)
+  end
 end

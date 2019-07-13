@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     end
     member do
       get :itemlist
+      get :itemlist_trading
     end
   end
   resources :items, only: [:index, :show, :new,:destroy,:create,:edit,:update] do
