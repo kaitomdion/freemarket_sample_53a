@@ -42,10 +42,15 @@ class UsersController < ApplicationController
   end
 
   def itemlist
+    @user = User.find(params[:id])
+    if @user.id == current_user.id
     @saleitem = Item.where(saler_id:current_user.id)
+    else
+      redirect_to root_path
+    end
   end
 
   def itemlist_trading
-    @tradeitem = Item.where(buyer_id:current_user.id)
+    @tradeitem = Item.where(saler_id:current_user.id)
   end
 end

@@ -17,3 +17,7 @@ crumb :user do |user|
   parent :root
 end
 
+crumb :itemlist do |itemlist|
+  link "出品した商品-出品中", itemlist_user_path(current_user.id)
+  parent :user
+end

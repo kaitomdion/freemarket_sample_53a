@@ -1,0 +1,47 @@
+.wrapper
+  = render '/items/main-header'
+  - breadcrumb :user, @tradeitem
+  .breadcrumb
+    = breadcrumbs pretext: "", separator: " &rsaquo; "
+  .main-container
+    .main-content
+      %section.main-content-purchace
+        %h2.main-content-purchace__head
+          出品した商品
+        .tabs
+          %input#tab-8{name: "tab-tv", type: "radio"}/
+          %label.tab-label8{for: "tab-8"} 出品中
+          %input#tab-9{checked: "checked",name: "tab-tv", type: "radio"}/
+          %label.tab-label9{for: "tab-9"} 取引中
+          %input#tab-10{name: "tab-tv", type: "radio"}/
+          %label#tab-label10{for: "tab-10"} 売却済み
+          .tab-content.tab-8-content
+            - @tradeitem.each do |tradeitem|
+              %li.main-content-tabs__line__list__notice
+                %a.main-content-tabs__line__list__notice__field{href: "/items/#{tradeitem.id}/editprev","data-turbolinks" => "false"}
+                  %figure.main-content-tabs__line__list__notice__field__figure
+                    = image_tag (tradeitem.images.first.url.url), size: "40x40"
+                  .mypage-item-body.show-stock-item
+                    .mypage-item-text
+                      = tradeitem.name
+                    %div.mypage-item-body
+                      %span.listing-item-count
+                        %i.icon-like-border
+                        %span 
+                      %span.listing-item-count
+                        %i.icon-message
+                        %span 
+                      .mypage-item-status.bold.awaiting
+                        取引中
+                  %i.icon-arrow-right
+            %li.main-content-tabs__line__list__back
+              %a.main-content-tabs__line__list__back-text{href: "/jp/mypage/notification/"} 一覧を見る
+          .tab-content.tab-9-content
+            %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+              %li.mypage-item-not-found.bold 取引中の商品がありません
+          .tab-content.tab-10-content
+            %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+              %li.mypage-item-not-found.bold 売却済みの商品はありません
+    = render 'side-bar'
+  = render "items/item_banner"
+  = render 'items/main-footer'

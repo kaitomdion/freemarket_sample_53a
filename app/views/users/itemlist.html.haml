@@ -1,7 +1,8 @@
 .wrapper
   = render '/items/main-header'
-  .nav
-    nav-bar
+  - breadcrumb :user, @saleitem
+  .breadcrumb
+    = breadcrumbs pretext: "", separator: " &rsaquo; "
   .main-container
     .main-content
       %section.main-content-purchace
@@ -9,32 +10,36 @@
           出品した商品
         .tabs
           %input#tab-5{checked: "checked", name: "tab-tv", type: "radio"}/
-          %label.tab-label5{for: "tab-5"} 取引中
+          %label.tab-label5{for: "tab-5"} 出品中
           %input#tab-6{name: "tab-tv", type: "radio"}/
-          %label.tab-label6{for: "tab-6"} 過去の取引
+          %label.tab-label6{for: "tab-6"} 取引中
           %input#tab-7{name: "tab-tv", type: "radio"}/
           %label#tab-label7{for: "tab-7"} 売却済み
           .tab-content.tab-5-content
             - @saleitem.each do |saleitem|
-              %li.main-content-tabs__line__list__notice
-                %a.main-content-tabs__line__list__notice__field{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false"}
-                  %figure.main-content-tabs__line__list__notice__field__figure
-                    = image_tag (saleitem.images.first.url.url), size: "40x40"
-                  .mypage-item-body.show-stock-item
-                    .mypage-item-text
-                      = saleitem.name
-                    %div.mypage-item-body
-                      %span.listing-item-count
-                        %i.icon-like-border
-                        %span 
-                      %span.listing-item-count
-                        %i.icon-message
-                        %span 
-                      .mypage-item-status.bold.awaiting
-                        出品中
-                  %i.icon-arrow-right
-            %li.main-content-tabs__line__list__back
-              %a.main-content-tabs__line__list__back-text{href: "/jp/mypage/notification/"} 一覧を見る
+              - if saleitem == nil
+                %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+                  %li.mypage-item-not-found.bold 取引中の商品がありません
+              - else
+                %li.main-content-tabs__line__list__notice
+                  %a.main-content-tabs__line__list__notice__field{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false"}
+                    %figure.main-content-tabs__line__list__notice__field__figure
+                      = image_tag (saleitem.images.first.url.url), size: "40x40"
+                    .mypage-item-body.show-stock-item
+                      .mypage-item-text
+                        = saleitem.name
+                      %div.mypage-item-body
+                        %span.listing-item-count
+                          %i.icon-like-border
+                          %span 
+                        %span.listing-item-count
+                          %i.icon-message
+                          %span 
+                        .mypage-item-status.bold.awaiting
+                          出品中
+                    %i.icon-arrow-right
+                %li.main-content-tabs__line__list__back
+                  %a.main-content-tabs__line__list__back-text{href: "/jp/mypage/notification/"} 一覧を見る
           .tab-content.tab-6-content
             %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
               %li.mypage-item-not-found.bold 取引中の商品がありません
