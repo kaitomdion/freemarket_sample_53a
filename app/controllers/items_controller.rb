@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit ,:update ,:editprev ,:destroy]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @items_ladies = Item.ladies
@@ -111,4 +112,9 @@ class ItemsController < ApplicationController
   def item_params
     @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id]).merge(saler_id: current_user.id,item_status_id: 1)
   end
+
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
+  end
+
 end
