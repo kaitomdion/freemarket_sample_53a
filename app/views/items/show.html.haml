@@ -97,7 +97,7 @@
             %span
               =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
     - else
-      = link_to "購入画面に進む", " confirm_item_path(@item)", class: 'show__item-buy-btn'  
+      = link_to "購入画面に進む", confirm_item_path(@item), class: 'show__item-buy-btn'  
       .show__item-description
         %p.show__item-description__text
           = @item.description
@@ -129,12 +129,12 @@
   %ul.navi-item.clearfix
     %li.navi-item__link-prev
     -if @previtem.present?
-      = link_to item_path(@previtem), class: 'navi-item__link-prev__text' do
+      = link_to item_path(@previtem), class: 'navi-item__link-prev__text', "data-turbolinks" => "false" do
         %i.fa.fa-chevron-left
         = @previtem.name  
     %li.navi-item__link-next
     -if @nextitem.present? 
-      = link_to item_path(@nextitem), class: 'navi-item__link-next__text' do
+      = link_to item_path(@nextitem), class: 'navi-item__link-next__text', "data-turbolinks" => "false" do
         = @nextitem.name
         %i.fa.fa-chevron-right
   .item-social
@@ -153,7 +153,7 @@
       .item-user-profile__container__contents.clearfix
         - @useritem.each do |useritem|
           .item-user-profile__container__contents__box
-            =link_to "", class: "item-user-profile__container__contents__box__link" do
+            =link_to "", class: "item-user-profile__container__contents__box__link", "data-turbolinks" => "false" do
               .item-user-profile__container__contents__box__photo
                 = image_tag (useritem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
               .item-user-profile__container__contents__box__text
@@ -173,7 +173,7 @@
       .item-user-profile__container__contents.clearfix
         - @childitem.each do |childitem|
           .item-user-profile__container__contents__box
-            =link_to "", class: "item-user-profile__container__contents__box__link" do
+            =link_to "", class: "item-user-profile__container__contents__box__link", "data-turbolinks" => "false" do
               .item-user-profile__container__contents__box__photo
                 = image_tag (childitem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
               .item-user-profile__container__contents__box__text
