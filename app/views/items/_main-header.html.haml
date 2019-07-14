@@ -4,9 +4,10 @@
       %h1
         =link_to "", class: "top-header__container__search__image" do
           = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2334484240", height: "36", width: "134") 
-      .top-header__container__search__form
-        %input{class: "top-header__container__search__form__input", placeholder: "何かお探しですか？"}
-        %i.fa.fa-search
+      = form_tag(search_items_path, method: 'get',class:'top-header__container__search__form') do
+        = text_field_tag :search, '', class: 'top-header__container__search__form__input'
+        %input{type: "submit", value: "    ",class: 'top-header__container__search__form__input__btn'}
+          %i.fa.fa-search        
     .top-header__container__navi
       .top-header__container__navi__left
         .top-header__container__navi__left__l

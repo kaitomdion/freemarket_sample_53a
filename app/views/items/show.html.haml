@@ -6,18 +6,20 @@
   .show
     .show__name
       = @item.name
-    .show__contents.clearfix
-      .show__contents__item-mainImage
-        %div.slick
-          #wrap
-            %ul#slider
-              %li.slide-item
+    .show-content.clearfix
+      .show-content__photo
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage{ style: 'left:0px',width: '900px'}
               - @images.each do |image|
-                = image_tag(image.url.url, size: "225x300",class:"main-image")
-            %ul#thumbnail-list
-              %li.thumbnail-item
-              - @images.each do|image|
-                = image_tag(image.url.url,size:"60x60")
+                .owl-item{ style: 'width:300px'}
+                  .owl-item__inner.is-higher-width
+                    = image_tag image.url.url
+          .owl-dots
+            - @images.each do |image|
+              .owl-dot
+                .owl-dot-inner
+                  = image_tag image.url.url
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -25,7 +27,7 @@
               出品者
             %td
               = link_to "#", class: 'show__contents__detail-table__name' do
-                スノーマン
+                = @user.nickname
               .show__contents__detail-table__face
                 .show__contents__detail-table__face__user-ratings1
                   %i.fas.fa-laugh
@@ -40,24 +42,12 @@
                   %i.fas.fa-frown
                   %span
                     4
-          %tr
-            %th
-              カテゴリー
-            %td
-              = link_to "#", class: 'show__contents__detail-table__category1' do
-                = @category.parent.parent.name
-              = link_to "#", class: 'show__contents__detail-table__category2' do
-                %i.fa.fa-chevron-right
-                = @category.parent.name
-              = link_to "#", class: 'show__contents__detail-table__category3' do
-                %i.fa.fa-chevron-right
-                = @category.name
           %tr 
             %th 
               ブランド
             %td
               = link_to "#", class: 'show__contents__detail-table__brand' do
-                コーチ
+                = @brand.name
           %tr
             %th
               商品の状態
@@ -80,33 +70,54 @@
               = @item.shipping_day.name_i18n
     .show__text-center
       .show__text-center__price
-        ￥ 
-        = @item.price
+        = number_to_currency @item.price
       .show__text-center__tax
         (税込)
       .show__text-center__fee
         送料込み
-    = link_to "購入画面に進む", "#", class: 'show__item-buy-btn'  
-    .show__item-description
-      %p.show__item-description__text
-        = @item.description
-    .show__item-button-container.clearfix
-      .show__item-button-container__left
-        %button.show__item-button-container__left__like{type: "button", name: "like!"}
-          %i.far.fa-heart
-          %span
-            いいね！
-          %span.show__item-button-container__left__like__count
-            0
-        =link_to "", class: 'show__item-button-container__left__report' do
-          %i.far.fa-flag
-          %span
-            不適切な商品の登録
-      .show__item-button-container__right
-        = link_to "", class:'show__item-button-container__right__news' do
-          %i.fa.fa-lock
-          %span
-            =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
+    - if user_signed_in? && current_user.id == @item.saler_id
+      .show__item-description
+        %p.show__item-description__text
+          = @item.description
+      .show__item-button-container.clearfix
+        .show__item-button-container__left
+          %button.show__item-button-container__left__like{type: "button", name: "like!"}
+            %i.far.fa-heart
+            %span
+              いいね！
+            %span.show__item-button-container__left__like__count
+              0
+          =link_to "", class: 'show__item-button-container__left__report' do
+            %i.far.fa-flag
+            %span
+              不適切な商品の登録
+        .show__item-button-container__right
+          = link_to "", class:'show__item-button-container__right__news' do
+            %i.fa.fa-lock
+            %span
+              =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
+    - else
+      = link_to "購入画面に進む", " confirm_item_path(@item)", class: 'show__item-buy-btn'  
+      .show__item-description
+        %p.show__item-description__text
+          = @item.description
+      .show__item-button-container.clearfix
+        .show__item-button-container__left
+          %button.show__item-button-container__left__like{type: "button", name: "like!"}
+            %i.far.fa-heart
+            %span
+              いいね！
+            %span.show__item-button-container__left__like__count
+              0
+          =link_to "", class: 'show__item-button-container__left__report' do
+            %i.far.fa-flag
+            %span
+              不適切な商品の登録
+        .show__item-button-container__right
+          = link_to "", class:'show__item-button-container__right__news' do
+            %i.fa.fa-lock
+            %span
+              =link_to "あんしん・あんぜんへの取り組み","https://www.mercari.com/jp/safe/description/"
   .detail-message
     .detail-message__container
       .detail-message__container__content
@@ -138,7 +149,7 @@
     .item-user-profile__container.clearfix
       .item-user-profile__container__head
         = link_to "#", class: "item-user-profile__container__head__link" do
-          -# ="#{@user.nickname}さんのその他の作品"
+          ="#{@user.nickname}さんのその他の作品"
       .item-user-profile__container__contents.clearfix
         - @useritem.each do |useritem|
           .item-user-profile__container__contents__box
@@ -173,6 +184,6 @@
                     = number_to_currency childitem.price
                   .item-user-profile__container__contents__box__text__num__like 
                     %i.far.fa-heart
-                .item-user-profile__container__contents__box__text__tax (税込)        
+                .item-user-profile__container__contents__box__text__tax (税込)
   = render "item_banner"
   = render "main-footer"

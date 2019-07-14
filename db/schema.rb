@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_041241) do
+ActiveRecord::Schema.define(version: 2019_07_12_100439) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -19,10 +19,8 @@ ActiveRecord::Schema.define(version: 2019_07_10_041241) do
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "number", null: false
-    t.string "limit_month", null: false
-    t.string "limit_year", null: false
-    t.string "security_cord", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,6 +44,12 @@ ActiveRecord::Schema.define(version: 2019_07_10_041241) do
     t.index ["user_id"], name: "index_images_on_user_id"
   end
 
+  create_table "item_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -57,19 +61,19 @@ ActiveRecord::Schema.define(version: 2019_07_10_041241) do
     t.bigint "shipping_burden_id"
     t.integer "buyer_id"
     t.integer "saler_id"
-    t.bigint "transaction_id"
+    t.bigint "item_status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["item_status_id"], name: "index_items_on_item_status_id"
     t.index ["shipping_burden_id"], name: "index_items_on_shipping_burden_id"
     t.index ["shipping_day_id"], name: "index_items_on_shipping_day_id"
     t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id"
     t.index ["shipping_region_id"], name: "index_items_on_shipping_region_id"
     t.index ["shipping_status_id"], name: "index_items_on_shipping_status_id"
-    t.index ["transaction_id"], name: "index_items_on_transaction_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
