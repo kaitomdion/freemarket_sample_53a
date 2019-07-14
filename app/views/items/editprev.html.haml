@@ -5,8 +5,16 @@
       = @item.name
     .show__contents.clearfix
       .show__contents__item-photo
-        - @item.images.each do |image|
-          = image_tag (@item.images[0][:url]), size: "250x250"
+        %div.slick
+          #wrap
+            %ul#slider
+              %li.slide-item
+              - @item.images.each do |image|
+                = image_tag(image.url.url, size: "225x300",class:"main-image")
+            %ul#thumbnail-list
+              %li.thumbnail-item
+              - @item.images.each do|image|
+                = image_tag(image.url.url,size:"60x60")
       %table.show__contents__detail-table
         %tbody
           %tr
@@ -69,9 +77,8 @@
             %td
               = @item.shipping_day.name_i18n
     .show__text-center
-      .show__text-center__price
-        ￥ 
-        = @item.price
+      .show__text-center__price 
+        = number_to_currency @item.price
       .show__text-center__tax
         (税込)
       .show__text-center__fee
@@ -84,8 +91,8 @@
     = link_to "商品の編集", new_item_path, id: 'edit__item-btn'
     %br
     = link_to "出品を一旦停止する", "#", id: 'stop__item-btn'
-    -# = link_to "この商品を削除する", "#", id: 'delete__item-btn'    
-    %btn#delete__item-btn この商品を削除する
+    %btn#delete__item-btn 
+      この商品を削除する
   .detail-message
     .detail-message__container
       .detail-message__container__content
@@ -94,8 +101,6 @@
             相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
           = f.text_area :text, class: 'detail-message__container__content__textarea', type: 'text'
           = f.submit 'コメントする', class: 'detail-message__container__content__submit'
-
-
 #overlay
 #modalWindow
   .modal-body
@@ -105,13 +110,9 @@
       %br>/
       削除する代わりに停止することもできます。
       %br/
-      = succeed "\u{672c}\u{5f53}\u{306b}\u{524a}\u{9664}\u{3057}\u{307e}\u{3059}\u{304b}\u{ff1f}" do
-        %br/
   .clearfix
     .btn-cancel-div
-      %button#modal-btn-cancel{"data-close" => "modal"} キャンセル
+      %button#modal-btn-cancel{"data-close": "modal"} キャンセル
     .mo
-    %form.modalform{:action => "/jp/items/cancel/m26056369093/", :method => "POST", :novalidate => "novalidate"}
-      %input.inputmodal{:name => "__csrf_value", :type => "hidden", :value => "2b69939eda8517e27e650ea055c6d7a9c88604b6edfa6dfbe5083a654d0aacefcb1c723bfa2e131dbd4d6b9b4ebc77175cbd05179955a43cddf28ad786884d59d"}
-      = link_to '削除する', "/items/#{@item.id}", method: :delete
-      %button.modal-btn-delete{:type => "submit"}
+      = link_to '削除する', item_path(@item), method: :delete
+      %button.modal-btn-delete{type: "submit"}

@@ -79,13 +79,13 @@
               }
               &__search {
                 position: absolute;
-                top: 44px;
+                top: 30px;
                 left: -34px;
                 z-index: 1000;
                 background: #fff;
                 box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+                display: none;
                 &__li {
-                  display: none;
                   &__title {
                     font-weight: 400;
                     font-size: 14px;
@@ -96,15 +96,22 @@
                       display: block;
                       color: black;
                     }
+                    &__link:hover {
+                      color: #fff;
+                    }
+                  }
+                  &__title:hover{
+                    background: #ea352d;
                   }
                   &__detail {
                     position: absolute;
                     top: 0;
-                    left: 224px;
+                    left: 190px;
                     bottom: 0;
                     background: #fff;
+                    display: none;
                     &__list {
-                      display: none;
+                      width: 300px;
                       &__link {
                         padding: 8px 16px;
                         text-decoration: none;
@@ -115,15 +122,17 @@
                         white-space: nowrap;
                         font-size: 14px;
                       }
+                      &__link:hover {
+                        background: #eee;
+                      }
                       &__de {
                         position: absolute;
                         top: 0;
-                        left: 224px;
+                        left: 200px;
                         bottom: 0;
                         background: #fff;
                         display: none;
                         &__content {
-                          display: none;
                           &__text {
                             padding: 8px 16px;
                             overflow: hidden;
@@ -134,9 +143,72 @@
                             display: block;
                             color: black;
                           }
+                          &__text:hover {
+                            background: #eee;
+                          }
                         }    
                       }
                     }
+                  }
+                }
+              }
+            }
+            &__bland {
+              position: relative;
+              display: inline-block;
+              padding: 0 11px;
+              cursor: pointer;
+              &__title {
+                font-size: 14px;
+                font-weight: 400;
+                &__link {
+                  font-weight: bold;
+                  color: black;
+                  text-decoration: none;
+                  line-height: 30px;
+                  .fa-list {
+                    color: #ea352d;
+                    font-size: 12px;
+                    margin-right: 4px;
+                  }
+                  .fa-tag {
+                    color: #ea352d;
+                    font-size: 12px;
+                    margin-right: 4px;
+                  }
+                }
+
+                &__link:hover {
+                  color: #0099e8;
+                }
+              }
+              
+              &__search {
+                position: absolute;
+                top: 30px;
+                left: -34px;
+                z-index: 1000;
+                background: #fff;
+                box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+                display: none;
+                width: 200px;
+                &__li {
+                  &__title {
+                    font-weight: 400;
+                    font-size: 14px;
+                    &__link{
+                      padding: 0 16px;
+                      line-height: 44px;
+                      text-decoration: none;
+                      display: block;
+                      color: black;
+                    }
+                    &__link:hover {
+                      color: #fff;
+                    }
+                  }
+                  &__title:hover {
+                    background: #ea352d;
                   }
                 }
               }

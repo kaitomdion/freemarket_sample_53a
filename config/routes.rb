@@ -11,12 +11,8 @@ Rails.application.routes.draw do
     get 'users/address', to: 'users/registrations#address'   
   end
   root "items#index"
-  resources :users, only: [:new, :show, :edit ,:index] do
+  resources :users, only: [:new, :show, :edit, :index] do
     collection do
-      get 'registration'
-      get 'sms_confirmation'
-      get 'sms_confirmation_sms'
-      get 'address'
       get 'credit_card'
       get 'done'
       get 'logout'
