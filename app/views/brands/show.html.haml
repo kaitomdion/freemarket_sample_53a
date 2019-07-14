@@ -1,0 +1,25 @@
+= render "items/main-header"
+- breadcrumb :brand, @brand
+.breadcrumb
+  = breadcrumbs pretext: "", separator: " &rsaquo; "
+.brands
+  .brand.clearfix
+    .brand__main
+      .brand__main__item.clearfix
+        .brand__main__item__head
+          = "#{@brand.name}の商品一覧"
+        .brand__main__item__content
+          - @items.each do |item|
+            .brand__main__item__content__box
+              =link_to "/items/#{item.id}", class: "brand__main__item__content__box__link" do
+                .brand__main__item__content__box__link
+                  .brand__main__item__content__box__link__photo
+                    = image_tag(item.images[0].url.url, size: "183x183", class: ".brand__main__item__content__box__link__photo__img")
+                  .brand__main__item__content__box__link__body
+                    %h3.brand__main__item__content__box__link__body__name
+                      = item.name
+                    .brand__main__item__content__box__link__body__num
+                      .brand__main__item__content__box__link__body__num__price
+                        = number_to_currency item.price
+= render "items/item_banner"
+= render "items/main-footer"

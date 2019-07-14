@@ -1,25 +1,29 @@
-.container
-  = render "items/main-header"
-  - breadcrumb :category, @category
-  .breadcrumb
-    = breadcrumbs pretext: "", separator: " &rsaquo; "
-  .contents
-    .contents-title
-      = @category.name
-      の商品一覧
-      - @category.items.each do |item|
-        .items-contents__boxes__box
-          =link_to "/items/#{item.id}", class: "items-contents__boxes__box__link" do
-            .items-contents__boxes__box__photo
-            = image_tag(item.images[0].url.url, size: "100x100")
-            .items-contents__boxes__box__text
-              %h3.items-contents__boxes__box__text__sentence 
-                = item.name
-              .items-contents__boxes__box__text__num
-                .items-contents__boxes__box__text__num__price
-                  = number_to_currency item.price
-                .items-contents__boxes__box__text__num__like 
-                  %i.far.fa-heart
-              .items-contents__boxes__box__text__tax (税込)
-  = render "items/item_banner"
-  = render "items/main-footer"
+= render "items/main-header"
+- breadcrumb :category, @category
+.breadcrumb
+  = breadcrumbs pretext: "", separator: " &rsaquo; "
+.categories
+  .category.clearfix
+    .category__main
+      .category__main__navi.clearfix
+        - @category.children.each do |child|
+          %li.category__main__navi__list
+            = link_to child.name, category_path(child), class: "category__main__navi__list__link"
+      .category__main__item.clearfix
+        .category__main__item__head
+          = "#{@category.name}の商品一覧"
+        .category__main__item__content
+          - @items.each do |item|
+            .category__main__item__content__box
+              =link_to "/items/#{item.id}", class: "category__main__item__content__box__link" do
+                .category__main__item__content__box__link
+                  .category__main__item__content__box__link__photo
+                    = image_tag(item.images[0].url.url, size: "183x183", class: ".category__main__item__content__box__link__photo__img")
+                  .category__main__item__content__box__link__body
+                    %h3.category__main__item__content__box__link__body__name
+                      = item.name
+                    .category__main__item__content__box__link__body__num
+                      .category__main__item__content__box__link__body__num__price
+                        = number_to_currency item.price
+= render "items/item_banner"
+= render "items/main-footer"
