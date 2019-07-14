@@ -7,9 +7,7 @@
           %span.search-container__main__item-box__head__text
             検索結果
         .search-container__main__item-box__result
-          1 -
-          = @items.count
-          件表示
+          = "1-#{@items.count}件表示"
         .search-container__main__item-box__content.clearfix
           - @items.each do |item|
             .search-container__main__item-box__content__items

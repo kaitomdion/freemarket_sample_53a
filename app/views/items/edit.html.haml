@@ -3,7 +3,7 @@
   .item-contents__main
     .item-contents__main__header
       商品の情報を入力
-    = form_for @item, method: :patch do |f|
+    = form_for @item do |f|
       .item-contents__main__form
         .item-contents__main__form__upload-box
           .item-contents__main__form__upload-box__head
@@ -13,7 +13,7 @@
           .item-contents__main__form__upload-box__description
             最大10枚までアップロードできます
             = f.fields_for :images do |i|
-              .item-contents__main__form__upload-box__image
+              .item-contents__main__form__upload-box__image.cleafix
                 %label
                   .item-contents__main__form__upload-box__image__box
                     .input-area
@@ -24,12 +24,13 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image__drop-file', type: "file", id: 'file1'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image2.cleafix
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[0].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image2__box
                     .input-area2
@@ -40,19 +41,19 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image2__drop-file', type: "file" , id: 'file2'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image3.cleafix
-              - if Image.where(item_id: @item.id)[1].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[1].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image3__box
                     .input-area3
@@ -63,25 +64,25 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image3__drop-file', type: "file" , id: 'file3'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image4.cleafix
-              - if Image.where(item_id: @item.id)[2].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[2].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image4__box
                     .input-area4
@@ -92,31 +93,31 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image4__drop-file', type: "file", id: 'file4'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image5.cleafix
-              - if Image.where(item_id: @item.id)[3].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
-                .item-contents__main__form__upload-box__image5__view
-                  .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
-                    .item-contents__main__form__upload-box__image5__view__btn
-                      %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[3].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image5__view
+                    .item-contents__main__form__upload-box__image5__view__file
+                      %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
+                      .item-contents__main__form__upload-box__image5__view__btn
+                        %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image5__box
                     .input-area5
@@ -127,37 +128,37 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image5__drop-file', type: "file", id: 'file5'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image6.cleafix
-              - if Image.where(item_id: @item.id)[4].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
-                .item-contents__main__form__upload-box__image5__view
-                  .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
-                    .item-contents__main__form__upload-box__image5__view__btn
-                      %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
-                .item-contents__main__form__upload-box__image6__view
-                  .item-contents__main__form__upload-box__image6__view__file
-                    %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
-                    .item-contents__main__form__upload-box__image6__view__btn
-                      %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[4].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image5__view
+                    .item-contents__main__form__upload-box__image5__view__file
+                      %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
+                      .item-contents__main__form__upload-box__image5__view__btn
+                        %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image6__view
+                    .item-contents__main__form__upload-box__image6__view__file
+                      %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
+                      .item-contents__main__form__upload-box__image6__view__btn
+                        %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image6__box
                     .input-area6
@@ -168,43 +169,43 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image6__drop-file', type: "file", id: 'file6'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image7.cleafix
-              - if Image.where(item_id: @item.id)[5].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
-                .item-contents__main__form__upload-box__image5__view
-                  .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
-                    .item-contents__main__form__upload-box__image5__view__btn
-                      %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
-                .item-contents__main__form__upload-box__image6__view
-                  .item-contents__main__form__upload-box__image6__view__file
-                    %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
-                    .item-contents__main__form__upload-box__image6__view__btn
-                      %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
-                .item-contents__main__form__upload-box__image7__view
-                  .item-contents__main__form__upload-box__image7__view__file
-                    %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
-                    .item-contents__main__form__upload-box__image7__view__btn
-                      %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[5].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image5__view
+                    .item-contents__main__form__upload-box__image5__view__file
+                      %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
+                      .item-contents__main__form__upload-box__image5__view__btn
+                        %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image6__view
+                    .item-contents__main__form__upload-box__image6__view__file
+                      %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
+                      .item-contents__main__form__upload-box__image6__view__btn
+                        %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image7__view
+                    .item-contents__main__form__upload-box__image7__view__file
+                      %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
+                      .item-contents__main__form__upload-box__image7__view__btn
+                        %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image7__box
                     .input-area7
@@ -215,49 +216,49 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image7__drop-file', type: "file", id: 'file7'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image8.cleafix
-              - if Image.where(item_id: @item.id)[6].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
-                .item-contents__main__form__upload-box__image5__view
-                  .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
-                    .item-contents__main__form__upload-box__image5__view__btn
-                      %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
-                .item-contents__main__form__upload-box__image6__view
-                  .item-contents__main__form__upload-box__image6__view__file
-                    %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
-                    .item-contents__main__form__upload-box__image6__view__btn
-                      %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
-                .item-contents__main__form__upload-box__image7__view
-                  .item-contents__main__form__upload-box__image7__view__file
-                    %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
-                    .item-contents__main__form__upload-box__image7__view__btn
-                      %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
-                .item-contents__main__form__upload-box__image8__view
-                  .item-contents__main__form__upload-box__image8__view__file
-                    %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
-                    .item-contents__main__form__upload-box__image8__view__btn
-                      %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[6].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image5__view
+                    .item-contents__main__form__upload-box__image5__view__file
+                      %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
+                      .item-contents__main__form__upload-box__image5__view__btn
+                        %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image6__view
+                    .item-contents__main__form__upload-box__image6__view__file
+                      %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
+                      .item-contents__main__form__upload-box__image6__view__btn
+                        %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image7__view
+                    .item-contents__main__form__upload-box__image7__view__file
+                      %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
+                      .item-contents__main__form__upload-box__image7__view__btn
+                        %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image8__view
+                    .item-contents__main__form__upload-box__image8__view__file
+                      %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
+                      .item-contents__main__form__upload-box__image8__view__btn
+                        %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image8__box
                     .input-area8
@@ -268,55 +269,55 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image8__drop-file', type: "file", id: 'file8'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image9.cleafix
-              - if Image.where(item_id: @item.id)[7].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
-                .item-contents__main__form__upload-box__image5__view
-                  .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
-                    .item-contents__main__form__upload-box__image5__view__btn
-                      %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
-                .item-contents__main__form__upload-box__image6__view
-                  .item-contents__main__form__upload-box__image6__view__file
-                    %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
-                    .item-contents__main__form__upload-box__image6__view__btn
-                      %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
-                .item-contents__main__form__upload-box__image7__view
-                  .item-contents__main__form__upload-box__image7__view__file
-                    %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
-                    .item-contents__main__form__upload-box__image7__view__btn
-                      %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
-                .item-contents__main__form__upload-box__image8__view
-                  .item-contents__main__form__upload-box__image8__view__file
-                    %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
-                    .item-contents__main__form__upload-box__image8__view__btn
-                      %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
-                .item-contents__main__form__upload-box__image9__view
-                  .item-contents__main__form__upload-box__image9__view__file
-                    %img.item-contents__main__form__upload-box__image9__view__file__preview{src: Image.where(item_id: @item.id)[7].url.url}
-                    .item-contents__main__form__upload-box__image9__view__btn
-                      %a.item-contents__main__form__upload-box__image9__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image9__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[7].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image5__view
+                    .item-contents__main__form__upload-box__image5__view__file
+                      %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
+                      .item-contents__main__form__upload-box__image5__view__btn
+                        %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image6__view
+                    .item-contents__main__form__upload-box__image6__view__file
+                      %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
+                      .item-contents__main__form__upload-box__image6__view__btn
+                        %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image7__view
+                    .item-contents__main__form__upload-box__image7__view__file
+                      %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
+                      .item-contents__main__form__upload-box__image7__view__btn
+                        %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image8__view
+                    .item-contents__main__form__upload-box__image8__view__file
+                      %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
+                      .item-contents__main__form__upload-box__image8__view__btn
+                        %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image9__view
+                    .item-contents__main__form__upload-box__image9__view__file
+                      %img.item-contents__main__form__upload-box__image9__view__file__preview{src: Image.where(item_id: @item.id)[7].url.url}
+                      .item-contents__main__form__upload-box__image9__view__btn
+                        %a.item-contents__main__form__upload-box__image9__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image9__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image9__box
                     .input-area9
@@ -327,61 +328,61 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image9__drop-file', type: "file", id: 'file9'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image10.cleafix
-              - if Image.where(item_id: @item.id)[8].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
-                .item-contents__main__form__upload-box__image5__view
-                  .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
-                    .item-contents__main__form__upload-box__image5__view__btn
-                      %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
-                .item-contents__main__form__upload-box__image6__view
-                  .item-contents__main__form__upload-box__image6__view__file
-                    %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
-                    .item-contents__main__form__upload-box__image6__view__btn
-                      %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
-                .item-contents__main__form__upload-box__image7__view
-                  .item-contents__main__form__upload-box__image7__view__file
-                    %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
-                    .item-contents__main__form__upload-box__image7__view__btn
-                      %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
-                .item-contents__main__form__upload-box__image8__view
-                  .item-contents__main__form__upload-box__image8__view__file
-                    %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
-                    .item-contents__main__form__upload-box__image8__view__btn
-                      %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
-                .item-contents__main__form__upload-box__image9__view
-                  .item-contents__main__form__upload-box__image9__view__file
-                    %img.item-contents__main__form__upload-box__image9__view__file__preview{src: Image.where(item_id: @item.id)[7].url.url}
-                    .item-contents__main__form__upload-box__image9__view__btn
-                      %a.item-contents__main__form__upload-box__image9__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image9__view__btn__right 削除
-                .item-contents__main__form__upload-box__image10__view
-                  .item-contents__main__form__upload-box__image10__view__file
-                    %img.item-contents__main__form__upload-box__image10__view__file__preview{src: Image.where(item_id: @item.id)[8].url.url}
-                    .item-contents__main__form__upload-box__image10__view__btn
-                      %a.item-contents__main__form__upload-box__image10__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image10__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[8].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image5__view
+                    .item-contents__main__form__upload-box__image5__view__file
+                      %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
+                      .item-contents__main__form__upload-box__image5__view__btn
+                        %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image6__view
+                    .item-contents__main__form__upload-box__image6__view__file
+                      %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
+                      .item-contents__main__form__upload-box__image6__view__btn
+                        %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image7__view
+                    .item-contents__main__form__upload-box__image7__view__file
+                      %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
+                      .item-contents__main__form__upload-box__image7__view__btn
+                        %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image8__view
+                    .item-contents__main__form__upload-box__image8__view__file
+                      %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
+                      .item-contents__main__form__upload-box__image8__view__btn
+                        %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image9__view
+                    .item-contents__main__form__upload-box__image9__view__file
+                      %img.item-contents__main__form__upload-box__image9__view__file__preview{src: Image.where(item_id: @item.id)[7].url.url}
+                      .item-contents__main__form__upload-box__image9__view__btn
+                        %a.item-contents__main__form__upload-box__image9__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image9__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image10__view
+                    .item-contents__main__form__upload-box__image10__view__file
+                      %img.item-contents__main__form__upload-box__image10__view__file__preview{src: Image.where(item_id: @item.id)[8].url.url}
+                      .item-contents__main__form__upload-box__image10__view__btn
+                        %a.item-contents__main__form__upload-box__image10__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image10__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image10__box
                     .input-area10
@@ -392,67 +393,67 @@
                     =i.file_field :url, class: 'item-contents__main__form__upload-box__image10__drop-file', type: "file", id: 'file10'
             = f.fields_for :images do |i|
               .item-contents__main__form__upload-box__image11.cleafix
-              - if Image.where(item_id: @item.id)[9].present?
-                .item-contents__main__form__upload-box__image2__view
-                  .item-contents__main__form__upload-box__image2__view__file
-                    %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
-                    .item-contents__main__form__upload-box__image2__view__btn
-                      %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
-                .item-contents__main__form__upload-box__image3__view
-                  .item-contents__main__form__upload-box__image3__view__file
-                    %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
-                    .item-contents__main__form__upload-box__image3__view__btn
-                      %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
-                .item-contents__main__form__upload-box__image4__view
-                  .item-contents__main__form__upload-box__image4__view__file
-                    %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
-                    .item-contents__main__form__upload-box__image4__view__btn
-                      %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
-                .item-contents__main__form__upload-box__image5__view
-                  .item-contents__main__form__upload-box__image5__view__file
-                    %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
-                    .item-contents__main__form__upload-box__image5__view__btn
-                      %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
-                .item-contents__main__form__upload-box__image6__view
-                  .item-contents__main__form__upload-box__image6__view__file
-                    %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
-                    .item-contents__main__form__upload-box__image6__view__btn
-                      %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
-                .item-contents__main__form__upload-box__image7__view
-                  .item-contents__main__form__upload-box__image7__view__file
-                    %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
-                    .item-contents__main__form__upload-box__image7__view__btn
-                      %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
-                .item-contents__main__form__upload-box__image8__view
-                  .item-contents__main__form__upload-box__image8__view__file
-                    %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
-                    .item-contents__main__form__upload-box__image8__view__btn
-                      %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
-                .item-contents__main__form__upload-box__image9__view
-                  .item-contents__main__form__upload-box__image9__view__file
-                    %img.item-contents__main__form__upload-box__image9__view__file__preview{src: Image.where(item_id: @item.id)[7].url.url}
-                    .item-contents__main__form__upload-box__image9__view__btn
-                      %a.item-contents__main__form__upload-box__image9__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image9__view__btn__right 削除
-                .item-contents__main__form__upload-box__image10__view
-                  .item-contents__main__form__upload-box__image10__view__file
-                    %img.item-contents__main__form__upload-box__image10__view__file__preview{src: Image.where(item_id: @item.id)[8].url.url}
-                    .item-contents__main__form__upload-box__image10__view__btn
-                      %a.item-contents__main__form__upload-box__image10__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image10__view__btn__right 削除
-                .item-contents__main__form__upload-box__image11__view
-                  .item-contents__main__form__upload-box__image11__view__file
-                    %img.item-contents__main__form__upload-box__image11__view__file__preview{src: Image.where(item_id: @item.id)[9].url.url}
-                    .item-contents__main__form__upload-box__image11__view__btn
-                      %a.item-contents__main__form__upload-box__image11__view__btn__left 編集
-                      %a.item-contents__main__form__upload-box__image11__view__btn__right 削除
+                - if Image.where(item_id: @item.id)[9].present?
+                  .item-contents__main__form__upload-box__image2__view
+                    .item-contents__main__form__upload-box__image2__view__file
+                      %img.item-contents__main__form__upload-box__image2__view__file__preview{src: Image.where(item_id: @item.id)[0].url.url}
+                      .item-contents__main__form__upload-box__image2__view__btn
+                        %a.item-contents__main__form__upload-box__image2__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image2__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image3__view
+                    .item-contents__main__form__upload-box__image3__view__file
+                      %img.item-contents__main__form__upload-box__image3__view__file__preview{src: Image.where(item_id: @item.id)[1].url.url}
+                      .item-contents__main__form__upload-box__image3__view__btn
+                        %a.item-contents__main__form__upload-box__image3__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image3__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image4__view
+                    .item-contents__main__form__upload-box__image4__view__file
+                      %img.item-contents__main__form__upload-box__image4__view__file__preview{src: Image.where(item_id: @item.id)[2].url.url}
+                      .item-contents__main__form__upload-box__image4__view__btn
+                        %a.item-contents__main__form__upload-box__image4__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image4__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image5__view
+                    .item-contents__main__form__upload-box__image5__view__file
+                      %img.item-contents__main__form__upload-box__image5__view__file__preview{src: Image.where(item_id: @item.id)[3].url.url}
+                      .item-contents__main__form__upload-box__image5__view__btn
+                        %a.item-contents__main__form__upload-box__image5__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image5__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image6__view
+                    .item-contents__main__form__upload-box__image6__view__file
+                      %img.item-contents__main__form__upload-box__image6__view__file__preview{src: Image.where(item_id: @item.id)[4].url.url}
+                      .item-contents__main__form__upload-box__image6__view__btn
+                        %a.item-contents__main__form__upload-box__image6__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image6__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image7__view
+                    .item-contents__main__form__upload-box__image7__view__file
+                      %img.item-contents__main__form__upload-box__image7__view__file__preview{src: Image.where(item_id: @item.id)[5].url.url}
+                      .item-contents__main__form__upload-box__image7__view__btn
+                        %a.item-contents__main__form__upload-box__image7__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image7__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image8__view
+                    .item-contents__main__form__upload-box__image8__view__file
+                      %img.item-contents__main__form__upload-box__image8__view__file__preview{src: Image.where(item_id: @item.id)[6].url.url}
+                      .item-contents__main__form__upload-box__image8__view__btn
+                        %a.item-contents__main__form__upload-box__image8__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image8__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image9__view
+                    .item-contents__main__form__upload-box__image9__view__file
+                      %img.item-contents__main__form__upload-box__image9__view__file__preview{src: Image.where(item_id: @item.id)[7].url.url}
+                      .item-contents__main__form__upload-box__image9__view__btn
+                        %a.item-contents__main__form__upload-box__image9__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image9__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image10__view
+                    .item-contents__main__form__upload-box__image10__view__file
+                      %img.item-contents__main__form__upload-box__image10__view__file__preview{src: Image.where(item_id: @item.id)[8].url.url}
+                      .item-contents__main__form__upload-box__image10__view__btn
+                        %a.item-contents__main__form__upload-box__image10__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image10__view__btn__right 削除
+                  .item-contents__main__form__upload-box__image11__view
+                    .item-contents__main__form__upload-box__image11__view__file
+                      %img.item-contents__main__form__upload-box__image11__view__file__preview{src: Image.where(item_id: @item.id)[9].url.url}
+                      .item-contents__main__form__upload-box__image11__view__btn
+                        %a.item-contents__main__form__upload-box__image11__view__btn__left 編集
+                        %a.item-contents__main__form__upload-box__image11__view__btn__right 削除
                 %label
                   .item-contents__main__form__upload-box__image11__box
                     .input-area11
