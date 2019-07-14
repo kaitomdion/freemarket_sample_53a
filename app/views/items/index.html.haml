@@ -18,7 +18,7 @@
     .items-contents
       -# = render partial: '/items/items_category/ladies', collection: @items_ladies
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/categories/1' , class: "items-contents__title__name" do
           レディース新着アイテム
       .items-contents__boxes.clearfix
         - @items_ladies.each do |item|
@@ -36,11 +36,12 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/categories/1', class: "items-contents__all__link" do
+          すべての商品をみる
         
     .items-contents
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/categories/2', class: "items-contents__title__name" do
           メンズ新着アイテム
       .items-contents__boxes.clearfix
         - @items_mens.each do |item|
@@ -58,10 +59,11 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/categories/2', class: "items-contents__all__link" do
+          すべての商品をみる
     .items-contents
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/categories/3', class: "items-contents__title__name" do
           ベビー・キッズ新着アイテム
       .items-contents__boxes.clearfix
         - @items_kids.each do |item|
@@ -79,10 +81,11 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/categories/3', class: "items-contents__all__link" do
+          すべての商品をみる
     .items-contents
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/categories/7', class: "items-contents__title__name" do
           コスメ・香水・美容 新着アイテム
       .items-contents__boxes.clearfix
         - @items_cosmetics.each do |item|
@@ -100,12 +103,13 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/categories/7', class: "items-contents__all__link" do
+          すべての商品をみる
   .contents
     %h2.items-head ピックアップブランド
     .items-contents
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/brands/23', class: "items-contents__title__name" do
           シャネル 新着アイテム
       .items-contents__boxes.clearfix
         - @items_chanel.each do |item|
@@ -123,10 +127,11 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/brands/23', class: "items-contents__all__link" do
+          すべての商品をみる
     .items-contents
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/brands/82', class: "items-contents__title__name" do
           ルイ ヴィトン新着アイテム
       .items-contents__boxes.clearfix
         - @items_louisvuitton.each do |item|
@@ -144,10 +149,11 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/brands/82', class: "items-contents__all__link" do
+          すべての商品をみる
     .items-contents
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/brands/24', class: "items-contents__title__name" do
           シュプリーム新着アイテム
       .items-contents__boxes.clearfix
         - @items_supreme.each do |item|
@@ -165,10 +171,11 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/brands/24', class: "items-contents__all__link" do
+          すべての商品をみる
     .items-contents
       %h3.items-contents__title.clearfix 
-        =link_to "", class: "items-contents__title__name" do
+        =link_to '/brands/41', class: "items-contents__title__name" do
           ナイキ 新着アイテム
       .items-contents__boxes.clearfix
         - @items_nike.each do |item|
@@ -186,7 +193,8 @@
                     %i.far.fa-heart
                 .items-contents__boxes__box__text__tax (税込)
       .items-contents__all 
-        =link_to "すべての商品をみる", class: "items-contents__all__link"
+        =link_to '/brands/41', class: "items-contents__all__link" do
+          すべての商品をみる
 
   .bottom-banner
     .bottom-banner__photo

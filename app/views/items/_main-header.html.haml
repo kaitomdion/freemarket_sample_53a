@@ -2,7 +2,7 @@
   .top-header__container
     .top-header__container__search
       %h1
-        =link_to "", class: "top-header__container__search__image" do
+        =link_to root_path, class: "top-header__container__search__image" do
           = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2334484240", height: "36", width: "134") 
       = form_tag(search_items_path, method: 'get',class:'top-header__container__search__form') do
         = text_field_tag :search, '', class: 'top-header__container__search__form__input'
@@ -20,7 +20,7 @@
               %ul.top-header__container__navi__left__l__category__list__search
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/1', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       レディース
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -447,7 +447,7 @@
                             その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/2', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       メンズ
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -828,7 +828,7 @@
                         その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/3', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       ベビー・キッズ
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -1225,7 +1225,7 @@
                             その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/4', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       インテリア・住まい・小物
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -1629,7 +1629,7 @@
                         その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/5', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       本・音楽・ゲーム
                     
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
@@ -1819,7 +1819,7 @@
                             その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/6', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       おもちゃ・ホビー・グッズ
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -2156,7 +2156,7 @@
                             模型制作用品
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/7', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       コスメ・香水・美容
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -2463,7 +2463,7 @@
                             その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/8', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       家電・スマホ・カメラ
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -2727,7 +2727,7 @@
                             その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/9', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       スポーツ・レジャー
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -3068,7 +3068,7 @@
                             その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/10', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       ハンドメイド
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -3234,7 +3234,7 @@
                         その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/11', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       チケット
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -3423,7 +3423,7 @@
                         その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/12', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       自動車・オートバイ
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list
@@ -3611,7 +3611,7 @@
                             その他
                 %li.top-header__container__navi__left__l__category__list__search__li
                   %h3.top-header__container__navi__left__l__category__list__search__li__title
-                    =link_to "", class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
+                    =link_to '/categories/13', class:"top-header__container__navi__left__l__category__list__search__li__title__link" do
                       その他
                   %ul.top-header__container__navi__left__l__category__list__search__li__detail
                     %li.top-header__container__navi__left__l__category__list__search__li__detail__list

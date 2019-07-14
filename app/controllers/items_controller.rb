@@ -42,21 +42,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
-    @category = Category.find_by(id: @item.category_id)
-    @brand = Brand.find_by(id: @item.brand_id)
-    @image = Image.where(item_id: @item.id)
-    # respond_to do |format|
-    #   format.html
-    #   format.json do
-    #       @grandchildren = @category.id
-    #       @children = @category.parent.id
-    #       @parent = @category.parent.parent
-    #       @child = @category.parent.parent.children.ids
-    #       @grand =  @category.parent.children
-    #       # @a = @child.index
-    #   end
-    # end
+    if @item.saler_id == current_user.id
+      @item = Item.find(params[:id])
+      @category = Category.find_by(id: @item.category_id)
+      @brand = Brand.find_by(id: @item.brand_id)
+      @image = Image.where(item_id: @item.id)
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -84,18 +77,25 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-   
     @item = Item.find(params[:id])
-    #  binding.pry
+    if @item.saler_id != current_user.id
+    @item = Item.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def end
   end
   
   def editprev
+    if @item.saler_id == current_user.id
     @images = @item.images
     @category = Category.find(@item.category_id)
     @user = User.find(@item.saler_id)
+    else
+      redirect_to root_path
+    end
   end
 
 

@@ -1,7 +1,27 @@
 $(document).on('turbolinks:load', function(){
+  
+
+  var num = $('.item-contents__main__form__upload-box__image').length;
+    console.log(num)
+   if(num == 1){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+  }
+
+
+
 
   var new_url = window.location.protocol + '//' + window.location.host + '/items/new' 
   if(location.href == new_url){
+  $('.item-contents__main__form__upload-box__image').css("display" , "block");
   $('.item-contents__main__form__upload-box__image2').css("display" , "none");
   $('.item-contents__main__form__upload-box__image3').css("display" , "none");
   $('.item-contents__main__form__upload-box__image4').css("display" , "none");
@@ -12,6 +32,140 @@ $(document).on('turbolinks:load', function(){
   $('.item-contents__main__form__upload-box__image9').css("display" , "none");
   $('.item-contents__main__form__upload-box__image10').css("display" , "none");
   $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+  }
+  
+   
+  
+  if(num == 2){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').nextAll().remove();
+  }
+
+  if(num == 3){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').nextAll().remove();
+  }
+
+  if(num == 4){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').nextAll().remove();
+  }
+
+  if(num == 5){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').nextAll().remove();
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+  }
+
+  if(num == 6){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').nextAll().remove();
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+  }
+  
+  if(num == 7){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').nextAll().remove();
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+  }
+
+  if(num == 8){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').nextAll().remove();
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+  }
+
+  if(num == 9){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').nextAll().remove();
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+  }
+
+  if(num == 10){
+    $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').nextAll().remove();
+    $(".item-contents__main__form__upload-box").css("height", "450px");
   }
 
   $('.item-contents__main__form__upload-box__image').on('change', 'input[type="file"]', function(e){
@@ -348,6 +502,7 @@ $(document).on('click', '.item-contents__main__form__upload-box__image9__view__b
   $(".item-contents__main__form__upload-box__image9").css("display", "none")
   $(".item-contents__main__form__upload-box__image8").css("display", "block")
   $("#file8").css("display", "none")
+  
 })
 
 
