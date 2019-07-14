@@ -91,6 +91,14 @@
     }
 
 }
+.navi-item.clearfix{
+  .navi-item__link-prev__text{
+    float:left;
+  }
+  .navi-item__link-next__text{
+    float:right;
+  }
+}
 .item-social{
   margin: 24px auto;
   padding: 32px 0 24px;

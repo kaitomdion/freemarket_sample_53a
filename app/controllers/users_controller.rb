@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def itemlist
     @user = User.find(params[:id])
     if @user.id == current_user.id
-      @saleitem = Item.where(saler_id:current_user.id)
+       @saleitem = Item.where(saler_id:current_user.id)
     else
       redirect_to root_path
     end
