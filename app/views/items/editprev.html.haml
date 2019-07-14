@@ -111,11 +111,9 @@
       %br>/
       削除する代わりに停止することもできます。
       %br/
-      = succeed "\u{672c}\u{5f53}\u{306b}\u{524a}\u{9664}\u{3057}\u{307e}\u{3059}\u{304b}\u{ff1f}" do
-        %br/
   .clearfix
     .btn-cancel-div
-      %button#modal-btn-cancel{"data-close" => "modal"} キャンセル
+      %button#modal-btn-cancel{"data-close": "modal"} キャンセル
     .mo
     = link_to '削除する', "/items/#{@item.id}", method: :delete
     %button.modal-btn-delete{type: "submit"}
