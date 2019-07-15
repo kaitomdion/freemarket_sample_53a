@@ -36,7 +36,17 @@
           right:16px;
           color:#eee;
         }
+        .li__link {
+          color: black;
+        }
+        .li__link:hover {
+          text-decoration: none;
+        }
       }
+      li:hover {
+        background: #eee
+      }
+
     }
     h3{
       font-size:16px;

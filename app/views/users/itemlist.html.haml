@@ -1,7 +1,8 @@
 .wrapper
   = render '/items/main-header'
-  .nav
-    nav-bar
+  - breadcrumb :itemlist, @user
+  .breadcrumb
+    = breadcrumbs pretext: "", separator: " &rsaquo; ",class: "breadcrumb__text"
   .main-container
     .main-content
       %section.main-content-purchace

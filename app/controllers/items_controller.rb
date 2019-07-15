@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit ,:update ,:editprev ,:destroy]
+  before_action :set_item, only: [:show, :edit ,:update ,:editprev ,:destroy, :confirm]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -77,6 +77,7 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+    @user = User.find_by(id: current_user.id)
     @item = Item.find(params[:id])
     if @item.saler_id != current_user.id
     @item = Item.find(params[:id])

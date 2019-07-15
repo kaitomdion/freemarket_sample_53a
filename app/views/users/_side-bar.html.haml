@@ -2,98 +2,98 @@
   %nav.side-bar__box
     %ul
       %li
-        = link_to "item_path" do
+        = link_to "item_path", class: "li__link" do
           マイページ
         %i.fa.fa-chevron-right
       %li
-        = link_to  "/jp/mypage/notification/" do
+        = link_to  "/jp/mypage/notification/", class: "li__link" do
           お知らせ
         %i.fa.fa-chevron-right
       %li
-        = link_to "/jp/mypage/todo/" do
+        = link_to "/jp/mypage/todo/", class: "li__link" do
           やることリスト
         %i.fa.fa-chevron-right
       %li
-        = link_to "/jp/mypage/like/history/" do
+        = link_to "/jp/mypage/like/history/", class: "li__link" do
           いいね一覧
         %i.fa.fa-chevron-right
       %li
-        = link_to new_item_path do
+        = link_to new_item_path , class: "li__link" do
           出品する
         %i.fa.fa-chevron-right
       %li
-        = link_to itemlist_user_path(current_user.id) do
+        = link_to itemlist_user_path(current_user.id), class: "li__link" do
           出品した商品-出品中
         %i.fa.fa-chevron-right
       %li
-        = link_to "/jp/mypage/listings/in progress/" do
+        = link_to "/jp/mypage/listings/in progress/", class: "li__link" do
           出品した商品-取引中
         %i.fa.fa-chevron-right
       %li
-        = link_to "/jp/mypage/listings/completed/"do
+        = link_to "/jp/mypage/listings/completed/", class: "li__link" do
           出品した商品-売却済み
         %i.fa.fa-chevron-right
       %li
-        = link_to "/jp/mypage/purchace/" do
+        = link_to "/jp/mypage/purchace/", class: "li__link" do
           購入した商品-取引中
         %i.fa.fa-chevron-right
       %li
-        = link_to "/jp/mypage/purchaced/" do
+        = link_to "/jp/mypage/purchaced/", class: "li__link" do
           購入した商品-過去の取引
         %i.fa.fa-chevron-right
       %li
-        = link_to "/jp/mypage/news/" do
+        = link_to "/jp/mypage/news/", class: "li__link" do
           ニュース一覧
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/review/history/" do
+        =link_to "/jp/mypage/review/history/", class: "li__link" do
           評価一覧
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/help center/" do
+        =link_to "/jp/help center/", class: "li__link" do
           ガイド
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/support/" do
+        =link_to "/jp/mypage/support/", class: "li__link" do
           お問い合わせ
         %i.fa.fa-chevron-right
     %h3  メルペイ
     %ul
       %li
-        =link_to "/jp/mypage/sales/" do
+        =link_to "/jp/mypage/sales/", class: "li__link" do
           残高・振込申請
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/point/" do
+        =link_to "/jp/mypage/point/", class: "li__link" do
           ポイント
         %i.fa.fa-chevron-right
     %h3  設定
     %ul
       %li
-        =link_to "/jp/mypage/profile/" do
+        =link_to "/jp/mypage/profile/", class: "li__link" do
           プロフィール
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/deliver/address/" do
+        =link_to "/jp/mypage/deliver/address/", class: "li__link" do
           発送元・お届け先住所
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/card/" do
+        =link_to "/jp/mypage/card/", class: "li__link" do
           支払い方法
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/email password/" do
+        =link_to "/jp/mypage/email password/", class: "li__link" do
           メール/パスワード
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/identification/" do
+        =link_to account_information_user_path(current_user.id), class: "li__link" do
           本人情報
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/sms confirmation/" do
+        =link_to "/jp/mypage/sms confirmation/", class: "li__link" do
           電話番号の確認
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/logout/" do
+        =link_to "/jp/mypage/logout/", class: "li__link" do
           ログアウト
         %i.fa.fa-chevron-right 
