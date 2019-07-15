@@ -12,6 +12,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user.id == current_user.id
+      @user = User.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -39,8 +44,12 @@ class UsersController < ApplicationController
   end
 
   def itemlist
-    @saleitem = Item.where(saler_id:current_user.id)
     @user = User.find(params[:id])
+    if @user.id == current_user.id
+      @saleitem = Item.where(saler_id:current_user.id)
+    else
+      redirect_to root_path
+    end
   end
 
   private

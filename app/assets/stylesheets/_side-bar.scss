@@ -13,7 +13,12 @@
         display:flex;
         align-items: center;
         position:relative;
-        color: black;
+        &:hover{
+          background-color:whitesmoke;
+          .fa.fa-chevron-right{
+            color:black;
+          }
+        }
         .mypage{
           font-weight:bold;
           text-decoration: none;
@@ -24,15 +29,12 @@
           font-size:14px;
           width:100%;
           text-decoration:none;
+          color:black;
         }
         .fa.fa-chevron-right{
           position:absolute;
           right:16px;
           color:#eee;
-          // &:hover{
-          //   color:black;
-          //   right:15px;
-          // }
         }
         .li__link {
           color: black;

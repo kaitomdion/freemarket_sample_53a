@@ -17,6 +17,11 @@ crumb :category do |category|
   parent :root
 end
 
+crumb :brand do |brand|
+  link "#{brand.name}", category_path(brand)
+  parent :root
+end
+
 crumb :user do |user|
   link "マイページ", user_path(user)
   parent :root
