@@ -4,42 +4,89 @@
     nav-bar
   .main-container
     .main-content
-      %section.main-content-purchace
-        %h2.main-content-purchace__head
+      %section.main-content-section
+        %h2.main-content-section__head
           出品した商品
-        .tabs
-          %input#tab-5{checked: "checked", name: "tab-tv", type: "radio"}/
-          %label.tab-label5{for: "tab-5"} 取引中
-          %input#tab-6{name: "tab-tv", type: "radio"}/
-          %label.tab-label6{for: "tab-6"} 過去の取引
-          %input#tab-7{name: "tab-tv", type: "radio"}/
-          %label#tab-label7{for: "tab-7"} 売却済み
-          .tab-content.tab-5-content
+        %ul.tabs
+          %li.tabs--list.left
+            出品中
+          %li.tabs--list.middle
+            取引中
+          %li.tabs--list.right
+            売却済み
+        .tabs-content
+          %ul.tabs-contents
             - @saleitem.each do |saleitem|
-              %li.main-content-tabs__line__list__notice
-                %a.main-content-tabs__line__list__notice__field{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false"}
-                  %figure.main-content-tabs__line__list__notice__field__figure
-                    = image_tag (saleitem.images.first.url.url), size: "40x40"
-                  .mypage-item-body.show-stock-item
-                    .mypage-item-text
+              %a{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false",class:"itemshow-link"}
+                %li.tabs-contents__list
+                  %figure.tabs-contents__list__figure
+                    = image_tag (saleitem.images.first.url.url),size: "40X40"
+                  .tabs-contents__list__text
+                    .tabs-contents__list__text__upper
                       = saleitem.name
-                    %div.mypage-item-body
-                      %span.listing-item-count
-                        %i.i.far.fa-heart
-                        %span 
-                      %span.listing-item-count
+                    .tabs-contents__list__text__middle
+                      %span.tabs-contents__list__text__middle--count
+                        %i.far.fa-heart
+                        %span.count
+                          0
+                        %span
+                      %span.tabs-contents__list__text__middle--count
                         %i.far.fa-comment-alt
-                        %span 
-                      .mypage-item-status.bold.awaiting
+                        %span.count
+                          0
+                        %span
+                      .tabs-contents__list__text__middle--status
                         出品中
                   %i.fas.fa-chevron-right
-          .tab-content.tab-6-content
-            %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
-              %li.mypage-item-not-found.bold 取引中の商品がありません
-          .tab-content.tab-7-content
-            %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
-              %li.mypage-item-not-found.bold 売却済みの商品はありません
     = render 'side-bar'
-  .aside
-    aside
+  = render 'items/item_banner'
   = render 'items/main-footer'
+
+
+
+
+-# .wrapper
+-#   = render '/items/main-header'
+-#   .nav
+-#     nav-bar
+-#   .main-container
+-#     .main-content
+-#       %section.main-content-purchace
+-#         %h2.main-content-purchace__head
+-#           出品した商品
+-#         .tab-itemlist
+-#           %input#tab-5{checked: "checked", name: "tab-tv", type: "radio"}/
+-#           %label.tab-label5{for: "tab-5"} 取引中
+-#           %input#tab-6{name: "tab-tv", type: "radio"}/
+-#           %label.tab-label6{for: "tab-6"} 過去の取引
+-#           %input#tab-7{name: "tab-tv", type: "radio"}/
+-#           %label#tab-label7{for: "tab-7"} 売却済み
+-#           .tab-content.tab-5-content
+-#             - @saleitem.each do |saleitem|
+-#               %li.main-content-tabs__line__list__notice
+-#                 %a.main-content-tabs__line__list__notice__field{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false"}
+-#                   %figure.main-content-tabs__line__list__notice__field__figure
+-#                     = image_tag (saleitem.images.first.url.url), size: "40x40"
+-#                   .mypage-item-body.show-stock-item
+-#                     .mypage-item-text
+-#                       = saleitem.name
+-#                     %div.mypage-item-body
+-#                       %span.listing-item-count
+-#                         %i.i.far.fa-heart
+-#                         %span 
+-#                       %span.listing-item-count
+-#                         %i.far.fa-comment-alt
+-#                         %span 
+-#                       .mypage-item-status.bold.awaiting
+-#                         出品中
+-#                   %i.fas.fa-chevron-right
+-#           .tab-content.tab-6-content
+-#             %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+-#               %li.mypage-item-not-found.bold 取引中の商品がありません
+-#           .tab-content.tab-7-content
+-#             %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+-#               %li.mypage-item-not-found.bold 売却済みの商品はありません
+-#     = render 'side-bar'
+-#   .aside
+-#     aside
+-#   = render 'items/main-footer'

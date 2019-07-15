@@ -3,122 +3,163 @@
   - breadcrumb :user, @user
   .breadcrumb
     = breadcrumbs pretext: "", separator: " &rsaquo; ",class: "breadcrumb__text"
-  .main-container
-    .main-content
-      %section.main-content__mypage-user
-        %a.main-content__mypage-user__field
-          %figure.main-content__mypage-user__field__figure
-            %img.main-content__mypage-user__field__figure__image{alt: "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}/
-          %h2.main-content__mypage-user__field__name 
-            = current_user.nickname
-          .main-content__mypage-user__field__number.clearfix
-            .main-content__mypage-user__field__number__evaluation
-              評価
-              %span.main-content__mypage-user__field____evaluation__count 36
-            .main-content__mypage-user__field__number__sells
-              出品数
-              %span.main-content__mypage-user__field__sells__count 33
-      .tabs
-        %input#tab-1{checked: "checked", name: "tab-radio", type: "radio"}/
-        %label.tab-label1{for: "tab-1"} お知らせ
-        %input#tab-2{name: "tab-radio", type: "radio"}/
-        %label.tab-label2{for: "tab-2"} やることリスト
-        .tab-content.tab-1-content
-          %li.main-content-tabs__line__list__notice
-            %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
-              %figure.main-content-tabs__line__list__notice__field__figure
-                %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-              .main-content-tabs__line__list--textarea
-                .main-content-tabs__line__list--textarea__text いいね！しました
-                .main-content-tabs__line__list--textarea__timebox
-                  %i.fa.fa-clock-o
-                  %span.day-time 1 日前
-              %i.fa.fa-chevron-right
-          %li.main-content-tabs__line__list__notice
-            %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
-              %figure.main-content-tabs__line__list__notice__field__figure
-                %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-              .main-content-tabs__line__list--textarea
-                .main-content-tabs__line__list--textarea__text いいね！しました
-                .main-content-tabs__line__list--textarea__timebox
-                  %i.fa.fa-clock-o
-                  %span.day-time 1 日前
-              %i.fa.fa-chevron-right
-          %li.main-content-tabs__line__list__notice
-            %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
-              %figure.main-content-tabs__line__list__notice__field__figure
-                %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-              .main-content-tabs__line__list--textarea
-                .main-content-tabs__line__list--textarea__text いいね！しました
-                .main-content-tabs__line__list--textarea__timebox
-                  %i.fa.fa-clock-o
-                  %span.day-time 1 日前
-              %i.fa.fa-chevron-right
-          %li.main-content-tabs__line__list__back
-            %a.main-content-tabs__line__list__back-text{href: "/jp/mypage/notification/"} 一覧を見る
-        .tab-content.tab-2-content
-          %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
-            %li.mypage-item-not-found.bold 現在、やることリストはありません
+  .main-content
+    %section.main-content__userfield
+      %a{:href => "https://www.mercari.com/jp/u/937091267/"}
+        %figure
+          %img{:alt => "", :height => "60", :src => "//static.mercdn.net/images/member_photo_noimage_thumb.png", :width => "60"}/
+        %h2.bold ケンピー
+        .mypage-number
+          %div
+            評価
+            %span.bold 37
+          %div
+            出品数
+            %span.bold 36
+    %section.mypage-tab-container-notification-todo
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+              お知らせ
+              %span.mypage-nav-number.hidden-large
+                2
+        %li
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-todo"}
+              やることリスト
+      .tab-content
+        %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+          %li
+            %a.mypage-item-link{:href => "https://item.mercari.com/jp/m62002611702/"}
+              %figure
+                %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/thumb/members/391137840.jpg?1542582835", :src => "//static.mercdn.net/thumb/members/391137840.jpg?1542582835"}/
+              .mypage-item-body
+                .mypage-item-text 1925さん、他25名が「MacBook Pro 13イ...」にいいね！しました
+                %time
+                  %i.icon-time
+                  %span 5 時間前
+              %i.icon-arrow-right
+          %li.mypage-go-list
+            %a{:href => "/jp/mypage/todo/"} 一覧を見る
+    %section.mypage-tab-container
+      %h2.mypage-tab-head 購入した商品
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-now"}
+              取引中
+        %li
+          %h3
+            %a{"data-toggle" => "tab", :href => "#mypage-tab-transaction-old"}
+              過去の取引
+      .tab-content
+        %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+          %li.mypage-item-not-found.bold 取引中の商品がありません
+        %ul#mypage-tab-transaction-old.mypage-item-list.tab-pane
+          %li
+            %a.mypage-item-link{:href => "https://www.mercari.com/jp/transaction/order_status/m94632766835/"}
+              %figure
+                %img.lazyload{:alt => "", "data-src" => "//static.mercdn.net/thumb/photos/m94632766835_1.jpg?1562049256"}/
+              .mypage-item-body
+                .mypage-item-text
+                  「アンカー Anker
+                  A3902011 Bluetooth ヘッドホン」 を購入しました。
+                  %span 取引が完了しました
+                .mypage-item-status.bold.done
+                  取引完了
+              %i.icon-arrow-right
+          %li.mypage-go-list
+            %a{:href => "/jp/mypage/purchased/"} 一覧を見る
+  -# .main-container
+  -#   .main-content
+  -#     %section.main-content__mypage-user
+  -#       %a.main-content__mypage-user__field
+  -#         %figure.main-content__mypage-user__field__figure
+  -#           %img.main-content__mypage-user__field__figure__image{alt: "", height: "60", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "60"}/
+  -#         %h2.main-content__mypage-user__field__name 
+  -#           = current_user.nickname
+  -#         .main-content__mypage-user__field__number.clearfix
+  -#           .main-content__mypage-user__field__number__evaluation
+  -#             評価
+  -#             %span.main-content__mypage-user__field____evaluation__count 36
+  -#           .main-content__mypage-user__field__number__sells
+  -#             出品数
+  -#             %span.main-content__mypage-user__field__sells__count 33
+  -#     .tabs
+  -#       %input#tab-1{checked: "checked", name: "tab-radio", type: "radio"}/
+  -#       %label.tab-label1{for: "tab-1"} お知らせ
+  -#       %input#tab-2{name: "tab-radio", type: "radio"}/
+  -#       %label.tab-label2{for: "tab-2"} やることリスト
+  -#       .tab-content.tab-1-content
+  -#         %li.main-content-tabs__line__list__notice
+  -#           %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
+  -#             %figure.main-content-tabs__line__list__notice__field__figure
+  -#               %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+  -#             .main-content-tabs__line__list--textarea
+  -#               .main-content-tabs__line__list--textarea__text いいね！しました
+  -#               .main-content-tabs__line__list--textarea__timebox
+  -#                 %i.fa.fa-clock-o
+  -#                 %span.day-time 1 日前
+  -#             %i.fa.fa-chevron-right
+  -#         %li.main-content-tabs__line__list__notice
+  -#           %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
+  -#             %figure.main-content-tabs__line__list__notice__field__figure
+  -#               %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+  -#             .main-content-tabs__line__list--textarea
+  -#               .main-content-tabs__line__list--textarea__text いいね！しました
+  -#               .main-content-tabs__line__list--textarea__timebox
+  -#                 %i.fa.fa-clock-o
+  -#                 %span.day-time 1 日前
+  -#             %i.fa.fa-chevron-right
+  -#         %li.main-content-tabs__line__list__notice
+  -#           %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
+  -#             %figure.main-content-tabs__line__list__notice__field__figure
+  -#               %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+  -#             .main-content-tabs__line__list--textarea
+  -#               .main-content-tabs__line__list--textarea__text いいね！しました
+  -#               .main-content-tabs__line__list--textarea__timebox
+  -#                 %i.fa.fa-clock-o
+  -#                 %span.day-time 1 日前
+  -#             %i.fa.fa-chevron-right
+  -#         %li.main-content-tabs__line__list__back
+  -#           %a.main-content-tabs__line__list__back-text{href: "/jp/mypage/notification/"} 一覧を見る
+  -#       .tab-content.tab-2-content
+  -#         %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+  -#           %li.mypage-item-not-found.bold 現在、やることリストはありません
 
-      %section.main-content-purchace
-        %h2.main-content-purchace__head
-          購入した商品
-        .tabs
-          %input#tab-3{checked: "checked", name: "tab-tv", type: "radio"}/
-          %label.tab-label3{for: "tab-3"} 取引中
-          %input#tab-4{name: "tab-tv", type: "radio"}/
-          %label.tab-label4{for: "tab-4"} 過去の取引
-          .tab-content.tab-3-content
-            %li.main-content-tabs__line__list__todo
-              %a.main-content-tabs__line__list__todo__field{href: "https://mercari.com/jp/"}
-                %figure.main-content-tabs__line__list__todo__field__figure
-                  %img.main-content-tabs__line__list__todo__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-                .main-content-tabs__line__list__todo--textarea
-                  .main-content-tabs__line__list__todo--textarea__text いいね！しました
-                  .main-content-tabs__line__list--todo--textarea__timebox
-                    %span.main-content-tabs__line__list--todo--textarea__timebox-trihiki 取引完了
-                %i.fa.fa-chevron-right
-            %li.main-content-tabs__line__list__notice
-              %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
-                %figure.main-content-tabs__line__list__notice__field__figure
-                  %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-                .main-content-tabs__line__list--textarea
-                  .main-content-tabs__line__list--textarea__text いいね！しました
-                  .main-content-tabs__line__list--textarea__timebox
-                    %span.trihiki 取引完了
-                %i.fa.fa-chevron-right
-            %li.main-content-tabs__line__list__notice
-              %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
-                %figure.main-content-tabs__line__list__notice__field__figure
-                  %img.main-content-tabs__line__list__notice__field__figure__image{alt: "",src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-                .main-content-tabs__line__list--textarea
-                  .main-content-tabs__line__list--textarea__text いいね！しました
-                  .main-content-tabs__line__list--textarea__timebox
-                    %span.trihiki 取引完了
-                %i.fa.fa-chevron-right
-            %li.main-content-tabs__line__list__notice
-              %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
-                %figure.main-content-tabs__line__list__notice__field__figure
-                  %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-                .main-content-tabs__line__list--textarea
-                  .main-content-tabs__line__list--textarea__text いいね！しました
-                  .main-content-tabs__line__list--textarea__timebox
-                    %span.trihiki 取引完了
-                %i.fa.fa-chevron-right
-            %li.main-content-tabs__line__list__notice
-              %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
-                %figure.main-content-tabs__line__list__notice__field__figure
-                  %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
-                .main-content-tabs__line__list--textarea
-                  .main-content-tabs__line__list--textarea__text いいね！しました
-                  .main-content-tabs__line__list--textarea__timebox
-                    %span.trihiki 取引完了
-                %i.fa.fa-chevron-right
-            %li.main-content-tabs__line__list__back
-              %a.main-content-tabs__line__list__back-text{href: "/jp/mypage/notification/"} 一覧を見る
-          .tab-content.tab-4-content
-            %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
-              %li.mypage-item-not-found.bold 現在、やることリストはありません
+  -#     %section.main-content-purchace
+  -#       %h2.main-content-purchace__head
+  -#         購入した商品
+  -#       .tabs
+  -#         %input#tab-3{checked: "checked", name: "tab-tv", type: "radio"}/
+  -#         %label.tab-label3{for: "tab-3"} 取引中
+  -#         %input#tab-4{name: "tab-tv", type: "radio"}/
+  -#         %label.tab-label4{for: "tab-4"} 過去の取引
+  -#         .tab-content.tab-3-content
+  -#           %li.main-content-tabs__line__list__todo
+  -#             %a.main-content-tabs__line__list__todo__field{href: "https://mercari.com/jp/"}
+  -#               %figure.main-content-tabs__line__list__todo__field__figure
+  -#                 %img.main-content-tabs__line__list__todo__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+  -#               .main-content-tabs__line__list__todo--textarea
+  -#                 .main-content-tabs__line__list__todo--textarea__text いいね！しました
+  -#                 .main-content-tabs__line__list--todo--textarea__timebox
+  -#                   %span.main-content-tabs__line__list--todo--textarea__timebox-trihiki 取引完了
+  -#               %i.fa.fa-chevron-right
+  -#           %li.main-content-tabs__line__list__notice
+  -#             %a.main-content-tabs__line__list__notice__field{href: "https://mercari.com/jp/"}
+  -#               %figure.main-content-tabs__line__list__notice__field__figure
+  -#                 %img.main-content-tabs__line__list__notice__field__figure__image{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png"}/
+  -#               .main-content-tabs__line__list--textarea
+  -#                 .main-content-tabs__line__list--textarea__text いいね！しました
+  -#                 .main-content-tabs__line__list--textarea__timebox
+  -#                   %span.trihiki 取引完了
+  -#               %i.fa.fa-chevron-right
+  -#           %li.main-content-tabs__line__list__back
+  -#             %a.main-content-tabs__line__list__back-text{href: "/jp/mypage/notification/"} 一覧を見る
+  -#         .tab-content.tab-4-content
+  -#           %ul#mypage-tab-todo.mypage-item-list.tab-pane.active
+  -#             %li.mypage-item-not-found.bold 現在、やることリストはありません
     = render 'side-bar'
   = render 'items/item_banner'
   = render 'items/main-footer'
