@@ -13,6 +13,7 @@
         display:flex;
         align-items: center;
         position:relative;
+        color: black;
         .mypage{
           font-weight:bold;
           text-decoration: none;
@@ -33,7 +34,17 @@
           //   right:15px;
           // }
         }
+        .li__link {
+          color: black;
+        }
+        .li__link:hover {
+          text-decoration: none;
+        }
       }
+      li:hover {
+        background: #eee
+      }
+
     }
     h3{
       font-size:16px;

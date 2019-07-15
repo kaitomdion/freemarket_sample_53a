@@ -83,6 +83,10 @@
               border: 1px solid #ea352d;
               position: relative;
               color: #fff;
+              &__link {
+                color: white;
+                text-decoration: none;
+              }
             }
           }
         }
