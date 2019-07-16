@@ -58,9 +58,9 @@
             %th
               ブランド
             %td
-              = link_to brand_path(@brand.id), class: 'show__contents__detail-table__brand' do
-                - if @item.brand_id == nil
-                - else
+              - if @item.brand_id == nil
+              - else
+                = link_to brand_path(@brand.id), class: 'show__contents__detail-table__brand' do
                   = @brand.name
           %tr
             %th
