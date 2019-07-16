@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit ,:update ,:editprev ,:destroy]
+  before_action :set_item, only: [:show, :edit ,:update ,:editprev ,:destroy, :confirm]
   before_action :move_to_index, except: [:index, :show]
 
   def index
+    @parents = Category.all.order("id ASC").limit(13)
     @items_ladies = Item.ladies
     @items_mens = Item.mens
     @items_kids = Item.kids
@@ -15,6 +16,7 @@ class ItemsController < ApplicationController
 
   def show
     if @item.brand_id != nil
+    @parents = Category.all.order("id ASC").limit(13)
     @images = @item.images
     @brand =Brand.find(@item.brand_id)
     @category = Category.find(@item.category_id)
@@ -24,6 +26,7 @@ class ItemsController < ApplicationController
     @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
     @user = User.find(@item.saler_id)
     else
+    @parents = Category.all.order("id ASC").limit(13)
     @images = @item.images
     @category = Category.find(@item.category_id)
     @previtem = Item.where("id < ?", @item.id).order("id DESC").first
@@ -62,6 +65,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    
     @item.update(item_params) 
     # if @item.update
      redirect_to root_path(@item), notice: 'itemを編集しました'
@@ -86,6 +90,7 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+    @user = User.find_by(id: current_user.id)
     @item = Item.find(params[:id])
     if @item.saler_id != current_user.id
     @item = Item.find(params[:id])
@@ -98,6 +103,7 @@ class ItemsController < ApplicationController
   end
   
   def editprev
+    @parents = Category.all.order("id ASC").limit(13)
     if @item.saler_id == current_user.id
     @images = @item.images
     @category = Category.find(@item.category_id)

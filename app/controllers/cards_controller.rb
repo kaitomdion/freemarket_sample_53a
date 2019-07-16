@@ -6,6 +6,7 @@ class CardsController < ApplicationController
 
 
   def new
+    @parents = Category.all.order("id ASC").limit(13)
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
@@ -49,7 +50,7 @@ class CardsController < ApplicationController
     )
     # binding.pry
     
-    if @item.update( buyer_id: current_user.id)
+    if @item.update( buyer_id: current_user.id,item_status_id: 2)
       flash[:notice] = '購入しました。'
       redirect_to controller: "items", action: 'index'
     else
@@ -58,11 +59,24 @@ class CardsController < ApplicationController
     end
     
   end
-end
-private
-  def move_to_index
-    redirect_to new_user_session_path unless user_signed_in?
+
+  def delete
+    card = current_user.credit_card
+    if card.blank?
+      redirect_to action: "new"
+    else
+      Payjp.api_key = Rails.application.credentials.pay_jp[:secret_access_key]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+     #ここでpay.jpの方を消している
+      card.delete
+     #ここでテーブルにあるcardデータを消している
+    end  
   end
+end
+  private
+    def move_to_index
+      redirect_to new_user_session_path unless user_signed_in?
+    end
 
 end
-

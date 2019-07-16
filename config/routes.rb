@@ -11,18 +11,18 @@ Rails.application.routes.draw do
     get 'users/address', to: 'users/registrations#address'   
   end
   root "items#index"
-  resources :users, only: [:new, :show, :edit, :index] do
+  resources :users, only: [:new, :show, :index, :update] do
     collection do
       get 'credit_card'
       get 'done'
       get 'logout'
-      get 'account_information'
     end
     member do
       get 'itemlist'
       get 'profile_edit'
       get 'itemlist_transnow_sale'
       get 'itemlist_transnow_buy'
+      get 'account_information'
     end
   end
   resources :items, only: [:index, :show, :new,:destroy,:create,:edit,:update] do
