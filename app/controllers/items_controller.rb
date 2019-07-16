@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    if @item.brand_id != nil
     @parents = Category.all.order("id ASC").limit(13)
     @images = @item.images
     @brand =Brand.find(@item.brand_id)
@@ -24,6 +25,16 @@ class ItemsController < ApplicationController
     @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
     @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
     @user = User.find(@item.saler_id)
+    else
+    @parents = Category.all.order("id ASC").limit(13)
+    @images = @item.images
+    @category = Category.find(@item.category_id)
+    @previtem = Item.where("id < ?", @item.id).order("id DESC").first
+    @nextitem = Item.where("id > ?", @item.id).order("id ASC").first
+    @childitem =Item.where(category_id: @item.category_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
+    @useritem = Item.where(saler_id: @item.saler_id).where.not(id: @item.id).order(Arel.sql("RAND()")).limit(6)
+    @user = User.find(@item.saler_id)
+    end
   end
 
   def new

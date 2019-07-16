@@ -1,30 +1,27 @@
 .wrapper
   = render '/items/main-header'
-  - breadcrumb :itemlist, @user
-  .breadcrumb
-    = breadcrumbs pretext: "", separator: " &rsaquo; ",class: "breadcrumb__text"
+  .nav
+    nav-bar
   .main-container-itemlist
     .main-content
       %section.main-content-section
         %h2.main-content-section__head
-          出品した商品
-        %ul.tabs
-          %li.tabs--list.left.active
-            出品中
-          %li.tabs--list.middle
+          購入した商品
+        %ul.tabs--buy
+          %li.tabs--buy--list.now
             取引中
-          %li.tabs--list.right
-            売却済み
+          %li.tabs--buy--list.old
+            過去の取引
         .tabs-content
           %ul.tabs-contents
-            - @saleitem.each do |saleitem|
-              %a{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false",class:"itemshow-link"}
+            - @transactionItem_buy.each do |transactionItem_buy|
+              %a{href: "/items/#{transactionItem_buy.id}/","data-turbolinks" => "false",class:"itemshow-link"}
                 %li.tabs-contents__list
                   %figure.tabs-contents__list__figure
-                    = image_tag (saleitem.images.first.url.url),size: "40X40"
+                    = image_tag (transactionItem_buy.images.first.url.url),size: "40X40"
                   .tabs-contents__list__text
                     .tabs-contents__list__text__upper
-                      = saleitem.name
+                      = transactionItem_buy.name
                     .tabs-contents__list__text__middle
                       %span.tabs-contents__list__text__middle--count
                         %i.far.fa-heart
@@ -36,8 +33,8 @@
                         %span.count
                           0
                         %span
-                      .tabs-contents__list__text__middle--status
-                        出品中
+                      .tabs-contents__list__text__middle--status.finish
+                        取引完了
                   %i.fas.fa-chevron-right
     = render 'side-bar'
   = render 'items/item_banner'

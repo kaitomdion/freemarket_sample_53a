@@ -10,11 +10,10 @@
 @import "main-header";
 @import "user-mypage";
 @import "main-footer";
-@import "user-index";
+@import "user-profile_edit";
 @import "side-bar";
 @import "user_new";
 @import "./registration";
-@import "users";
 @import "sms_confirmation";
 @import "sms_confirmation_sms";
 @import "address";
@@ -40,3 +39,5 @@
 @import "itemlist";
 @import "./category";
 @import "show_brand";
+@import "itemlist_transnow_sale";
+@import "itemlist_transnow_buy";

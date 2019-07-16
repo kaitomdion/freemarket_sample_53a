@@ -178,15 +178,16 @@
     font-size:16px;
     text-align:center;
     background-color:#eee;
-    &.left{
-      background-color:white;
-      border-top: 2px solid red;
+    &.left.none{
+      border-top:2px solid #eee;
+      background-color:#eee;
     }
     &.middle{
       border-top:2px solid #eee;
     }
-    &.right{
-      border-top:2px solid #eee;
+    &.right.active{
+      background-color:white;
+      border-top: 2px solid red;
     }
   }
 }
@@ -231,14 +232,14 @@
               font-size:14px;
             }
           }
-          &--status{
+          &--status.saled{
             display: inline-block;
             margin: 0 0 0 8px;
             padding: 5px 6px;
             border-radius: 2px;
             font-size: 12px;
             color: #fff;
-            background: #0099e8;
+            background: gray;
           }
       }
     }
@@ -253,3 +254,22 @@
 }
 }
 }
+
+// .tab-content {
+//   display: none;
+//   border: 1px solid #999;
+//   min-height: 200px;
+//   width:700px;
+
+  .mypage-item-not-found.bold{
+  margin-top:50px;
+  padding: 160px 0 60px;
+  background: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?61790013);
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  background-size: 78px 85px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+  }
+// }

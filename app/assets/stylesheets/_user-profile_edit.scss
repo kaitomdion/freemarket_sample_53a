@@ -1,0 +1,317 @@
+// .wrapper{
+//   background-color: rgb(245,245,245);
+//   height:2132px;
+//   width:100%;
+//   padding:0;
+//   margin:0;
+//   .main-container-profile_edit{
+//     margin:40px auto 40px;
+//     width:1020px;
+//     height:1292px;
+//     display:block;
+//     padding:0 0 40px;
+//     .main-content{
+//       // float:right;
+//       // width:700px;
+//       // height:568px;
+//       // background:white;
+//       .l-chapter-container{
+//         height:100%;
+//         width:100%;
+//         .l-chapter-header{
+//           font-size:24px;
+//           padding:8px 24px;
+//           text-align:center;
+//           border-bottom: 1px solid #f5f5f5;
+//           font-weight:bold;
+//         }
+//         form{
+//           height:518px;
+//           box-sizing:border-box;
+//           .setting-profile-icon{
+//             padding:72px 16px 24px;
+//             background:url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?69765993);
+//             background-size:contain;
+//             text-align: center;
+//             .profile-profile{
+//               margin: 0 0 0;
+//               display: inline-block;
+//               width: 60px;
+//               height: 60px;
+//               vertical-align: middle;
+//               .image-image{
+//                 border-radius: 50%;
+//               }
+//             }
+//               .input-default{
+//                 box-sizing: border-box;
+//                 width:220px;
+//                 margin:0 0 0 8px;
+//                 vertical-align:middle;
+//                 display: inline-block;
+//                 font-size: 16px;
+//                 background:#fff;
+//                 border-radius:4px;
+//                 padding:10px 16px 8px;
+//                 vertical-align: middle;
+//                 border:1px solid #ccc;
+//                 line-height:1.5;
+//                 height:48px;
+//                 &:focus{
+//                   outline:none;
+//                   border:1px solid blue;
+//                 }
+//               }
+//           }
+//           .setting-profile-content{
+//             height:362px;
+//             box-sizing:border-box;
+//             padding:40px 16px;
+//             .textarea-default{
+//               box-sizing:border-box;
+//               border:0;
+//               display: block;
+//               width: 100%;
+//               min-height: 216px;
+//               min-width:100%;
+//               padding: 10px;
+//               border: 1px solid #ccc;
+//               background: #fff;
+//               font-size: 16px;
+//               line-height: 1.5;
+//               max-width:100%;
+//               &:focus{
+//                 outline:none;
+//                 border:1px solid blue;
+//               }
+//             }
+//             .btn-default.btn-red{
+//               margin: 16px 0 0;
+//               background: #ea352d;
+//               border: 1px solid #ea352d;
+//               color: #fff;
+//               display: block;
+//               width: 100%;
+//               line-height: 48px;
+//               font-size: 14px;
+//               transition: all ease-out .3s;
+//               cursor: pointer;
+//               text-align: center;
+//             }
+//           }
+//         }
+//       }
+//     }
+//     .side-bar{
+//       float:left;
+//       width:280px;
+//       margin:0 40px 0 0;
+//       .side-bar-box{
+//         ul{
+//           list-style:none;
+//           li{
+//             background-color:#fff ;
+//             border-top:1px solid  #eee;
+//             height:48px;
+//             display:flex;
+//             align-items: center;
+//             position:relative;
+//             &:hover{
+//               background-color:gray;
+//             }
+//             .mypage{
+//               font-weight:bold;
+//             }
+//             a{
+//               padding:16px;
+//               font-size:14px;
+//             }
+//             .fa.fa-chevron-right{
+//               position:absolute;
+//               right:16px;
+//               color:#eee;
+//               &:hover{
+//                 color:black;
+//                 right:15px;
+//               }
+//             }
+//           }
+//         }
+//         h3{
+//           font-size:16px;
+//           margin:40px 0 0;
+//           font-weight:bold;
+//         }
+//         }
+//       }
+//     }
+//   .aside{
+//     height:260px;
+//     width:1280px;
+//     background-color: orange
+//   }
+//   .footer{
+//     height:391px;
+//     width:1280px;
+//     background-color: aqua;
+//   }
+// }
+
+.wrapper{
+  background-color: rgb(245,245,245);
+  height:2132px;
+  width:100%;
+  padding:0;
+  margin:0;
+  .main-container{
+    margin:40px auto 40px;
+    width:1020px;
+    height:1292px;
+    display:block;
+    padding:0 0 40px;
+    .main-content{
+      float:right;
+      width:700px;
+      height:568px;
+      background:white;
+      .l-chapter-container{
+        height:100%;
+        width:100%;
+        .l-chapter-header{
+          font-size:24px;
+          padding:8px 24px;
+          text-align:center;
+          border-bottom: 1px solid #f5f5f5;
+          font-weight:bold;
+        }
+        form{
+          height:518px;
+          box-sizing:border-box;
+          .setting-profile-icon{
+            padding:72px 16px 24px;
+            background:url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?69765993);
+            background-size:contain;
+            text-align: center;
+            .profile-profile{
+              margin: 0 0 0;
+              display: inline-block;
+              width: 60px;
+              height: 60px;
+              vertical-align: middle;
+              .image-image{
+                border-radius: 50%;
+              }
+            }
+              .input-default{
+                box-sizing: border-box;
+                width:220px;
+                margin:0 0 0 8px;
+                vertical-align:middle;
+                display: inline-block;
+                font-size: 16px;
+                background:#fff;
+                border-radius:4px;
+                padding:10px 16px 8px;
+                vertical-align: middle;
+                border:1px solid #ccc;
+                line-height:1.5;
+                height:48px;
+                &:focus{
+                  outline:none;
+                  border:1px solid blue;
+                }
+              }
+          }
+          .setting-profile-content{
+            height:362px;
+            box-sizing:border-box;
+            padding:40px 16px;
+            .textarea-default{
+              box-sizing:border-box;
+              border:0;
+              display: block;
+              width: 100%;
+              min-height: 216px;
+              min-width:100%;
+              padding: 10px;
+              border: 1px solid #ccc;
+              background: #fff;
+              font-size: 16px;
+              line-height: 1.5;
+              max-width:100%;
+              &:focus{
+                outline:none;
+                border:1px solid blue;
+              }
+            }
+            .btn-default.btn-red{
+              margin: 16px 0 0;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .side-bar{
+      float:left;
+      width:280px;
+      margin:0 40px 0 0;
+      .side-bar-box{
+        ul{
+          list-style:none;
+          li{
+            background-color:#fff ;
+            border-top:1px solid  #eee;
+            height:48px;
+            display:flex;
+            align-items: center;
+            position:relative;
+            &:hover{
+              background-color:gray;
+            }
+            .mypage{
+              font-weight:bold;
+            }
+            a{
+              padding:16px;
+              font-size:14px;
+            }
+            .fa.fa-chevron-right{
+              position:absolute;
+              right:16px;
+              color:#eee;
+              &:hover{
+                color:black;
+                right:15px;
+              }
+            }
+          }
+        }
+        h3{
+          font-size:16px;
+          margin:40px 0 0;
+          font-weight:bold;
+        }
+        }
+      }
+    }
+  .aside{
+    height:260px;
+    width:1280px;
+    background-color: orange
+  }
+  .footer{
+    height:391px;
+    width:1280px;
+    background-color: aqua;
+  }
+}
