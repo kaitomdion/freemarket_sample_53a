@@ -46,19 +46,19 @@
             %th
               カテゴリー
             %td
-              = link_to "#", class: 'show__contents__detail-table__category1' do
+              = link_to category_path(@category.parent.parent.id), class: 'show__contents__detail-table__category1' do
                 = @category.parent.parent.name
-              = link_to "#", class: 'show__contents__detail-table__category2' do
+              = link_to category_path(@category.parent.id), class: 'show__contents__detail-table__category2' do
                 %i.fa.fa-chevron-right
                 = @category.parent.name
-              = link_to "#", class: 'show__contents__detail-table__category3' do
+              = link_to category_path(@category.id), class: 'show__contents__detail-table__category3' do
                 %i.fa.fa-chevron-right
                 = @category.name
           %tr 
             %th 
               ブランド
             %td
-              = link_to "#", class: 'show__contents__detail-table__brand' do
+              = link_to brand_path(@brand.id), class: 'show__contents__detail-table__brand' do
                 = @brand.name
           %tr
             %th

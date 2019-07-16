@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
+    @parents = Category.all.order("id ASC").limit(13)
     @items_ladies = Item.ladies
     @items_mens = Item.mens
     @items_kids = Item.kids
@@ -14,7 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-
+    @parents = Category.all.order("id ASC").limit(13)
     @images = @item.images
     @brand =Brand.find(@item.brand_id)
     @category = Category.find(@item.category_id)
@@ -53,6 +54,7 @@ class ItemsController < ApplicationController
   end
 
   def update
+    
     @item.update(item_params) 
     # if @item.update
      redirect_to root_path(@item), notice: 'itemを編集しました'
@@ -89,6 +91,7 @@ class ItemsController < ApplicationController
   end
   
   def editprev
+    @parents = Category.all.order("id ASC").limit(13)
     if @item.saler_id == current_user.id
     @images = @item.images
     @category = Category.find(@item.category_id)

@@ -43,12 +43,12 @@
             %th
               カテゴリー
             %td
-              = link_to "#", class: 'show__contents__detail-table__category1' do
+              = link_to category_path(@category.parent.parent.id), class: 'show__contents__detail-table__category1' do
                 = @category.parent.parent.name
-              = link_to "#", class: 'show__contents__detail-table__category2' do
+              = link_to category_path(@category.parent.id), class: 'show__contents__detail-table__category2' do
                 %i.fa.fa-chevron-right
                 = @category.parent.name
-              = link_to "#", class: 'show__contents__detail-table__category3' do
+              = link_to category_path(@category.id), class: 'show__contents__detail-table__category3' do
                 %i.fa.fa-chevron-right
                 = @category.name
           %tr 

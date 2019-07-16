@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @parents = Category.all.order("id ASC").limit(13)
     @user = User.find(params[:id])
     if @user.id == current_user.id
       @user = User.find(params[:id])
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def itemlist
+    @parents = Category.all.order("id ASC").limit(13)
     @user = User.find(params[:id])
     if @user.id == current_user.id
       @saleitem = Item.where(saler_id:current_user.id)

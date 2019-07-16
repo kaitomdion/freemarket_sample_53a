@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def show
-    
+    @parents = Category.all.order("id ASC").limit(13)
     @category= Category.find(params[:id])
     categoryIds = get_category(@category)
     @items = Item.where(category_id: categoryIds)

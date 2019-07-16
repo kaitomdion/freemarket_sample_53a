@@ -94,6 +94,6 @@
           電話番号の確認
         %i.fa.fa-chevron-right
       %li
-        =link_to "/jp/mypage/logout/" do
+        =link_to destroy_user_session_path, method: :delete do
           ログアウト
         %i.fa.fa-chevron-right 
