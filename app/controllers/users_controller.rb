@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.id == current_user.id
       @user = User.find(params[:id])
+      @transactionItem_buy = Item.where(buyer_id:current_user.id, item_status_id:2)
     else
       redirect_to root_path
     end
@@ -37,10 +38,31 @@ class UsersController < ApplicationController
   def itemlist
     @user = User.find(params[:id])
     if @user.id == current_user.id
-       @saleitem = Item.where(saler_id:current_user.id)
+       @saleitem = Item.where(saler_id:current_user.id).where(item_status_id:1)
     else
       redirect_to root_path
     end
+  end
+
+  def itemlist_transnow_sale
+    @user = User.find(params[:id])
+    if @user.id == current_user.id
+       @transactionItem = Item.where(saler_id:current_user.id, item_status_id:2)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def itemlist_transnow_buy
+    @user = User.find(params[:id])
+    if @user.id == current_user.id
+       @transactionItem_buy = Item.where(buyer_id:current_user.id, item_status_id:2)
+    else
+      redirect_to root_path
+    end
+  end
+
+  def profile_edit
   end
 
   private

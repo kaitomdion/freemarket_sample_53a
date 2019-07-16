@@ -19,7 +19,10 @@ Rails.application.routes.draw do
       get 'account_information'
     end
     member do
-      get :itemlist
+      get 'itemlist'
+      get 'profile_edit'
+      get 'itemlist_transnow_sale'
+      get 'itemlist_transnow_buy'
     end
   end
   resources :items, only: [:index, :show, :new,:destroy,:create,:edit,:update] do
@@ -29,7 +32,7 @@ Rails.application.routes.draw do
       get 'search'
     end
     member do
-      get :editprev
+      get 'editprev'
       get 'confirm'
     end
   end
