@@ -59,7 +59,9 @@
               ブランド
             %td
               = link_to "#", class: 'show__contents__detail-table__brand' do
-                = @brand.name
+                - if @item.brand_id == nil
+                - else
+                  = @brand.name
           %tr
             %th
               商品の状態
