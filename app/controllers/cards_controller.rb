@@ -6,6 +6,7 @@ class CardsController < ApplicationController
 
 
   def new
+    @parents = Category.all.order("id ASC").limit(13)
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
