@@ -55,8 +55,10 @@
             %th 
               ブランド
             %td
-              = link_to "#", class: 'show__contents__detail-table__brand' do
-                コーチ
+              - if @item.brand_id == nil
+              - else
+                = link_to brand_path(@brand.id), class: 'show__contents__detail-table__brand' do
+                  = @brand.name
           %tr
             %th
               商品の状態

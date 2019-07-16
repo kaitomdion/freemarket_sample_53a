@@ -111,6 +111,18 @@ class ItemsController < ApplicationController
     else
       redirect_to root_path
     end
+
+    if @item.brand_id != nil
+      @parents = Category.all.order("id ASC").limit(13)
+      @images = @item.images
+      @brand =Brand.find(@item.brand_id)
+      @category = Category.find(@item.category_id)
+      else
+      @parents = Category.all.order("id ASC").limit(13)
+      @images = @item.images
+      @category = Category.find(@item.category_id)
+      end
+      
   end
 
 
