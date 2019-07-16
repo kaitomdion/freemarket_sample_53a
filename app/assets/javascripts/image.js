@@ -2,7 +2,6 @@ $(document).on('turbolinks:load', function(){
   
 
   var num = $('.item-contents__main__form__upload-box__image').length;
-    console.log(num)
    if(num == 1){
     $('.item-contents__main__form__upload-box__image').css("display" , "none");
     $('.item-contents__main__form__upload-box__image3').css("display" , "none");
