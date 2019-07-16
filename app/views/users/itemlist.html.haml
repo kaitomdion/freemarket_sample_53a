@@ -1,7 +1,8 @@
 .wrapper
   = render '/items/main-header'
-  .nav
-    nav-bar
+  - breadcrumb :itemlist, @user
+  .breadcrumb
+    = breadcrumbs pretext: "", separator: " &rsaquo; ",class: "breadcrumb__text"
   .main-container
     .main-content
       %section.main-content-purchace
@@ -17,7 +18,7 @@
           .tab-content.tab-5-content
             - @saleitem.each do |saleitem|
               %li.main-content-tabs__line__list__notice
-                %a.main-content-tabs__line__list__notice__field{href: "/items/#{saleitem.id}/editprev"}
+                %a.main-content-tabs__line__list__notice__field{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false"}
                   %figure.main-content-tabs__line__list__notice__field__figure
                     = image_tag (saleitem.images.first.url.url), size: "40x40"
                   .mypage-item-body.show-stock-item

@@ -1,4 +1,7 @@
 = render "main-header"
+- breadcrumb :search
+.breadcrumb
+  = breadcrumbs pretext: "", separator: " &rsaquo; ",class: "breadcrumb__text"
 .search
   .search-container.clearfix
     .search-container__main

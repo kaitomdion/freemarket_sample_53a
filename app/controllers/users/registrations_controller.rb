@@ -4,6 +4,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
   before_action :correct_referer, only: [:sms_confirmation, :address]
+  before_action :login_user, only: [:registration]
   before_action :save_to_session, only: :sms_confirmation
   before_action :saves_to_session, only: :address
 
@@ -107,6 +108,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def correct_referer
     if request.referer.nil?
       redirect_to new_user_path
+    end
+  end
+
+  def login_user
+    if current_user
+      redirect_to root_path
     end
   end
 
