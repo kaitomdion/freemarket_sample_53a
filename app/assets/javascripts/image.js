@@ -194,6 +194,7 @@ $(document).on('turbolinks:load', function(){
 
 
   $('.item-contents__main__form__upload-box__image2').on('change', 'input[type="file"]', function(e){
+    
     var imagefile2 =$(".item-contents__main__form__upload-box__image2")
     var imagefile3 =$(".item-contents__main__form__upload-box__image3")
     var file = e.target.files[0];
