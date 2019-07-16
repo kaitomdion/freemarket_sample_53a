@@ -46,7 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else 
       @user.save
       sign_in @user 
-      redirect_to root_path
+      redirect_to new_card_path
     end
   end
 
