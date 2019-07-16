@@ -24,7 +24,7 @@ class Item < ApplicationRecord
   validates :shipping_burden_id, presence: true
   validates :category_id, presence: true
   
-  scope :ladies,   -> {where(category_id: 159..337).limit(4)}
+  scope :ladies,   -> {where(category_id: 159..337,).limit(4)}
   scope :mens,     -> {where(category_id: 338..468).limit(4)}
   scope :kids,     -> {where(category_id: 469..586).limit(4)}
   scope :cosmetics,-> {where(category_id: 867..954).limit(4)}
