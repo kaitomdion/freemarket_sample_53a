@@ -13,5 +13,12 @@ RSpec.describe Item, type: :model do
         expect(item.errors[:price]).to include('を40文字以内で入力してください')
       end
     end
+    context '保存できません！' do
+      it '空の場合' do
+        item = build(:item, name: nil)
+        item.valid?
+        expect(item.errors[:name]).to include('を入力してください')
+      end
+    end
   end
 end
