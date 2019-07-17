@@ -18,7 +18,7 @@
         .tabs-content
           %ul.tabs-contents
             - @saleitem.each do |saleitem|
-              %a{href: "/items/#{saleitem.id}/editprev","data-turbolinks" => "false",class:"itemshow-link"}
+              %a{href: "/items/#{saleitem.id}/prev","data-turbolinks" => "false",class:"itemshow-link"}
                 %li.tabs-contents__list
                   %figure.tabs-contents__list__figure
                     = image_tag (saleitem.images.first.url.url),size: "40X40"

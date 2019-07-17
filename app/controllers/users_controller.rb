@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   before_action :move_to_index, except: [:new]
   before_action :login_user, only: [:new]
+  before_action :parent
 
   def index
   end
@@ -11,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @parents = Category.all.order("id ASC").limit(13)
     @user = User.find(params[:id])
     if @user.id == current_user.id
       @user = User.find(params[:id])
@@ -46,7 +46,6 @@ class UsersController < ApplicationController
   end
 
   def itemlist
-    @parents = Category.all.order("id ASC").limit(13)
     @user = User.find(params[:id])
     if @user.id == current_user.id
        @saleitem = Item.where(saler_id:current_user.id).where(item_status_id:1)

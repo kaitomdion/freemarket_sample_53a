@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
+  def parent
+    @parents = Category.all.order("id ASC").limit(13)
+  end
 end

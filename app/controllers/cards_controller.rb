@@ -3,10 +3,9 @@ class CardsController < ApplicationController
   require "payjp"
   
   before_action :move_to_index
-
+  before_action :parent
 
   def new
-    @parents = Category.all.order("id ASC").limit(13)
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
