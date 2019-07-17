@@ -167,7 +167,7 @@
       .item-user-profile__container__contents.clearfix
         - @useritem.each do |useritem|
           .item-user-profile__container__contents__box
-            =link_to "", class: "item-user-profile__container__contents__box__link", "data-turbolinks" => "false" do
+            =link_to item_path(useritem.id), class: "item-user-profile__container__contents__box__link", "data-turbolinks" => "false" do
               .item-user-profile__container__contents__box__photo
                 = image_tag (useritem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
               .item-user-profile__container__contents__box__text
@@ -187,7 +187,7 @@
       .item-user-profile__container__contents.clearfix
         - @childitem.each do |childitem|
           .item-user-profile__container__contents__box
-            =link_to "", class: "item-user-profile__container__contents__box__link", "data-turbolinks" => "false" do
+            =link_to item_path(childitem.id), class: "item-user-profile__container__contents__box__link", "data-turbolinks" => "false" do
               .item-user-profile__container__contents__box__photo
                 = image_tag (childitem.images.first.url.url),height: "250", width: "200", class: "item-user-profile__container__contents__box__photo__image" 
               .item-user-profile__container__contents__box__text
