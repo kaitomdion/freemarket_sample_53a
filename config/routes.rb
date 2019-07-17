@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       get 'search'
     end
     member do
-      get 'editprev'
+      get 'prev'
       get 'confirm'
     end
   end

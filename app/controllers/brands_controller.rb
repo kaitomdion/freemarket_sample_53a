@@ -1,4 +1,7 @@
 class BrandsController < ApplicationController
+
+  before_action :parent
+
   def index 
     @brands = Brand.where('name LIKE(?)', "%#{params[:keyword]}%")
     respond_to do |format|
@@ -7,7 +10,6 @@ class BrandsController < ApplicationController
   end
 
   def show 
-    @parents = Category.all.order("id ASC").limit(13)
     @brand= Brand.find(params[:id])
     @items = Item.where(brand_id: @brand.id)
   end
