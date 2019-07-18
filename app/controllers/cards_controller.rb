@@ -38,16 +38,16 @@ class CardsController < ApplicationController
     redirect_to action: "new"
     flash[:alert] = '購入にはクレジットカード登録が必要です'
   else
-    # binding.pry
+    
     @item = Item.find(params[:id])
-    # binding.pry
+    
     Payjp.api_key = Rails.application.credentials.pay_jp[:secret_access_key]
     Payjp::Charge.create(
     amount: @item.price,
     customer: card.customer_id, 
     currency: 'jpy', 
     )
-    # binding.pry
+    
     
     if @item.update( buyer_id: current_user.id,item_status_id: 2)
       flash[:notice] = '購入しました。'
