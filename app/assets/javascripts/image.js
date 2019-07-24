@@ -46,7 +46,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image3').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image3').nextAll().css("display" , "none");
   }
 
   if(num == 3){
@@ -60,7 +60,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image4').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image4').nextAll().css("display" , "none");
   }
 
   if(num == 4){
@@ -74,7 +74,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image5').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image5').nextAll().css("display" , "none");
   }
 
   if(num == 5){
@@ -88,7 +88,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image6').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image6').nextAll().css("display" , "none");
     $(".item-contents__main__form__upload-box").css("height", "450px");
   }
 
@@ -103,7 +103,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image7').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image7').nextAll().css("display" , "none");
     $(".item-contents__main__form__upload-box").css("height", "450px");
   }
   
@@ -118,7 +118,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image8').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image8').nextAll().css("display" , "none");
     $(".item-contents__main__form__upload-box").css("height", "450px");
   }
 
@@ -133,7 +133,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image8').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image9').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image9').nextAll().css("display" , "none");
     $(".item-contents__main__form__upload-box").css("height", "450px");
   }
 
@@ -148,7 +148,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image8').css("display" , "none");
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image11').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image10').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image10').nextAll().css("display" , "none");
     $(".item-contents__main__form__upload-box").css("height", "450px");
   }
 
@@ -163,7 +163,7 @@ $(document).on('turbolinks:load', function(){
     $('.item-contents__main__form__upload-box__image8').css("display" , "none");
     $('.item-contents__main__form__upload-box__image9').css("display" , "none");
     $('.item-contents__main__form__upload-box__image10').css("display" , "none");
-    $('.item-contents__main__form__upload-box__image11').nextAll().remove();
+    $('.item-contents__main__form__upload-box__image11').nextAll().css("display" , "none");
     $(".item-contents__main__form__upload-box").css("height", "450px");
   }
 
@@ -184,6 +184,9 @@ $(document).on('turbolinks:load', function(){
         })
         imagefile2.css({
           'display': `block`
+        })
+        imagefile2.nextAll().css({
+          'display': 'none'
         })
       };
     })(file);
@@ -210,6 +213,9 @@ $(document).on('turbolinks:load', function(){
         imagefile3.css({
           'display': `block`
         })
+        imagefile3.nextAll().css({
+          'display': 'none'
+        })
       };
     })(file);
      reader.readAsDataURL(file);
@@ -233,6 +239,9 @@ $(document).on('turbolinks:load', function(){
         })
         imagefile4.css({
           'display': `block`
+        })
+        imagefile4.nextAll().css({
+          'display': 'none'
         })
       };
     })(file);
@@ -260,6 +269,9 @@ $(document).on('turbolinks:load', function(){
         imagefile5.css({
           'display': `block`
         })
+        imagefile5.nextAll().css({
+          'display': 'none'
+        })
       };
     })(file);
      reader.readAsDataURL(file);
@@ -282,6 +294,9 @@ $(document).on('turbolinks:load', function(){
         })
         imagefile6.css({
           'display': `block`
+        })
+        imagefile6.nextAll().css({
+          'display': 'none'
         })
         height.css({
           'height': `450px`
@@ -309,6 +324,9 @@ $(document).on('turbolinks:load', function(){
         imagefile7.css({
           'display': `block`
         })
+        imagefile7.nextAll().css({
+          'display': 'none'
+        })
         height.css({
           'height': `450px`
         })
@@ -334,6 +352,9 @@ $(document).on('turbolinks:load', function(){
         })
         imagefile8.css({
           'display': `block`
+        })
+        imagefile8.nextAll().css({
+          'display': 'none'
         })
         height.css({
           'height': `450px`
@@ -361,6 +382,9 @@ $(document).on('turbolinks:load', function(){
         imagefile9.css({
           'display': `block`
         })
+        imagefile9.nextAll().css({
+          'display': 'none'
+        })
         height.css({
           'height': `450px`
         })
@@ -387,6 +411,9 @@ $(document).on('turbolinks:load', function(){
         imagefile10.css({
           'display': `block`
         })
+        imagefile10.nextAll().css({
+          'display': 'none'
+        })
         height.css({
           'height': `450px`
         })
@@ -412,6 +439,9 @@ $(document).on('turbolinks:load', function(){
         })
         imagefile11.css({
           'display': `block`
+        })
+        imagefile11.nextAll().css({
+          'display': 'none'
         })
         height.css({
           'height': `450px`
@@ -526,6 +556,152 @@ $(document).on('click', '.item-contents__main__form__upload-box__image11__view__
   $(".item-contents__main__form__upload-box__image10").css("display", "block")
   $(".item-contents__main__form__upload-box__image10__drop-file").css("display", "none")
   $("#file10").css("display", "none")
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image11__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').nextAll().css("display" , "none");
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image10__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').nextAll().css("display" , "none");
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image9__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').nextAll().css("display" , "none");
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+  
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image8__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').nextAll().css("display" , "none");
+    $(".item-contents__main__form__upload-box").css("height", "450px");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image7__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image6').nextAll().css("display" , "none");
+  $(".item-contents__main__form__upload-box").css("height", "450px");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image6__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').nextAll().css("display" , "none");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image5__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').nextAll().css("display" , "none");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image4__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+    $('.item-contents__main__form__upload-box__image3').nextAll().css("display" , "none");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image3__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image2').nextAll().css("display" , "none");
+})
+
+$(document).on('click', '.item-contents__main__form__upload-box__image2__view__btn__right', function(){
+  $('.item-contents__main__form__upload-box__image2').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image3').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image4').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image5').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image6').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image7').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image8').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image9').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image10').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image11').css("display" , "none");
+  $('.item-contents__main__form__upload-box__image').nextAll().css("display" , "none");
 })
 
 })

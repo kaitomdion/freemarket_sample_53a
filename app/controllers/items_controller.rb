@@ -65,8 +65,9 @@ class ItemsController < ApplicationController
   end
 
   def update
-    
-    @item.update(item_params) 
+    @item.update(edit_params) 
+    Image.create(image_params)
+
      redirect_to root_path(@item), notice: 'itemを編集しました'
   end
 
@@ -133,6 +134,14 @@ class ItemsController < ApplicationController
   private
   def item_params
     @params_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id, images_attributes: [:url, :id]).merge(saler_id: current_user.id,item_status_id: 1)
+  end
+
+  def edit_params
+    @edit_items = params.require(:item).permit(:name, :description, :price, :brand_id, :shipping_region_id, :shipping_status_id, :shipping_day_id, :shipping_method_id,:transaction_id,:saler_id, :shipping_burden_id, :category_id).merge(saler_id: current_user.id,item_status_id: 1)
+  end
+
+  def image_params
+    @edit_images = params.require(:item).require(:images_attributes).permit(:url, :id)
   end
 
   def move_to_index
